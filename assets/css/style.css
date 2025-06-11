@@ -155,6 +155,14 @@ p {
   transition: var(--transition);
 }
 
+/* Esconder elementos mobile no desktop */
+@media (min-width: 769px) {
+  .mobile-menu-close,
+  .mobile-overlay {
+    display: none !important;
+  }
+}
+
 /* ===== MELHORIAS TOUCH MOBILE ===== */
 @media (max-width: 768px) {
   /* Aumenta área de toque para links */
