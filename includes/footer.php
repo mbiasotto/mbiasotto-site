@@ -126,6 +126,11 @@
         <script src="<?php echo asset('assets/js/recaptcha-forms.js'); ?>"></script>
     <?php endif; ?>
     
+    <!-- Form Submission System (carregado em todas as páginas com formulários) -->
+    <?php if (needsRecaptcha()): ?>
+        <script src="<?php echo asset('assets/js/form-submission.js'); ?>"></script>
+    <?php endif; ?>
+    
     <?php if (isset($additionalJS)): ?>
         <?php foreach ($additionalJS as $js): ?>
             <script src="<?php echo asset($js); ?>"></script>

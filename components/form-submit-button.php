@@ -60,6 +60,53 @@ $onClickFunction = $onClickFunction ?? 'submitContactForm()';
     transform: none;
 }
 
+/* Estados de loading aprimorados */
+.btn-form-submit.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn-form-submit.btn-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: pulse-loading 1.5s infinite;
+}
+
+@keyframes pulse-loading {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+/* Spinner personalizado */
+.btn-form-submit .spinner-border {
+    width: 1rem;
+    height: 1rem;
+    border-width: 2px;
+    animation: spinner-custom 0.8s linear infinite;
+}
+
+@keyframes spinner-custom {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Feedback visual para estados */
+.btn-form-submit:not(:disabled):hover {
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+}
+
+.btn-form-submit.btn-loading:hover {
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+    transform: none;
+}
+
 /* Responsividade Mobile */
 @media (max-width: 767.98px) {
     .form-submit-container {
