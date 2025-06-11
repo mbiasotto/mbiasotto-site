@@ -81,11 +81,44 @@ function processFormSubmission(form, button) {
             });
         }
         
-        // Enviar formulário após pequeno delay para UX
-        setTimeout(() => {
-            console.log('Enviando formulário:', form.id);
-            form.submit();
-        }, 500);
+        // Definir ação do reCAPTCHA baseada no formulário
+        const action = form.id === 'contactForm' ? 'contact_form' : 'quick_contact';
+        
+        // Verificar se reCAPTCHA está disponível
+        if (typeof executeRecaptcha === 'function') {
+            console.log('Executando reCAPTCHA para ação:', action);
+            
+            executeRecaptcha(action, function(token) {
+                if (token && token !== 'error_loading_recaptcha' && token !== 'error_generating_token') {
+                    // Adicionar token reCAPTCHA ao formulário
+                    addRecaptchaToForm(form, token, action);
+                    
+                    // Enviar formulário
+                    setTimeout(() => {
+                        console.log('Enviando formulário com reCAPTCHA:', form.id);
+                        form.submit();
+                    }, 200);
+                } else {
+                    console.warn('Erro no reCAPTCHA, enviando sem proteção');
+                    // Adicionar bypass para casos de erro no reCAPTCHA
+                    addRecaptchaBypass(form);
+                    
+                    setTimeout(() => {
+                        console.log('Enviando formulário com bypass:', form.id);
+                        form.submit();
+                    }, 200);
+                }
+            });
+        } else {
+            console.warn('reCAPTCHA não disponível, enviando com bypass');
+            // Adicionar bypass se reCAPTCHA não estiver disponível
+            addRecaptchaBypass(form);
+            
+            setTimeout(() => {
+                console.log('Enviando formulário sem reCAPTCHA:', form.id);
+                form.submit();
+            }, 500);
+        }
         
     } catch (error) {
         console.error('Erro no envio:', error);
@@ -182,6 +215,49 @@ function setButtonLoading(button, isLoading) {
         button.style.opacity = '1';
         button.style.cursor = 'pointer';
     }
+}
+
+/**
+ * Adicionar dados do reCAPTCHA ao formulário
+ */
+function addRecaptchaToForm(form, token, action) {
+    // Adicionar token
+    let tokenInput = form.querySelector('input[name="recaptcha_token"]');
+    if (!tokenInput) {
+        tokenInput = document.createElement('input');
+        tokenInput.type = 'hidden';
+        tokenInput.name = 'recaptcha_token';
+        form.appendChild(tokenInput);
+    }
+    tokenInput.value = token;
+    
+    // Adicionar action
+    let actionInput = form.querySelector('input[name="recaptcha_action"]');
+    if (!actionInput) {
+        actionInput = document.createElement('input');
+        actionInput.type = 'hidden';
+        actionInput.name = 'recaptcha_action';
+        form.appendChild(actionInput);
+    }
+    actionInput.value = action;
+    
+    console.log('reCAPTCHA adicionado ao formulário:', action);
+}
+
+/**
+ * Adicionar bypass do reCAPTCHA para casos de erro
+ */
+function addRecaptchaBypass(form) {
+    let bypassInput = form.querySelector('input[name="recaptcha_bypass"]');
+    if (!bypassInput) {
+        bypassInput = document.createElement('input');
+        bypassInput.type = 'hidden';
+        bypassInput.name = 'recaptcha_bypass';
+        form.appendChild(bypassInput);
+    }
+    bypassInput.value = '1';
+    
+    console.log('reCAPTCHA bypass adicionado ao formulário');
 }
 
 /**
