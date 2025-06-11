@@ -106,7 +106,7 @@
     <!-- Google Analytics Events Tracking -->
     <script src="<?php echo asset('assets/js/analytics-events.js'); ?>"></script>
     
-    <!-- reCAPTCHA Forms Script (carregado apenas em páginas com formulários) -->
+    <!-- Form Masks and Validations Script (carregado apenas em páginas com formulários) -->
     <?php
     // Incluir configuração de páginas se não foi incluída ainda
     if (!function_exists('needsRecaptcha')) {
@@ -114,6 +114,7 @@
     }
     
     if (needsRecaptcha()): ?>
+        <script src="<?php echo asset('assets/js/form-masks.js'); ?>"></script>
         <script src="<?php echo asset('assets/js/recaptcha-forms.js'); ?>"></script>
     <?php endif; ?>
     

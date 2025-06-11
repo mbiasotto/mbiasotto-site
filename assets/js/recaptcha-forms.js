@@ -169,34 +169,32 @@ function addRecaptchaToForm(form, token, action) {
 }
 
 /**
- * Validar formulário de contato
+ * Validar formulário de contato (usa validações centralizadas)
  */
 function validateContactForm(form) {
+    // Usar validação centralizada do form-masks.js
+    if (typeof validateCompleteForm === 'function') {
+        return validateCompleteForm(form);
+    }
+    
+    // Fallback para validação básica se form-masks.js não estiver carregado
     const nome = form.querySelector('input[name="nome"]');
     const email = form.querySelector('input[name="email"]');
     const tipoProj = form.querySelector('select[name="tipo_projeto"]');
     const mensagem = form.querySelector('textarea[name="mensagem"]');
 
-    // Reset classes de erro
-    clearFormErrors(form);
-
     let isValid = true;
 
-    // Validar nome
+    // Validações básicas
     if (!nome.value.trim() || nome.value.length < 2) {
-        showFieldError(nome, 'Nome deve ter pelo menos 2 caracteres');
         isValid = false;
     }
 
-    // Validar email
     if (!isValidEmail(email.value)) {
-        showFieldError(email, 'Digite um e-mail válido');
         isValid = false;
     }
 
-    // Validar tipo de projeto
     if (!tipoProj.value) {
-        showFieldError(tipoProj, 'Selecione o tipo de projeto');
         isValid = false;
     }
 
@@ -218,9 +216,24 @@ function validateContactForm(form) {
 }
 
 /**
- * Validar formulário rápido
+ * Validar formulário rápido (usa validações centralizadas)
  */
 function validateQuickForm(form) {
+    // Usar validação centralizada do form-masks.js se disponível
+    if (typeof validateCompleteForm === 'function') {
+        const isValid = validateCompleteForm(form);
+        
+        if (!isValid) {
+            gtag('event', 'form_validation_error', {
+                event_category: 'Form Error',
+                event_label: 'Quick Form Validation Failed'
+            });
+        }
+        
+        return isValid;
+    }
+    
+    // Fallback para validação básica se form-masks.js não estiver carregado
     const nome = form.querySelector('input[name="nome"]');
     const email = form.querySelector('input[name="email"]');
     const tipoProj = form.querySelector('select[name="tipo_projeto"]');

@@ -65,14 +65,8 @@ try {
         }
     }
     
-    // Verificação de rate limiting simples
+    // Rate limiting removido a pedido do cliente
     $ipFile = 'tmp/rate_limit_' . md5($_SERVER['REMOTE_ADDR']);
-    if (file_exists($ipFile)) {
-        $lastSubmit = file_get_contents($ipFile);
-        if (time() - $lastSubmit < 60) { // 1 minuto entre envios
-            throw new Exception('Aguarde 1 minuto antes de enviar outro formulário');
-        }
-    }
     
     // Processar dados do formulário
     $formData = [
