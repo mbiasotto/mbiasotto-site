@@ -88,7 +88,7 @@ RewriteRule ^ /%1? [NC,L,R=301]
 # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Custom 404 page for better UX and SEO
-ErrorDocument 404 /mbiasotto/404.php
+ErrorDocument 404 /404.php
 
 # SEO: Block access to sensitive files that could hurt SEO
 <Files "config.php">
