@@ -38,61 +38,55 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGVCBGF67P"></script>
+    <!-- Google Analytics 4 (carregamento otimizado) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-RGVCBGF67P', {
-          // Configurações otimizadas para programador PHP freelancer
-          page_title: '<?php echo addslashes($pageTitle); ?>',
-          page_location: '<?php echo $canonicalUrl; ?>',
-          content_group1: '<?php echo ucfirst($currentPage); ?>',
-          content_group2: 'Programador PHP Freelancer',
-          send_page_view: true
-      });
-
-      // Função para capturar eventos de conversão
-      function trackConversion(action, category, label, value) {
-          gtag('event', action, {
-              event_category: category,
-              event_label: label,
-              value: value || 0
-          });
-      }
-
-      // Evento de visualização de página específica
-      gtag('event', 'page_view', {
-          page_title: '<?php echo addslashes($pageTitle); ?>',
-          page_location: '<?php echo $canonicalUrl; ?>',
-          content_group1: '<?php echo ucfirst($currentPage); ?>'
-      });
-
-      <?php if ($currentPage === 'programador-php-freelancer'): ?>
-      // Evento específico: Visualização do perfil do freelancer
-      gtag('event', 'view_freelancer_profile', {
-          event_category: 'Engagement',
-          event_label: 'Programador PHP Profile View'
-      });
-      <?php endif; ?>
-
-      <?php if ($currentPage === 'servicos'): ?>
-      // Evento específico: Visualização de serviços
-      gtag('event', 'view_services', {
-          event_category: 'Engagement', 
-          event_label: 'PHP Services Page View'
-      });
-      <?php endif; ?>
-
-      <?php if ($currentPage === 'contato'): ?>
-      // Evento específico: Chegada na página de contato
-      gtag('event', 'reach_contact_page', {
-          event_category: 'Conversion Funnel',
-          event_label: 'Contact Page Reached'
-      });
-      <?php endif; ?>
+        // Carrega Analytics de forma assíncrona para melhor performance mobile
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-RGVCBGF67P';
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-RGVCBGF67P', {
+                    page_title: '<?php echo addslashes($pageTitle); ?>',
+                    page_location: '<?php echo $canonicalUrl; ?>',
+                    content_group1: '<?php echo ucfirst($currentPage); ?>',
+                    content_group2: 'Programador PHP Freelancer',
+                    send_page_view: true
+                });
+            };
+        }
+        
+        // Carrega Analytics após 3 segundos ou primeiro scroll para melhor performance
+        setTimeout(loadGoogleAnalytics, 3000);
+        window.addEventListener('scroll', function() {
+            loadGoogleAnalytics();
+        }, { once: true });
+        
+        // Fallback: carrega analytics se demorar muito
+        window.addEventListener('load', function() {
+            setTimeout(loadGoogleAnalytics, 5000);
+        });
+    </script>
+    <script>
+        // Funções globais para Analytics (definidas quando o script carregar)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Função para capturar eventos de conversão
+        function trackConversion(action, category, label, value) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    event_category: category,
+                    event_label: label,
+                    value: value || 0
+                });
+            }
+        }
     </script>
     
     <?php if ($needsRecaptcha): ?>

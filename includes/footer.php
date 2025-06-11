@@ -93,7 +93,7 @@
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <!-- jQuery -->
+    <!-- jQuery (carregamento imediato para estabilidade) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -103,8 +103,16 @@
     <script src="<?php echo asset('assets/js/main.js'); ?>"></script>
     <script src="<?php echo asset('assets/js/navbar-scroll.js'); ?>"></script>
     
-    <!-- Google Analytics Events Tracking -->
-    <script src="<?php echo asset('assets/js/analytics-events.js'); ?>"></script>
+    <!-- Google Analytics Events Tracking (carregado após 1 segundo) -->
+    <script>
+        // Carrega analytics events após 1 segundo para não bloquear
+        setTimeout(function() {
+            const script = document.createElement('script');
+            script.src = '<?php echo asset('assets/js/analytics-events.js'); ?>';
+            script.async = true;
+            document.head.appendChild(script);
+        }, 1000);
+    </script>
     
     <!-- Form Masks and Validations Script (carregado apenas em páginas com formulários) -->
     <?php

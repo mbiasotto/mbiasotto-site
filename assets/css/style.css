@@ -3668,11 +3668,7 @@ html {
     display: block;
 }
 
-/* Phone Input Styling */
-input[name="telefone"] {
-    font-family: 'Courier New', monospace;
-    letter-spacing: 0.5px;
-}
+/* Phone Input Styling removido - fonte padrão */
 
 /* Validation Animation */
 @keyframes shake {

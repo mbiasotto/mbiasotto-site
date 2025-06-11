@@ -22,27 +22,38 @@ function initializeFormMasks() {
 }
 
 /**
+ * Máscara para telefone (implementação padronizada)
+ */
+function phoneMask(value) {
+    if (!value) return '';
+    
+    value = value.replace(/\D/g, '');
+    
+    if (value.length <= 2) {
+        return `(${value}`;
+    }
+    if (value.length <= 7) {
+        return `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    }
+    if (value.length <= 11) {
+        return `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    }
+    
+    return `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
+}
+
+/**
  * Aplicar máscara de telefone
  */
 function applyPhoneMask(input) {
-    input.addEventListener('input', function() {
-        let value = this.value.replace(/\D/g, '');
-        
-        if (value.length <= 10) {
-            // Telefone fixo: (15) 3333-4444
-            value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-        } else {
-            // Celular: (15) 99999-9999
-            value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-        }
-        
-        this.value = value;
+    input.addEventListener('input', function(e) {
+        e.target.value = phoneMask(e.target.value);
     });
 
-    // Permitir apenas números, parênteses, espaço e hífen
+    // Permitir apenas números e caracteres de formatação
     input.addEventListener('keypress', function(e) {
         const char = String.fromCharCode(e.which);
-        if (!/[\d\(\)\s\-]/.test(char)) {
+        if (!/[\d\(\)\s\-]/.test(char) && e.which !== 8 && e.which !== 0) {
             e.preventDefault();
         }
     });
@@ -299,4 +310,19 @@ function addFormSubmitFeedback(form) {
             }, 100);
         });
     }
-} 
+}
+
+/**
+ * Inicialização automática quando o DOM carregar
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar máscaras e validações
+    initializeFormMasks();
+    initializeFormValidations();
+    
+    // Adicionar feedback para todos os formulários
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        addFormSubmitFeedback(form);
+    });
+}); 

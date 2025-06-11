@@ -3,27 +3,14 @@
  * Validação frontend e envio via AJAX
  */
 
-// Máscara para telefone
-function phoneMask(value) {
-    if (!value) return '';
-    
-    value = value.replace(/\D/g, '');
-    
-    if (value.length <= 2) {
-        return `(${value}`;
-    }
-    if (value.length <= 7) {
-        return `(${value.slice(0, 2)}) ${value.slice(2)}`;
-    }
-    if (value.length <= 11) {
-        return `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
-    }
-    
-    return `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
-}
+// Máscara para telefone (usa função centralizada do form-masks.js)
+// A função phoneMask está definida em form-masks.js para evitar duplicação
 
-// Validação de email
-function validateEmail(email) {
+// Validação de email (usa função centralizada do form-masks.js)
+// A função validateEmail está definida em form-masks.js para evitar duplicação
+
+// Helper para validar apenas o valor do email
+function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
@@ -72,7 +59,7 @@ function validateQuickField(e, form) {
     if (field.hasAttribute('required') && !value) {
         isValid = false;
         message = 'Este campo é obrigatório';
-    } else if (field.type === 'email' && value && !validateEmail(value)) {
+    } else if (field.type === 'email' && value && !isValidEmail(value)) {
         isValid = false;
         message = 'Digite um email válido';
     } else if (field.name === 'nome' && value && value.length < 2) {
@@ -168,13 +155,18 @@ async function handleQuickSubmit(e, form, submitBtn, btnText, spinner) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Máscara para telefone em todos os formulários
-    const phoneInputs = document.querySelectorAll('input[type="tel"], input[name="telefone"]');
-    phoneInputs.forEach(input => {
-        input.addEventListener('input', function(e) {
-            e.target.value = phoneMask(e.target.value);
+    // Inicializar máscaras de telefone (usando função centralizada)
+    if (typeof initializeFormMasks === 'function') {
+        initializeFormMasks();
+    } else {
+        // Fallback se form-masks.js não estiver carregado
+        const phoneInputs = document.querySelectorAll('input[type="tel"], input[name="telefone"]');
+        phoneInputs.forEach(input => {
+            input.addEventListener('input', function(e) {
+                e.target.value = phoneMask(e.target.value);
+            });
         });
-    });
+    }
     
     // Inicializar todos os formulários rápidos
     const quickForms = document.querySelectorAll('#quickContactForm, #homeContactForm');
@@ -217,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (field.hasAttribute('required') && !value) {
             isValid = false;
             message = 'Este campo é obrigatório';
-        } else if (field.type === 'email' && value && !validateEmail(value)) {
+        } else if (field.type === 'email' && value && !isValidEmail(value)) {
             isValid = false;
             message = 'Digite um email válido';
         } else if (field.name === 'nome' && value && value.length < 2) {

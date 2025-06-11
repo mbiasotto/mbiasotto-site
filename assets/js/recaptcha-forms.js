@@ -274,12 +274,8 @@ function validateQuickForm(form) {
 }
 
 /**
- * Helpers de validação
+ * Helpers de validação (usa função isValidEmail do contact-form.js)
  */
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
 
 function showFieldError(field, message) {
     field.classList.add('is-invalid');

@@ -89,68 +89,22 @@ include 'includes/navigation.php';
                             <!-- Honeypot field (hidden) -->
                             <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                             
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Nome *</label>
-                                    <input type="text" name="nome" class="form-control" required minlength="2" placeholder="Seu nome completo">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">E-mail *</label>
-                                    <input type="email" name="email" class="form-control" required placeholder="seu@email.com">
-                                </div>
-                            </div>
+                            <?php 
+                            // Configurar variáveis para o componente de campos
+                            $showCompany = true;
+                            $showBudget = true;
+                            $messageRows = 5;
+                            include 'components/form-fields.php'; 
+                            ?>
                             
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Telefone</label>
-                                    <input type="tel" name="telefone" class="form-control" placeholder="(15) 99999-9999">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Empresa</label>
-                                    <input type="text" name="empresa" class="form-control" placeholder="Nome da empresa">
-                                </div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label class="form-label">Tipo de Projeto *</label>
-                                <select name="tipo_projeto" class="form-select" required>
-                                    <option value="">Selecione o tipo de projeto</option>
-                                    <option value="desenvolvimento-php">Desenvolvimento PHP</option>
-                                    <option value="laravel">Sistema Laravel</option>
-                                    <option value="site">Desenvolvimento de Site</option>
-                                    <option value="api">Construção de API</option>
-                                    <option value="app">Desenvolvimento de APP</option>
-                                    <option value="sistema">Sistema Personalizado</option>
-                                    <option value="automacao">Automação com n8n</option>
-                                    <option value="consultoria">Consultoria</option>
-                                    <option value="outro">Outro</option>
-                                </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label class="form-label">Orçamento Previsto</label>
-                                <select name="orcamento" class="form-select">
-                                    <option value="">Selecione uma faixa de orçamento</option>
-                                    <option value="ate-5k">Até R$ 5.000</option>
-                                    <option value="5k-10k">R$ 5.000 - R$ 10.000</option>
-                                    <option value="10k-20k">R$ 10.000 - R$ 20.000</option>
-                                    <option value="20k-mais">Acima de R$ 20.000</option>
-                                    <option value="nao-definido">Ainda não defini</option>
-                                </select>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label class="form-label">Descrição do Projeto *</label>
-                                <textarea name="mensagem" class="form-control" rows="5" placeholder="Descreva seu projeto, objetivos e funcionalidades desejadas..." required minlength="10"></textarea>
-                            </div>
-                            
-                            <div class="text-center">
-                                <button type="button" class="btn-form-submit" id="submitBtn" onclick="submitContactForm()">
-                                    <i class="fas fa-paper-plane me-2"></i>
-                                    <span class="btn-text">Enviar Mensagem</span>
-                                    <span class="spinner-border spinner-border-sm d-none ms-2" role="status"></span>
-                                </button>
-                            </div>
+                            <?php 
+                            // Configurar variáveis para o componente de botão
+                            $buttonText = 'Enviar Mensagem';
+                            $buttonIcon = 'fas fa-paper-plane';
+                            $formId = 'contactForm';
+                            $onClickFunction = 'submitContactForm()';
+                            include 'components/form-submit-button.php'; 
+                            ?>
                         </form>
                     </div>
                 </div>
