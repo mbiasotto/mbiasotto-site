@@ -50,20 +50,24 @@ include 'includes/header.php';
                     
                     <!-- Hero Buttons -->
                         <div class="hero-buttons mb-5" data-aos="fade-up" data-aos-delay="200">
-                        <a href="<?php echo url('contato'); ?>" class="btn btn-primary btn-lg me-3 mb-3 btn-pulse">
-                                Solicitar Orçamento Gratuito
+                        <a href="<?php echo url('contato'); ?>" class="btn btn-cta-primary me-3 mb-3">
+                                <i class="fas fa-rocket me-2"></i>
+                                Solicitar Orçamento
                             </a>
-                        <a href="<?php echo url('servicos'); ?>" class="btn btn-secondary btn-lg mb-3">
+                            <!-- 
+                            <a href="<?php echo url('servicos'); ?>" class="btn btn-cta-secondary mb-3">
+                                <i class="fas fa-eye me-2"></i>
                                 Conhecer Serviços
-                            </a>
+                            </a>-->
                         </div>
                         
                     <!-- Hero Badges -->
                         <div class="hero-badges" data-aos="fade-up" data-aos-delay="400">
-                            <span class="badge-custom">PHP Moderno</span>
-                            <span class="badge-custom">Framework Laravel Expert</span>
+                            <span class="badge-custom">PHP</span>
+                            <span class="badge-custom">Framework Laravel</span>
                             <span class="badge-custom">APIs RESTful</span>
-                            <span class="badge-custom">Automações n8n</span>
+                            <span class="badge-custom">Automações N8N</span>
+                            <span class="badge-custom">MCP</span>
                         </div>
                     </div>
                 </div>

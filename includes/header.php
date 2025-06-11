@@ -13,9 +13,9 @@ if (!isset($_SESSION['csrf_token'])) {
 }
 
 // Configurações padrão da página
-$pageTitle = $pageTitle ?? 'Maurício Biasotto - Programador PHP Freelancer';
-$pageDescription = $pageDescription ?? 'Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com n8n. Soluções personalizadas para impulsionar o seu negócio em Sorocaba e região.';
-$pageKeywords = $pageKeywords ?? 'programador php freelancer, desenvolvedor laravel, api rest, automação n8n, sorocaba, php developer';
+$pageTitle = $pageTitle ?? 'Programador PHP Freelancer - Sorocaba/SP';
+$pageDescription = $pageDescription ?? 'Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com N8N / MCP. Soluções personalizadas para impulsionar o seu negócio em Sorocaba e região.';
+$pageKeywords = $pageKeywords ?? 'programador php freelancer, desenvolvedor laravel, api rest, automação n8n, mcp, sorocaba, php developer';
 $canonicalUrl = $canonicalUrl ?? url();
 ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $canonicalUrl = $canonicalUrl ?? url();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle; ?></title>
+    <title><?php echo $pageTitle; ?> - MBiasotto</title>
     <meta name="description" content="<?php echo $pageDescription; ?>">
     <meta name="keywords" content="<?php echo $pageKeywords; ?>">
     <meta name="author" content="Maurício Biasotto">

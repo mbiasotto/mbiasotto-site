@@ -35,7 +35,7 @@ function isActive($page, $current) {
                     <a class="nav-link <?php echo isActive('contato', $currentPage); ?>" href="<?php echo url('contato'); ?>">CONTATO</a>
                 </li>
                 <li class="nav-item ms-2">
-                    <a class="btn btn-accent rounded-pill px-4" href="<?php echo url('contato'); ?>">Vamos Conversar?</a>
+                    <a class="btn btn-cta-navbar" href="<?php echo url('contato'); ?>">Vamos Conversar?</a>
                 </li>
             </ul>
         </div>

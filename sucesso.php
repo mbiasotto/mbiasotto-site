@@ -1,34 +1,41 @@
 <?php
 // Configurações da página
-$pageTitle = 'Mensagem Enviada com Sucesso | Maurício Biasotto';
+$pageTitle = 'Mensagem Enviada com Sucesso | Mauricio Biasotto';
 $pageDescription = 'Sua mensagem foi enviada com sucesso. Retornarei em breve para discutir seu projeto.';
+$bodyClass = 'success-page'; // Classe específica para a página
 
 // Include header
 include 'includes/header.php';
 include 'includes/navigation.php';
 ?>
 
-    <!-- Success Section -->
-    <section class="py-5 bg-light" style="margin-top: 100px; min-height: calc(100vh - 100px);">
+<?php
+// Configurações do Hero interno
+$heroTitle = 'Mensagem Enviada com Sucesso!';
+$heroSubtitle = 'Obrigado pelo seu contato. Em breve retornaremos com uma proposta personalizada para seu projeto.';
+$isInternal = true;
+
+// Incluir Hero
+include 'components/hero.php';
+?>
+
+    <!-- Success Details Section -->
+    <section class="py-5 bg-light success-page">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
+                <div class="col-lg-10">
                     <div class="success-content" data-aos="fade-up">
-                        <!-- Success Icon -->
-                        <div class="success-icon mb-4">
-                            <div class="success-circle">
-                                <i class="fas fa-check"></i>
+                        <!-- Ícone de Sucesso -->
+                        <div class="text-center mb-5">
+                            <div class="success-icon mb-4" style="display: block;">
+                                <div class="success-circle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);">
+                                    <i class="fas fa-check" style="line-height: 1;"></i>
+                                </div>
                             </div>
+                            <h2 class="title-section mb-4">Próximos Passos</h2>
+                        
                         </div>
-                        
-                        <h2 class="success-title mb-4">Sua mensagem foi enviada!</h2>
-                        
                         <div class="success-details">
-                            <p class="lead mb-4">
-                                Recebemos sua solicitação e estou analisando os detalhes do seu projeto. 
-                                Você receberá uma resposta personalizada em seu email em até <strong>24 horas</strong>.
-                            </p>
-                            
                             <div class="row text-center mb-5">
                                 <div class="col-md-4 mb-3">
                                     <div class="next-step-card">
@@ -65,14 +72,10 @@ include 'includes/navigation.php';
 
                         
                         <!-- Navigation -->
-                        <div class="success-navigation">
-                            <a href="<?php echo url(''); ?>" class="btn btn-outline-primary me-3">
+                        <div class="success-navigation text-center">
+                            <a href="<?php echo url(''); ?>" class="btn btn-cta-primary me-3">
                                 <i class="fas fa-home me-2"></i>
                                 Voltar ao Início
-                            </a>
-                            <a href="<?php echo url('servicos'); ?>" class="btn btn-outline-secondary">
-                                <i class="fas fa-cogs me-2"></i>
-                                Ver Serviços
                             </a>
                         </div>
                     </div>

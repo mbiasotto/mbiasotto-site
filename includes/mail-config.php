@@ -33,7 +33,7 @@ class MailService
             
             // Configurações padrão
             $this->mail->setFrom('sendrevenda@mbiasotto.com', 'Site Maurício Biasotto');
-            $this->mail->addReplyTo('mauricio@mbiasotto.com', 'Maurício Biasotto');
+            $this->mail->addReplyTo('mauricio@mbiasotto.com', 'Mauricio Biasotto');
             
         } catch (Exception $e) {
             error_log("Erro na configuração do email: " . $e->getMessage());

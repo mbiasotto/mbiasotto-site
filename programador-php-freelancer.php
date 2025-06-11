@@ -17,8 +17,8 @@ include 'includes/header.php';
 
 <?php
 // Configurações do Hero interno
-$heroTitle = 'Maurício Biasotto - Desenvolvedor PHP';
-$heroSubtitle = '8+ anos transformando ideias em soluções digitais eficientes para empresas de todos os portes';
+$heroTitle = 'Mauricio Biasotto - Desenvolvedor PHP Freelancer';
+$heroSubtitle = '20+ anos transformando ideias em soluções digitais eficientes para empresas de todos os portes';
 $isInternal = true;
 
 // Incluir Hero

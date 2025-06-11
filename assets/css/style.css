@@ -1902,25 +1902,39 @@ p {
 }
 
 /* ===== CTA SECTION ===== */
-.cta-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+.cta-section,
+.cta-section-default {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 5rem 0;
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-.cta-section::before {
-  content: "";
+.cta-section::before,
+.cta-section-default::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M20 20h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4z'/%3E%3Cpath d='M18 26h8v2h-8v-2zm12 0h8v2h-8v-2zm12 0h8v2h-8v-2z'/%3E%3Cpath d='M20 30h4v2h-4v-2zm8 0h4v2h-4v-2zm8 0h4v2h-4v-2z'/%3E%3Cpath d='M18 34h10v2h-10v-2zm14 0h10v2h-10v-2z'/%3E%3Cpath d='M60 20h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4z'/%3E%3Cpath d='M58 26h8v2h-8v-2zm12 0h8v2h-8v-2zm12 0h8v2h-8v-2z'/%3E%3Cpath d='M60 30h4v2h-4v-2zm8 0h4v2h-4v-2zm8 0h4v2h-4v-2z'/%3E%3Cpath d='M58 34h10v2h-10v-2zm14 0h10v2h-10v-2z'/%3E%3Cpath d='M20 60h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4z'/%3E%3Cpath d='M18 66h8v2h-8v-2zm12 0h8v2h-8v-2zm12 0h8v2h-8v-2z'/%3E%3Cpath d='M20 70h4v2h-4v-2zm8 0h4v2h-4v-2zm8 0h4v2h-4v-2z'/%3E%3Cpath d='M18 74h10v2h-10v-2zm14 0h10v2h-10v-2z'/%3E%3Cpath d='M60 60h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4zm8 0h4v4h-4v-4z'/%3E%3Cpath d='M58 66h8v2h-8v-2zm12 0h8v2h-8v-2zm12 0h8v2h-8v-2z'/%3E%3Cpath d='M60 70h4v2h-4v-2zm8 0h4v2h-4v-2zm8 0h4v2h-4v-2z'/%3E%3Cpath d='M58 74h10v2h-10v-2zm14 0h10v2h-10v-2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='cta-pattern' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ctext x='5' y='15' font-family='monospace' font-size='8'%3E%3Fphp%3C/text%3E%3Ctext x='5' y='25' font-family='monospace' font-size='6'%3Eclass User%3C/text%3E%3Ctext x='5' y='35' font-family='monospace' font-size='6'%3E%7B%3C/text%3E%3Ctext x='8' y='45' font-family='monospace' font-size='6'%3Epublic function%3C/text%3E%3Ctext x='8' y='55' font-family='monospace' font-size='6'%3Eget()%3C/text%3E%3Ctext x='8' y='65' font-family='monospace' font-size='6'%3E%7B%3C/text%3E%3Ctext x='12' y='75' font-family='monospace' font-size='5'%3Ereturn %24this%3C/text%3E%3Ctext x='8' y='85' font-family='monospace' font-size='6'%3E%7D%3C/text%3E%3Ctext x='5' y='95' font-family='monospace' font-size='6'%3E%7D%3C/text%3E%3Ccircle cx='75' cy='20' r='2' fill='%2300d4ff' fill-opacity='0.3'/%3E%3Ccircle cx='85' cy='40' r='1.5' fill='%2300ff88' fill-opacity='0.3'/%3E%3Cpath d='M65,60 L70,65 L65,70' stroke='%2300d4ff' stroke-width='1' fill='none' stroke-opacity='0.2'/%3E%3Cpath d='M75,75 L80,70 L85,75' stroke='%23ff6b6b' stroke-width='1' fill='none' stroke-opacity='0.2'/%3E%3Crect x='70' y='30' width='8' height='1' fill='%2300ff88' fill-opacity='0.2'/%3E%3Crect x='75' y='50' width='12' height='1' fill='%23ffd93d' fill-opacity='0.2'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23cta-pattern)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
   z-index: 1;
+}
+
+.cta-section-default::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25% 75%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 75% 25%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(255, 109, 107, 0.06) 0%, transparent 70%);
 }
 
 .cta-content {
@@ -1942,21 +1956,20 @@ p {
 }
 
 .btn-cta-enhanced {
-  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+  background: #1e3a8a;
   color: white;
   padding: 1.5rem 3.5rem;
-  border-radius: 25px;
-  font-weight: 900;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 1.3rem;
-  transition: all 0.4s ease;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 15px 40px rgba(30, 64, 175, 0.5), 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  border: none;
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.5);
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+  min-width: 300px;
 }
 
 .btn-cta-enhanced::before {
@@ -1966,20 +1979,126 @@ p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.6s;
 }
 
 .btn-cta-enhanced:hover {
-  transform: translateY(-7px) scale(1.08);
-  box-shadow: 0 20px 50px rgba(30, 64, 175, 0.7), 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);
+  background: #1e40af;
+  box-shadow: 0 15px 40px rgba(30, 58, 138, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-cta-enhanced:hover::before {
+  left: 100%;
+}
+
+/* ===== BOTÕES CTA PADRONIZADOS ===== */
+
+/* Botão CTA da Navbar */
+.btn-cta-navbar {
+  background: #1e3a8a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-cta-navbar:hover {
+  background: #1e40af;
+  box-shadow: 0 6px 25px rgba(30, 58, 138, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Botão CTA Primário (Hero) */
+.btn-cta-primary {
+  background: #1e3a8a;
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-cta-primary:hover {
+  background: #1e40af;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.5);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-cta-primary:hover::before {
+  left: 100%;
+}
+
+/* Botão CTA Secundário (Hero) */
+.btn-cta-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   color: white;
   text-decoration: none;
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.btn-cta-enhanced:hover::before {
+.btn-cta-secondary:hover::before {
   left: 100%;
 }
 
@@ -2300,6 +2419,17 @@ p {
   .btn-form-submit { 
     padding: 0.625rem 1.25rem; 
     font-size: 0.875rem; 
+  }
+  
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .btn-cta-navbar {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
   }
   
   .btn-cta-enhanced { 
@@ -2940,6 +3070,7 @@ html {
 /* ===== SUCCESS PAGE STYLES ===== */
 .success-icon {
     text-align: center;
+    margin: 2rem auto;
 }
 
 .success-circle {
@@ -2954,6 +3085,11 @@ html {
     color: white;
     box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
     animation: successPulse 2s ease-in-out infinite;
+    margin: 0 auto;
+}
+
+.success-circle i {
+    line-height: 1;
 }
 
 @keyframes successPulse {
@@ -2962,7 +3098,7 @@ html {
 }
 
 .success-title {
-    color: var(--text-dark);
+    color: var(--text);
     font-weight: 700;
     font-size: 2rem;
 }
@@ -2985,24 +3121,29 @@ html {
 .step-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     color: white;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+}
+
+.step-icon i {
+    line-height: 1;
 }
 
 .next-step-card h5 {
-    color: var(--text-dark);
+    color: var(--text);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .next-step-card p {
-    color: var(--text-muted);
+    color: var(--text-light);
     font-size: 0.9rem;
     margin: 0;
 }
@@ -3015,7 +3156,7 @@ html {
 }
 
 .contact-info-summary h4 {
-    color: var(--text-dark);
+    color: var(--text);
     font-weight: 600;
 }
 
@@ -3030,13 +3171,13 @@ html {
 }
 
 .info-card h5 {
-    color: var(--text-dark);
+    color: var(--text);
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .info-card p {
-    color: var(--text-muted);
+    color: var(--text-light);
     font-size: 0.9rem;
     margin: 0;
 }
@@ -3051,7 +3192,7 @@ html {
 
 .contact-form .form-label {
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--text);
     margin-bottom: 0.5rem;
 }
 
@@ -3065,8 +3206,8 @@ html {
 
 .contact-form .form-control:focus,
 .contact-form .form-select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.1);
 }
 
 .contact-form .btn {
@@ -3092,7 +3233,7 @@ html {
 }
 
 .contact-info-title {
-    color: var(--text-dark);
+    color: var(--text);
     font-weight: 600;
     font-size: 1.5rem;
 }
@@ -3117,14 +3258,14 @@ html {
 }
 
 .contact-info-content h5 {
-    color: var(--text-dark);
+    color: var(--text);
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 0.25rem;
 }
 
 .contact-info-content p {
-    color: var(--text-muted);
+    color: var(--text-light);
     margin: 0;
     font-size: 0.95rem;
 }
@@ -3233,13 +3374,13 @@ html {
 
 .contact-form-modern .form-control:focus,
 .contact-form-modern .form-select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.1);
     background-color: #ffffff;
 }
 
 .contact-form-modern .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     border: none;
     border-radius: 8px;
     padding: 1rem 2rem;
@@ -3260,7 +3401,7 @@ html {
 }
 
 .contact-info-content p a:hover {
-    color: var(--primary-color);
+    color: var(--primary);
     text-decoration: underline;
 }
 
@@ -3406,4 +3547,80 @@ html {
   color: white;
   font-size: 2rem;
   box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+/* ===== PÁGINAS DE ERRO E SUCESSO ===== */
+
+/* Error number para a página 404 */
+.error-number {
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(30, 58, 138, 0.2);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+/* Botões CTA em páginas de conteúdo (fora do hero) */
+.success-navigation .btn-cta-primary,
+.success-navigation .btn-cta-secondary {
+  margin: 0.5rem;
+}
+
+/* Garantir visibilidade dos botões CTA em todas as páginas */
+.btn-cta-primary,
+.btn-cta-secondary {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Cards de sugestão */
+.suggestion-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-card i {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.suggestion-card h4 {
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.suggestion-card p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Responsividade para páginas de erro */
+@media (max-width: 768px) {
+  .error-number {
+    font-size: 5rem;
+  }
+  
+  .suggestion-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .error-number {
+    font-size: 4rem;
+  }
 }
