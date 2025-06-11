@@ -123,17 +123,26 @@ include 'components/hero.php';
     <script>
         // Event tracking para Google Analytics
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'form_submit', {
-                'event_category': 'Contact',
+            // Evento principal de sucesso do formulário
+            gtag('event', 'contact_form_submit', {
+                'event_category': 'Conversion',
                 'event_label': 'Contact Form Success',
-                'value': 1
+                'value': 200
             });
             
-            // Evento de conversão
-            gtag('event', 'conversion', {
-                'send_to': 'AW-CONVERSION-ID/CONVERSION-LABEL', // Substituir pelos dados reais
-                'event_category': 'Lead',
-                'event_label': 'Contact Form Conversion'
+            // Evento de geração de lead
+            gtag('event', 'generate_lead', {
+                'event_category': 'Conversion',
+                'event_label': 'Lead Generated - Contact Form',
+                'value': 200
+            });
+
+            // Evento de conversão customizado
+            gtag('event', 'form_conversion_success', {
+                'event_category': 'Contact',
+                'event_label': 'Contact Form Converted Successfully',
+                'conversion_type': 'contact_form',
+                'recaptcha_protected': true
             });
         }
         

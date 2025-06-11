@@ -2,9 +2,10 @@
 // Include config first
 require_once 'includes/config.php';
 
-// Configurações da página
-$pageTitle = 'Programador PHP Freelancer Sorocaba SP | DevPHP Solutions';
-$pageDescription = 'Programador PHP Freelancer em Sorocaba SP. Desenvolvimento Laravel, APIs, sistemas web e automações n8n. Soluções profissionais para seu negócio.';
+// Configurações da página - Otimizadas para SEO
+$pageTitle = 'Programador PHP Freelancer Sorocaba SP | Especialista Laravel & APIs - DevPHP Solutions';
+$pageDescription = 'Programador PHP freelancer Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
+$pageKeywords = 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 
 // Configurações do Hero
 $heroTitle = 'Programador PHP Freelancer<span class="d-block text-blue-200">Sorocaba, SP</span>';
@@ -33,25 +34,30 @@ include 'includes/header.php';
 
 <?php include 'includes/navigation.php'; ?>
 
+    <!-- SEO: Comentário HTML com palavras-chave estratégicas -->
+    <!-- Seção Principal: Programador PHP Freelancer Sorocaba - Desenvolvimento Laravel e APIs -->
+
     <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" role="banner" aria-labelledby="hero-title">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
                     <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                        <h1 class="hero-title mb-4">
+                        <!-- SEO: H1 otimizado com keywords principais -->
+                        <h1 id="hero-title" class="hero-title mb-4" itemprop="headline">
                         Programador PHP Freelancer<br>
                         <span class="text-blue-200">Sorocaba, SP</span>
                         </h1>
-                        <p class="hero-subtitle mb-5">
+                        <p class="hero-subtitle mb-5" itemprop="description">
                             Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com n8n. 
                             Soluções personalizadas para impulsionar o seu negócio em Sorocaba e região.
                         </p>
                     
                     <!-- Hero Buttons -->
-                        <div class="hero-buttons mb-5" data-aos="fade-up" data-aos-delay="200">
-                        <a href="<?php echo url('contato'); ?>" class="btn btn-cta-primary me-3 mb-3">
-                                <i class="fas fa-rocket me-2"></i>
+                        <div class="hero-buttons mb-5" data-aos="fade-up" data-aos-delay="200" role="group" aria-label="Ações principais">
+                        <a href="<?php echo url('contato'); ?>" class="btn btn-cta-primary me-3 mb-3" 
+                           aria-label="Solicitar orçamento gratuito para desenvolvimento PHP">
+                                <i class="fas fa-rocket me-2" aria-hidden="true"></i>
                                 Solicitar Orçamento
                             </a>
                             <!-- 
@@ -62,20 +68,20 @@ include 'includes/header.php';
                         </div>
                         
                     <!-- Hero Badges -->
-                        <div class="hero-badges" data-aos="fade-up" data-aos-delay="400">
-                            <span class="badge-custom">PHP</span>
-                            <span class="badge-custom">Framework Laravel</span>
-                            <span class="badge-custom">APIs RESTful</span>
-                            <span class="badge-custom">Automações N8N</span>
-                            <span class="badge-custom">MCP</span>
+                        <div class="hero-badges" data-aos="fade-up" data-aos-delay="400" role="list" aria-label="Tecnologias especializadas">
+                            <span class="badge-custom" role="listitem">PHP</span>
+                            <span class="badge-custom" role="listitem">Framework Laravel</span>
+                            <span class="badge-custom" role="listitem">APIs RESTful</span>
+                            <span class="badge-custom" role="listitem">Automações N8N</span>
+                            <span class="badge-custom" role="listitem">MCP</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Scroll Button -->
-            <a href="#stats-section" class="scroll-section-btn">
-                <i class="fas fa-chevron-down"></i>
+            <a href="#stats-section" class="scroll-section-btn" aria-label="Rolar para estatísticas">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </a>
         </div>
     </section>
@@ -85,12 +91,14 @@ include 'includes/header.php';
 include 'components/stats.php';
 ?>
 
+    <!-- SEO: Comentário HTML - Serviços especializados em desenvolvimento PHP -->
     <!-- Services Section -->
-    <section class="services-section py-5 services-bg">
+    <section class="services-section py-5 services-bg" role="main" aria-labelledby="services-title">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
-                    <h2 class="section-title" data-aos="fade-up">Serviços Especializados</h2>
+                    <!-- SEO: H2 otimizado com palavras-chave de serviços -->
+                    <h2 id="services-title" class="section-title" data-aos="fade-up">Serviços Especializados</h2>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                         Soluções completas em desenvolvimento web e mobile com foco em PHP e tecnologias modernas 
                         para empresas em Sorocaba e região
@@ -98,110 +106,123 @@ include 'components/stats.php';
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row" role="list" aria-label="Lista de serviços de desenvolvimento">
                 <?php
                 $services = [
                     [
                         'icon' => 'fas fa-code',
                         'title' => 'Desenvolvimento PHP',
                         'description' => 'Desenvolvimento de aplicações web robustas e escaláveis utilizando PHP moderno e boas práticas para empresas em Sorocaba.',
-                        'delay' => '100'
+                        'delay' => '100',
+                        'aria_label' => 'Serviço de desenvolvimento PHP para aplicações web'
                     ],
                     [
-                        'icon' => 'fas fa-layer-group',
+                        'icon' => 'fas fa-layer-group', 
                         'title' => 'Framework Laravel',
                         'description' => 'Desenvolvimento de sistemas e aplicações web com Framework Laravel, o framework PHP mais popular e robusto do mercado.',
-                        'delay' => '200'
+                        'delay' => '200',
+                        'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas web'
                     ],
                     [
                         'icon' => 'fas fa-database',
                         'title' => 'Desenvolvimento de Sites',
                         'description' => 'Criação de sites institucionais, portfólios e landing pages responsivas com foco em conversão e experiência do usuário.',
-                        'delay' => '300'
+                        'delay' => '300',
+                        'aria_label' => 'Criação de sites responsivos e otimizados'
                     ],
                     [
                         'icon' => 'fas fa-mobile-alt',
                         'title' => 'Desenvolvimento de APP',
                         'description' => 'Criação de aplicativos móveis para Android e iOS com integração completa aos seus sistemas web e APIs.',
-                        'delay' => '400'
+                        'delay' => '400',
+                        'aria_label' => 'Desenvolvimento de aplicativos móveis Android e iOS'
                     ],
                     [
                         'icon' => 'fas fa-server',
                         'title' => 'Construção de APIs',
                         'description' => 'Desenvolvimento de APIs RESTful seguras e bem documentadas para integração com aplicativos móveis e web.',
-                        'delay' => '500'
+                        'delay' => '500',
+                        'aria_label' => 'Desenvolvimento de APIs RESTful para integração'
                     ],
                     [
                         'icon' => 'fas fa-database',
                         'title' => 'Desenvolvimento de Sistemas',
                         'description' => 'Criação de sistemas web personalizados para gestão empresarial, e-commerce e automação de processos.',
-                        'delay' => '600'
+                        'delay' => '600',
+                        'aria_label' => 'Desenvolvimento de sistemas web personalizados'
                     ],
                     [
                         'icon' => 'fas fa-bolt',
                         'title' => 'Automações com n8n e IA',
                         'description' => 'Criação de fluxos de automação com n8n e integração com inteligência artificial para otimizar processos.',
-                        'delay' => '700'
+                        'delay' => '700',
+                        'aria_label' => 'Automações empresariais com n8n e inteligência artificial'
                     ],
                     [
                         'icon' => 'fas fa-palette',
                         'title' => 'Criação de Identidade Visual',
                         'description' => 'Desenvolvimento de logos, materiais de marketing e identidade visual completa para fortalecer sua marca no mercado digital.',
-                        'delay' => '800'
+                        'delay' => '800',
+                        'aria_label' => 'Criação de identidade visual e branding'
                     ],
                     [
                         'icon' => 'fas fa-lightbulb',
                         'title' => 'Consultoria em Tecnologia',
                         'description' => 'Consultoria estratégica para escolha de tecnologias, arquitetura de projetos e otimização de processos.',
-                        'delay' => '900'
+                        'delay' => '900',
+                        'aria_label' => 'Consultoria especializada em tecnologia e arquitetura'
                     ]
                 ];
                 
                 foreach ($services as $service):
                 ?>
                     <!-- Service -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="<?php echo $service['delay']; ?>">
-                    <div class="service-card h-100">
-                        <div class="service-icon">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="<?php echo $service['delay']; ?>" role="listitem">
+                    <article class="service-card h-100" itemscope itemtype="https://schema.org/Service">
+                        <div class="service-icon" aria-hidden="true">
                                 <i class="<?php echo $service['icon']; ?>"></i>
                         </div>
-                            <h3 class="service-title"><?php echo $service['title']; ?></h3>
-                            <p class="service-description"><?php echo $service['description']; ?></p>
-                            <a href="<?php echo url('servicos'); ?>" class="service-link">
-                            Saiba mais <i class="fas fa-arrow-right ms-2"></i>
+                            <!-- SEO: H3 com palavras-chave específicas do serviço -->
+                            <h3 class="service-title" itemprop="name"><?php echo $service['title']; ?></h3>
+                            <p class="service-description" itemprop="description"><?php echo $service['description']; ?></p>
+                            <a href="<?php echo url('servicos'); ?>" class="service-link" 
+                               aria-label="<?php echo $service['aria_label']; ?>" itemprop="url">
+                            Saiba mais <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                         </a>
-                        </div>
+                        </article>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
 
+    <!-- SEO: Comentário HTML - Seção de conversão para orçamento -->
     <!-- Lead Capture Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-white" role="complementary" aria-labelledby="lead-capture-title">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="row align-items-center">
                         <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-                            <h2 class="section-title mb-4">Pronto para transformar sua ideia em realidade?</h2>
+                            <!-- SEO: H2 focado em conversão -->
+                            <h2 id="lead-capture-title" class="section-title mb-4">Pronto para transformar sua ideia em realidade?</h2>
                             <p class="mb-4">Receba uma análise gratuita do seu projeto e descubra como posso ajudar a impulsionar seu negócio com soluções tecnológicas personalizadas.</p>
                             
-                            <div class="mb-4">
-                                <div class="lead-feature-item">
-                                    <i class="fas fa-check-circle"></i>
+                            <div class="mb-4" role="list" aria-label="Benefícios do orçamento gratuito">
+                                <div class="lead-feature-item" role="listitem">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Orçamento detalhado sem compromisso</span>
                                 </div>
-                                <div class="lead-feature-item">
-                                    <i class="fas fa-check-circle"></i>
+                                <div class="lead-feature-item" role="listitem">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Resposta em até 24 horas úteis</span>
                                 </div>
-                                <div class="lead-feature-item">
-                                    <i class="fas fa-check-circle"></i>
+                                <div class="lead-feature-item" role="listitem">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Consultoria inicial gratuita</span>
                                 </div>
-                                <div class="lead-feature-item">
-                                    <i class="fas fa-check-circle"></i>
+                                <div class="lead-feature-item" role="listitem">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Seu projeto em mãos experientes</span>
                                 </div>
                             </div>
@@ -226,29 +247,32 @@ include 'components/stats.php';
         </div>
     </section>
 
+    <!-- SEO: Comentário HTML - Depoimentos de clientes sobre desenvolvimento PHP -->
     <!-- Testimonial Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-white" role="complementary" aria-labelledby="testimonials-title">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">O que dizem nossos clientes</h2>
+                    <!-- SEO: H2 para depoimentos -->
+                    <h2 id="testimonials-title" class="section-title" data-aos="fade-up">O que dizem nossos clientes</h2>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                         Experiências reais de clientes satisfeitos com nossos serviços
                     </p>
                 </div>
                 
                 <div class="col-lg-10">
-                    <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="200" 
+                         role="region" aria-label="Carrossel de depoimentos de clientes">
                         <div class="testimonial-slides" id="testimonialSlides">
                             <!-- Depoimento 1 -->
                             <div class="testimonial-slide">
-                                <div class="testimonial-card-modern">
-                                    <div class="testimonial-quote-modern">"</div>
-                                    <p class="testimonial-text-modern">
-                                        Trabalhar com o DevPHP Solutions foi uma experiência excepcional. O projeto foi 
+                                <article class="testimonial-card-modern" itemscope itemtype="https://schema.org/Review">
+                                    <div class="testimonial-quote-modern" aria-hidden="true">"</div>
+                                    <blockquote class="testimonial-text-modern" itemprop="reviewBody">
+                                        Trabalhar with DevPHP Solutions foi uma experiência excepcional. O projeto foi 
                                         entregue no prazo, com qualidade superior e total transparência no processo. 
                                         Recomendo para qualquer empresa que busca excelência em desenvolvimento web.
-                                    </p>
+                                    </blockquote>
                                     <div class="testimonial-author-modern">
                                         <div class="author-avatar">JS</div>
                                         <div class="author-info">
@@ -256,17 +280,17 @@ include 'components/stats.php';
                                             <p class="author-position-modern">CEO, TechCorp Sorocaba</p>
                                         </div>
                                     </div>
-                                </div>
+                                </article>
                             </div>
                             
                             <!-- Depoimento 2 -->
                             <div class="testimonial-slide">
-                                <div class="testimonial-card-modern">
-                                    <div class="testimonial-quote-modern">"</div>
-                                    <p class="testimonial-text-modern">
+                                <article class="testimonial-card-modern" itemscope itemtype="https://schema.org/Review">
+                                    <div class="testimonial-quote-modern" aria-hidden="true">"</div>
+                                    <blockquote class="testimonial-text-modern" itemprop="reviewBody">
                                         Precisava de uma solução em Laravel para minha empresa e o resultado superou todas as expectativas. 
                                         Código limpo, documentado e com suporte excepcional. Definitivamente voltarei a contratar.
-                                    </p>
+                                    </blockquote>
                                     <div class="testimonial-author-modern">
                                         <div class="author-avatar">MF</div>
                                         <div class="author-info">
@@ -274,17 +298,17 @@ include 'components/stats.php';
                                             <p class="author-position-modern">Diretora, Inovação Digital</p>
                                         </div>
                                     </div>
-                                </div>
+                                </article>
                             </div>
                             
                             <!-- Depoimento 3 -->
                             <div class="testimonial-slide">
-                                <div class="testimonial-card-modern">
-                                    <div class="testimonial-quote-modern">"</div>
-                                    <p class="testimonial-text-modern">
+                                <article class="testimonial-card-modern" itemscope itemtype="https://schema.org/Review">
+                                    <div class="testimonial-quote-modern" aria-hidden="true">"</div>
+                                    <blockquote class="testimonial-text-modern" itemprop="reviewBody">
                                         A automação com n8n transformou nossos processos. Economizamos horas de trabalho manual 
                                         e ganhamos muito mais eficiência. O investimento se pagou em menos de 2 meses.
-                                    </p>
+                                    </blockquote>
                                     <div class="testimonial-author-modern">
                                         <div class="author-avatar">CA</div>
                                         <div class="author-info">
@@ -292,7 +316,7 @@ include 'components/stats.php';
                                             <p class="author-position-modern">Gestor de TI, LogiSys</p>
                                         </div>
                                     </div>
-                                </div>
+                                </article>
                             </div>
                         </div>
                         

@@ -12,47 +12,188 @@ if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// Configurações padrão da página
-$pageTitle = $pageTitle ?? 'Programador PHP Freelancer - Sorocaba/SP';
-$pageDescription = $pageDescription ?? 'Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com N8N / MCP. Soluções personalizadas para impulsionar o seu negócio em Sorocaba e região.';
-$pageKeywords = $pageKeywords ?? 'programador php freelancer, desenvolvedor laravel, api rest, automação n8n, mcp, sorocaba, php developer';
+// Configurações padrão da página - Otimizado para SEO
+$pageTitle = $pageTitle ?? 'Programador PHP Freelancer Sorocaba SP | Especialista Laravel & APIs';
+$pageDescription = $pageDescription ?? 'Programador PHP freelancer em Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n e sistemas web sob demanda. Orçamento gratuito!';
+$pageKeywords = $pageKeywords ?? 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 $canonicalUrl = $canonicalUrl ?? url();
+
+// SEO: Determinar tipo de página para structured data otimizado
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$isServicePage = in_array($currentPage, ['servicos', 'programador-php-freelancer']);
+$isContactPage = $currentPage === 'contato';
+
+// reCAPTCHA v3 Configuration
+$recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
 ?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle; ?> - MBiasotto</title>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGVCBGF67P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RGVCBGF67P', {
+          // Configurações otimizadas para programador PHP freelancer
+          page_title: '<?php echo addslashes($pageTitle); ?>',
+          page_location: '<?php echo $canonicalUrl; ?>',
+          content_group1: '<?php echo ucfirst($currentPage); ?>',
+          content_group2: 'Programador PHP Freelancer',
+          send_page_view: true
+      });
+
+      // Função para capturar eventos de conversão
+      function trackConversion(action, category, label, value) {
+          gtag('event', action, {
+              event_category: category,
+              event_label: label,
+              value: value || 0
+          });
+      }
+
+      // Evento de visualização de página específica
+      gtag('event', 'page_view', {
+          page_title: '<?php echo addslashes($pageTitle); ?>',
+          page_location: '<?php echo $canonicalUrl; ?>',
+          content_group1: '<?php echo ucfirst($currentPage); ?>'
+      });
+
+      <?php if ($currentPage === 'programador-php-freelancer'): ?>
+      // Evento específico: Visualização do perfil do freelancer
+      gtag('event', 'view_freelancer_profile', {
+          event_category: 'Engagement',
+          event_label: 'Programador PHP Profile View'
+      });
+      <?php endif; ?>
+
+      <?php if ($currentPage === 'servicos'): ?>
+      // Evento específico: Visualização de serviços
+      gtag('event', 'view_services', {
+          event_category: 'Engagement', 
+          event_label: 'PHP Services Page View'
+      });
+      <?php endif; ?>
+
+      <?php if ($currentPage === 'contato'): ?>
+      // Evento específico: Chegada na página de contato
+      gtag('event', 'reach_contact_page', {
+          event_category: 'Conversion Funnel',
+          event_label: 'Contact Page Reached'
+      });
+      <?php endif; ?>
+    </script>
+    
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_site_key; ?>"></script>
+    <script>
+        // reCAPTCHA v3 Setup
+        grecaptcha.ready(function() {
+            // Gerar token inicial para a página
+            grecaptcha.execute('<?php echo $recaptcha_site_key; ?>', {action: 'page_load'}).then(function(token) {
+                console.log('reCAPTCHA v3: Page token generated');
+            });
+        });
+
+        // Função para executar reCAPTCHA em formulários
+        function executeRecaptcha(action, callback) {
+            grecaptcha.execute('<?php echo $recaptcha_site_key; ?>', {action: action}).then(function(token) {
+                if (callback && typeof callback === 'function') {
+                    callback(token);
+                }
+                
+                // Track no Google Analytics
+                gtag('event', 'recaptcha_executed', {
+                    event_category: 'Security',
+                    event_label: action,
+                    recaptcha_action: action
+                });
+                
+                console.log('reCAPTCHA v3: Token generated for action:', action);
+            });
+        }
+
+        // Função para submeter formulário com reCAPTCHA
+        function submitFormWithRecaptcha(formElement, action = 'contact_form') {
+            executeRecaptcha(action, function(token) {
+                // Adicionar token ao formulário
+                let tokenInput = formElement.querySelector('input[name="recaptcha_token"]');
+                if (!tokenInput) {
+                    tokenInput = document.createElement('input');
+                    tokenInput.type = 'hidden';
+                    tokenInput.name = 'recaptcha_token';
+                    formElement.appendChild(tokenInput);
+                }
+                tokenInput.value = token;
+
+                // Adicionar action ao formulário
+                let actionInput = formElement.querySelector('input[name="recaptcha_action"]');
+                if (!actionInput) {
+                    actionInput = document.createElement('input');
+                    actionInput.type = 'hidden';
+                    actionInput.name = 'recaptcha_action';
+                    formElement.appendChild(actionInput);
+                }
+                actionInput.value = action;
+
+                // Submeter formulário
+                formElement.submit();
+            });
+        }
+    </script>
+    
+    <!-- SEO: Meta tags otimizadas para programador PHP freelancer -->
+    <title><?php echo $pageTitle; ?></title>
     <meta name="description" content="<?php echo $pageDescription; ?>">
     <meta name="keywords" content="<?php echo $pageKeywords; ?>">
-    <meta name="author" content="Maurício Biasotto">
+    <meta name="author" content="Maurício Biasotto - Programador PHP Freelancer">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="<?php echo $canonicalUrl; ?>">
     
-    <!-- Open Graph Meta Tags -->
+    <!-- SEO: Geo-targeting para Sorocaba SP -->
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.placename" content="Sorocaba">
+    <meta name="geo.position" content="-23.5015;-47.4526">
+    <meta name="ICBM" content="-23.5015, -47.4526">
+    
+    <!-- SEO: Open Graph otimizado para freelancer PHP -->
     <meta property="og:title" content="<?php echo $pageTitle; ?>">
     <meta property="og:description" content="<?php echo $pageDescription; ?>">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="<?php echo $isServicePage ? 'service' : 'website'; ?>">
     <meta property="og:url" content="<?php echo $canonicalUrl; ?>">
-    <meta property="og:image" content="<?php echo url('assets/images/og-image.jpg'); ?>">
+    <meta property="og:image" content="<?php echo url('assets/images/og-programador-php-freelancer.jpg'); ?>">
+    <meta property="og:image:alt" content="Maurício Biasotto - Programador PHP Freelancer Sorocaba SP">
+    <meta property="og:site_name" content="DevPHP Solutions - Programador PHP Freelancer">
+    <meta property="og:locale" content="pt_BR">
     
-    <!-- Twitter Card Meta Tags -->
+    <!-- SEO: Twitter Card otimizado -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo $pageTitle; ?>">
     <meta name="twitter:description" content="<?php echo $pageDescription; ?>">
-    <meta name="twitter:image" content="<?php echo url('assets/images/twitter-card.jpg'); ?>">
+    <meta name="twitter:image" content="<?php echo url('assets/images/twitter-programador-php.jpg'); ?>">
+    <meta name="twitter:image:alt" content="Desenvolvedor PHP especialista em Laravel e APIs - Sorocaba SP">
+    <meta name="twitter:creator" content="@mbiasotto">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?php echo asset('assets/images/favicon.png'); ?>">
+    <!-- SEO: Favicon otimizado -->
+    <link rel="icon" type="image/png" href="<?php echo asset('assets/images/favicon.png'); ?>" sizes="32x32">
     <link rel="apple-touch-icon" href="<?php echo asset('assets/images/favicon.png'); ?>">
     <link rel="shortcut icon" href="<?php echo asset('assets/images/favicon.png'); ?>" type="image/png">
     <meta name="msapplication-TileImage" content="<?php echo asset('assets/images/favicon.png'); ?>">
     
+    <!-- Preload critical resources for performance (SEO factor) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="<?php echo asset('assets/css/style.css'); ?>" as="style">
+    
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,55 +201,155 @@ $canonicalUrl = $canonicalUrl ?? url();
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo asset('assets/css/style.css'); ?>">
     
-    <!-- Structured Data -->
+    <!-- SEO: Schema.org Structured Data otimizado para programador PHP freelancer -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Maurício Biasotto - Programador PHP",
-        "description": "<?php echo $pageDescription; ?>",
-        "url": "<?php echo url(); ?>",
-        "telephone": "+55-15-98118-7063",
-        "email": "mauricio@mbiasotto.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Sorocaba",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
-        },
-        "serviceArea": {
-            "@type": "Place",
-            "name": "Sorocaba e Região"
-        },
-        "priceRange": "$$",
-        "areaServed": ["Sorocaba", "São Paulo", "Brasil"],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Serviços de Desenvolvimento",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Desenvolvimento PHP"
-                    }
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "<?php echo url(); ?>#person",
+                "name": "Maurício Biasotto",
+                "jobTitle": "Programador PHP Freelancer",
+                "description": "Desenvolvedor PHP freelancer especializado em Laravel, APIs REST e automações. +20 anos de experiência em desenvolvimento web.",
+                "url": "<?php echo url(); ?>",
+                "sameAs": [
+                    "https://linkedin.com/in/mauriciobiasotto",
+                    "https://github.com/mbiasotto"
+                ],
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sorocaba",
+                    "addressRegion": "SP",
+                    "addressCountry": "BR"
                 },
-                {
-                    "@type": "Offer", 
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Desenvolvimento Laravel"
-                    }
+                "telephone": "+55-15-98118-7063",
+                "email": "mauricio@mbiasotto.com",
+                "knowsAbout": [
+                    "PHP Development",
+                    "Laravel Framework", 
+                    "REST API Development",
+                    "SlimPHP",
+                    "MySQL",
+                    "JavaScript",
+                    "n8n Automation",
+                    "Web Development"
+                ],
+                "hasOccupation": {
+                    "@type": "Occupation",
+                    "name": "Programador PHP Freelancer",
+                    "occupationLocation": {
+                        "@type": "City",
+                        "name": "Sorocaba, SP"
+                    },
+                    "skills": ["PHP", "Laravel", "API Development", "MySQL", "JavaScript"]
                 }
-            ]
-        }
+            },
+            {
+                "@type": "ProfessionalService",
+                "@id": "<?php echo url(); ?>#business",
+                "name": "DevPHP Solutions - Programador PHP Freelancer",
+                "description": "<?php echo $pageDescription; ?>",
+                "url": "<?php echo url(); ?>",
+                "telephone": "+55-15-98118-7063",
+                "email": "mauricio@mbiasotto.com",
+                "founder": {
+                    "@id": "<?php echo url(); ?>#person"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sorocaba",
+                    "addressRegion": "SP", 
+                    "addressCountry": "BR"
+                },
+                "serviceArea": [
+                    {
+                        "@type": "Place",
+                        "name": "Sorocaba"
+                    },
+                    {
+                        "@type": "Place", 
+                        "name": "São Paulo"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Brasil"
+                    }
+                ],
+                "priceRange": "$$",
+                "areaServed": ["Sorocaba", "São Paulo", "Brasil"],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Serviços de Desenvolvimento PHP",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Desenvolvimento PHP",
+                                "description": "Desenvolvimento de aplicações web robustas com PHP moderno"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service", 
+                                "name": "Desenvolvimento Laravel",
+                                "description": "Criação de sistemas web com Framework Laravel"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Desenvolvimento de APIs",
+                                "description": "APIs RESTful seguras e bem documentadas"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Manutenção de Sistemas PHP",
+                                "description": "Manutenção e otimização de sistemas PHP existentes"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Automações com n8n",
+                                "description": "Automação de processos empresariais com n8n e integração IA"
+                            }
+                        }
+                    ]
+                }
+            }<?php if ($isContactPage): ?>,
+            {
+                "@type": "ContactPage",
+                "@id": "<?php echo url('contato'); ?>",
+                "name": "Contato - Programador PHP Freelancer",
+                "description": "Entre em contato para solicitar orçamento de desenvolvimento PHP",
+                "mainEntity": {
+                    "@id": "<?php echo url(); ?>#business"
+                }
+            }<?php endif; ?>
+        ]
     }
     </script>
+    
+    <!-- SEO: Additional performance hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <!-- SEO: Comentário HTML estratégico com palavras-chave -->
+    <!-- Programador PHP Freelancer Sorocaba SP - Desenvolvimento Laravel, APIs REST, Sistemas Web Sob Demanda -->
+    
     <?php include 'components/loading-screen.php'; ?> 

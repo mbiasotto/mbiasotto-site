@@ -1,7 +1,8 @@
 <?php
-// Configurações da página
-$pageTitle = 'Serviços Especializados em PHP | DevPHP Solutions';
-$pageDescription = 'Soluções completas para o desenvolvimento do seu projeto web com tecnologias modernas. Desenvolvimento PHP, Laravel, APIs e automações.';
+// Configurações da página - Otimizadas para SEO
+$pageTitle = 'Serviços Desenvolvimento PHP | Laravel, APIs e Sistemas Web Sob Demanda';
+$pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, APIs REST, sistemas web, apps móveis, automações n8n. Programador PHP freelancer Sorocaba SP. Orçamento gratuito!';
+$pageKeywords = 'desenvolvimento php, laravel framework, apis rest, sistemas web, manutenção php, programador php freelancer, desenvolvimento sob demanda, sorocaba sp';
 
 // Configurações do Hero interno
 $heroTitle = 'Soluções Personalizadas para Seu Negócio';
@@ -16,19 +17,21 @@ include 'includes/navigation.php';
 include 'components/hero.php';
 ?>
 
+    <!-- SEO: Comentário HTML - Página de serviços especializados em PHP -->
     <!-- Services Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light" role="main" aria-labelledby="services-main-title">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
-                    <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
+                    <!-- SEO: H1 principal da página otimizado -->
+                    <h1 id="services-main-title" class="section-title" data-aos="fade-up">Nossos Serviços</h1>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                         Soluções personalizadas para cada necessidade do seu negócio
                     </p>
                 </div>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4" role="list" aria-label="Lista detalhada de serviços de desenvolvimento">
                 <?php
                 $detailedServices = [
                     [
@@ -40,7 +43,8 @@ include 'components/hero.php';
                             ['PHP 7.4+ e PHP 8.x', 'Orientação a objetos', 'Integração com bancos'],
                             ['Autenticação segura', 'Otimização de performance', 'Código documentado']
                         ],
-                        'delay' => '100'
+                        'delay' => '100',
+                        'aria_label' => 'Desenvolvimento PHP moderno para aplicações web robustas'
                     ],
                     [
                         'icon' => 'fas fa-layer-group',
@@ -51,7 +55,8 @@ include 'components/hero.php';
                             ['Laravel mais recente', 'APIs RESTful', 'Eloquent ORM'],
                             ['Autenticação Sanctum', 'Filas e jobs', 'Testes automatizados']
                         ],
-                        'delay' => '200'
+                        'delay' => '200',
+                        'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas profissionais'
                     ],
                     [
                         'icon' => 'fas fa-globe',
@@ -62,7 +67,8 @@ include 'components/hero.php';
                             ['Design responsivo', 'Otimização SEO', 'Alta performance'],
                             ['UX/UI moderno', 'Formulários de contato', 'Integração com Analytics']
                         ],
-                        'delay' => '300'
+                        'delay' => '300',
+                        'aria_label' => 'Criação de sites responsivos com foco em SEO e conversão'
                     ],
                     [
                         'icon' => 'fas fa-mobile-alt',
@@ -73,34 +79,36 @@ include 'components/hero.php';
                             ['React Native', 'Flutter', 'Nativo'],
                             ['API Integration', 'Push Notifications', 'App Store']
                         ],
-                        'delay' => '400'
+                        'delay' => '400',
+                        'aria_label' => 'Desenvolvimento de aplicativos móveis para Android e iOS'
                     ]
                 ];
 
-                foreach ($detailedServices as $service):
+                foreach ($detailedServices as $index => $service):
                 ?>
                     <!-- Service -->
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="<?php echo $service['delay']; ?>">
-                    <div class="service-detail-card">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="<?php echo $service['delay']; ?>" role="listitem">
+                    <article class="service-detail-card" itemscope itemtype="https://schema.org/Service">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
+                            <div class="service-detail-icon" aria-hidden="true">
                                     <i class="<?php echo $service['icon']; ?>"></i>
                             </div>
                             <div>
-                                    <h3 class="service-detail-title"><?php echo $service['title']; ?></h3>
-                                    <p class="service-detail-subtitle"><?php echo $service['subtitle']; ?></p>
+                                    <!-- SEO: H2 para cada serviço com palavras-chave específicas -->
+                                    <h2 class="service-detail-title" itemprop="name"><?php echo $service['title']; ?></h2>
+                                    <p class="service-detail-subtitle" itemprop="category"><?php echo $service['subtitle']; ?></p>
                             </div>
                         </div>
                         <div class="service-detail-body">
-                                <p><?php echo $service['description']; ?></p>
+                                <p itemprop="description"><?php echo $service['description']; ?></p>
                             
-                            <div class="service-features">
+                            <div class="service-features" role="list" aria-label="Recursos do serviço <?php echo $service['title']; ?>">
                                 <div class="row">
                                         <?php foreach ($service['features'] as $featureGroup): ?>
                                     <div class="col-md-6">
                                         <ul class="service-features-list">
                                                     <?php foreach ($featureGroup as $feature): ?>
-                                                        <li><i class="fas fa-check-circle text-accent"></i> <?php echo $feature; ?></li>
+                                                        <li role="listitem"><i class="fas fa-check-circle text-accent" aria-hidden="true"></i> <?php echo $feature; ?></li>
                                                     <?php endforeach; ?>
                                         </ul>
                                     </div>
@@ -109,15 +117,47 @@ include 'components/hero.php';
                             </div>
                             
                             <div class="service-detail-footer">
-                                    <a href="<?php echo url('contato'); ?>" class="btn-primary-standard">
-                                        <i class="fas fa-calculator me-2"></i>
+                                    <a href="<?php echo url('contato'); ?>" class="btn-primary-standard" 
+                                       aria-label="<?php echo $service['aria_label']; ?> - Solicitar orçamento" 
+                                       itemprop="url">
+                                        <i class="fas fa-calculator me-2" aria-hidden="true"></i>
                                         Solicitar Orçamento
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 <?php endforeach; ?>
+            </div>
+            
+            <!-- SEO: Seção adicional com mais serviços -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-4">Outros Serviços Especializados</h2>
+                    <div class="row g-3">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
+                                <i class="fas fa-server service-extra-icon" aria-hidden="true"></i>
+                                <h3 class="service-extra-title" itemprop="name">APIs RESTful</h3>
+                                <p class="service-extra-desc" itemprop="description">Integração e desenvolvimento de APIs seguras</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
+                                <i class="fas fa-bolt service-extra-icon" aria-hidden="true"></i>
+                                <h3 class="service-extra-title" itemprop="name">Automações n8n</h3>
+                                <p class="service-extra-desc" itemprop="description">Automação de processos com IA</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
+                                <i class="fas fa-tools service-extra-icon" aria-hidden="true"></i>
+                                <h3 class="service-extra-title" itemprop="name">Manutenção PHP</h3>
+                                <p class="service-extra-desc" itemprop="description">Suporte e manutenção de sistemas existentes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

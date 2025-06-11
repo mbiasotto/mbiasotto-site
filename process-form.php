@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/mail-config.php';
+require_once 'includes/recaptcha-config.php';
 
 // Verificar se é uma requisição POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -27,6 +28,16 @@ try {
     // Verificação de honeypot (anti-spam)
     if (!empty($_POST['website'])) {
         throw new Exception('Spam detectado');
+    }
+    
+    // Verificação do reCAPTCHA v3
+    $recaptchaResult = processRecaptchaSubmission($_POST);
+    if (!$recaptchaResult['success']) {
+        throw new Exception('Erro na verificação de segurança: ' . $recaptchaResult['error']);
+    }
+    
+    if (!$recaptchaResult['is_human']) {
+        throw new Exception('Score de segurança muito baixo. Tente novamente.');
     }
     
     // Verificação de rate limiting simples

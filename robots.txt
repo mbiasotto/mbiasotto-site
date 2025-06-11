@@ -1,0 +1,33 @@
+# Robots.txt para Programador PHP Freelancer Sorocaba SP
+# Otimizado para melhor indexação nos mecanismos de busca
+
+User-agent: *
+Allow: /
+
+# Permitir acesso a recursos importantes para SEO
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Bloquear acesso a arquivos e diretórios sensíveis
+Disallow: /includes/
+Disallow: /components/
+Disallow: /vendor/
+Disallow: /.git/
+Disallow: /test.php
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /.htaccess
+
+# Páginas importantes para indexação (programador PHP freelancer)
+Allow: /index.php
+Allow: /servicos
+Allow: /programador-php-freelancer
+Allow: /contato
+Allow: /como-trabalhamos
+
+# Sitemap para facilitar indexação
+Sitemap: https://mbiasotto.com/sitemap.xml
+
+# Crawl-delay para não sobrecarregar o servidor
+Crawl-delay: 1 

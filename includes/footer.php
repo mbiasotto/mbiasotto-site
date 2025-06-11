@@ -4,19 +4,25 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="mb-3">
-                        <img src="<?php echo asset('assets/images/logo-white.png'); ?>" alt="Maurício Biasotto" height="50">
+                        <img src="<?php echo asset('assets/images/logo-white.png'); ?>" alt="DevPHP Solutions - Programador PHP Freelancer Sorocaba SP" height="50">
                     </div>
-                    <p>Desenvolvedor PHP Freelancer especializado em Laravel, APIs e automações. Transformando ideias em soluções digitais eficientes para empresas de todos os portes.</p>
+                    <p>Desenvolvedor PHP Freelancer com 20 anos de experiência, especializado em Laravel, SlimPHP, APIs e automações. Transformando ideias em soluções digitais eficientes para empresas de todos os portes.</p>
                     
                     <div class="social-links">
-                        <a href="https://github.com/mbiasotto" class="social-link me-3" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/mbiasotto" class="social-link me-3" target="_blank" rel="noopener noreferrer" 
+                           onclick="trackExternalLink('https://github.com/mbiasotto', 'GitHub Profile')">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="sr-only">GitHub do Maurício Biasotto</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/mauriciobiasotto/" class="social-link me-3" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/mauriciobiasotto/" class="social-link me-3" target="_blank" rel="noopener noreferrer"
+                           onclick="trackExternalLink('https://www.linkedin.com/in/mauriciobiasotto/', 'LinkedIn Profile')">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn do Maurício Biasotto</span>
                         </a>
-                        <a href="https://www.instagram.com/mbiasotto/" class="social-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/mbiasotto/" class="social-link" target="_blank" rel="noopener noreferrer"
+                           onclick="trackExternalLink('https://www.instagram.com/mbiasotto/', 'Instagram Profile')">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram do Maurício Biasotto</span>
                         </a>
                     </div>
                 </div>
@@ -48,15 +54,17 @@
                     <h5 class="mb-3">Contato</h5>
                     <div class="contact-info">
                         <div class="contact-item mb-2">
-                            <i class="fas fa-envelope me-2"></i>
-                            <span><a href="mailto:mauricio@mbiasotto.com" style="color: inherit; text-decoration: none;">mauricio@mbiasotto.com</a></span>
+                            <i class="fas fa-envelope me-2" aria-hidden="true"></i>
+                            <span><a href="mailto:mauricio@mbiasotto.com" style="color: inherit; text-decoration: none;" 
+                                     onclick="gtag('event', 'click_email', {event_category: 'Contact', event_label: 'Email Click'});">mauricio@mbiasotto.com</a></span>
                         </div>
                         <div class="contact-item mb-2">
-                            <i class="fas fa-phone me-2"></i>
-                            <span><a href="https://wa.me/5515981187063" target="_blank" style="color: inherit; text-decoration: none;">(15) 98118-7063</a></span>
+                            <i class="fas fa-phone me-2" aria-hidden="true"></i>
+                            <span><a href="https://wa.me/5515981187063" target="_blank" style="color: inherit; text-decoration: none;"
+                                     onclick="gtag('event', 'click_whatsapp_footer', {event_category: 'Contact', event_label: 'WhatsApp Footer Click', value: 50});">(15) 98118-7063</a></span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>
                             <span>Sorocaba, SP - Brasil</span>
                         </div>
                     </div>
@@ -67,20 +75,22 @@
             
             <div class="row align-items-center">
                 <div class="col-md-12 text-center">
-                    <p class="mb-0">&copy; <?php echo date('Y'); ?> Maurício Biasotto. Todos os direitos reservados.</p>
+                    <p class="mb-0">&copy; <?php echo date('Y'); ?> Programador PHP Freelancer. Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/5515981187063?text=Olá! Gostaria de solicitar um orçamento." class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/5515981187063?text=Olá! Gostaria de solicitar um orçamento." class="whatsapp-btn" target="_blank"
+       onclick="gtag('event', 'click_whatsapp_button', {event_category: 'Contact', event_label: 'WhatsApp Floating Button', value: 75});">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="sr-only">Contato via WhatsApp</span>
     </a>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <!-- jQuery -->
@@ -92,6 +102,12 @@
     <!-- Custom JS -->
     <script src="<?php echo asset('assets/js/main.js'); ?>"></script>
     <script src="<?php echo asset('assets/js/navbar-scroll.js'); ?>"></script>
+    
+    <!-- Google Analytics Events Tracking -->
+    <script src="<?php echo asset('assets/js/analytics-events.js'); ?>"></script>
+    
+    <!-- reCAPTCHA Forms Script -->
+    <script src="<?php echo asset('assets/js/recaptcha-forms.js'); ?>"></script>
     
     <?php if (isset($additionalJS)): ?>
         <?php foreach ($additionalJS as $js): ?>

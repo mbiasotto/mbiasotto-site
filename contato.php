@@ -144,8 +144,16 @@ include 'includes/navigation.php';
                                 <textarea name="mensagem" class="form-control" rows="5" placeholder="Descreva seu projeto, objetivos e funcionalidades desejadas..." required minlength="10"></textarea>
                             </div>
                             
+                            <!-- reCAPTCHA Badge -->
+                            <div class="recaptcha-info mb-3">
+                                <small class="text-muted">
+                                    <i class="fas fa-shield-alt me-1"></i>
+                                    Este formulário é protegido pelo Google reCAPTCHA para evitar spam.
+                                </small>
+                            </div>
+                            
                             <div class="text-end">
-                                <button type="submit" class="btn-form-submit px-5" id="submitBtn">
+                                <button type="button" class="btn-form-submit px-5" id="submitBtn" onclick="submitContactForm()">
                                     <i class="fas fa-paper-plane me-2"></i>
                                     <span class="btn-text">Enviar Mensagem</span>
                                     <span class="spinner-border spinner-border-sm d-none ms-2" role="status"></span>
