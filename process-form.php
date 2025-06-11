@@ -30,14 +30,39 @@ try {
         throw new Exception('Spam detectado');
     }
     
-    // Verificação do reCAPTCHA v3
-    $recaptchaResult = processRecaptchaSubmission($_POST);
-    if (!$recaptchaResult['success']) {
-        throw new Exception('Erro na verificação de segurança: ' . $recaptchaResult['error']);
-    }
+    // Verificação do reCAPTCHA v3 (com bypass para problemas de conectividade)
+    $bypassRecaptcha = isset($_POST['recaptcha_bypass']) && $_POST['recaptcha_bypass'] === '1';
     
-    if (!$recaptchaResult['is_human']) {
-        throw new Exception('Score de segurança muito baixo. Tente novamente.');
+    if (!$bypassRecaptcha) {
+        $recaptchaResult = processRecaptchaSubmission($_POST);
+        if (!$recaptchaResult['success']) {
+            // Log do erro para debug
+            error_log("Erro reCAPTCHA: " . $recaptchaResult['error'] . " - IP: " . $_SERVER['REMOTE_ADDR']);
+            
+            // Mensagem mais amigável para problemas de conexão
+            if (strpos($recaptchaResult['error'], 'conectar') !== false) {
+                throw new Exception('Erro temporário na verificação de segurança. Tente novamente em alguns segundos.');
+            }
+            
+            throw new Exception('Erro na verificação de segurança: ' . $recaptchaResult['error']);
+        }
+        
+        if (!$recaptchaResult['is_human']) {
+            error_log("reCAPTCHA score baixo: " . $recaptchaResult['score'] . " - IP: " . $_SERVER['REMOTE_ADDR']);
+            throw new Exception('Score de segurança muito baixo. Tente novamente.');
+        }
+    } else {
+        // Log quando bypass é usado
+        error_log("reCAPTCHA bypass usado devido a problemas de conectividade - IP: " . $_SERVER['REMOTE_ADDR']);
+        
+        // Validações de segurança alternativas quando reCAPTCHA falha
+        // Verificar rate limiting mais rigoroso
+        if (file_exists($ipFile)) {
+            $lastSubmit = file_get_contents($ipFile);
+            if (time() - $lastSubmit < 300) { // 5 minutos entre envios quando sem reCAPTCHA
+                throw new Exception('Aguarde 5 minutos antes de enviar outro formulário (sistema de segurança temporariamente indisponível)');
+            }
+        }
     }
     
     // Verificação de rate limiting simples

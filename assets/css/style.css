@@ -2308,6 +2308,23 @@ p {
   background-color: var(--primary) !important;
 }
 
+/* Botão CTA destacado quando navbar tem scroll */
+.navbar-scrolled .btn-cta-navbar {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-scrolled .btn-cta-navbar:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background-color: var(--primary) !important;
@@ -2611,6 +2628,20 @@ p {
   .btn-cta-navbar:hover {
     background: white;
     color: var(--primary);
+  }
+
+  /* Destaque especial no mobile quando navbar tem scroll */
+  .navbar-scrolled .btn-cta-navbar {
+    border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    color: white !important;
+  }
+
+  .navbar-scrolled .btn-cta-navbar:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: white !important;
+    color: white !important;
   }
   
   /* Esconder elementos desktop no mobile */

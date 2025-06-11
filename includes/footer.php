@@ -106,8 +106,16 @@
     <!-- Google Analytics Events Tracking -->
     <script src="<?php echo asset('assets/js/analytics-events.js'); ?>"></script>
     
-    <!-- reCAPTCHA Forms Script -->
-    <script src="<?php echo asset('assets/js/recaptcha-forms.js'); ?>"></script>
+    <!-- reCAPTCHA Forms Script (carregado apenas em páginas com formulários) -->
+    <?php
+    // Incluir configuração de páginas se não foi incluída ainda
+    if (!function_exists('needsRecaptcha')) {
+        require_once __DIR__ . '/recaptcha-pages.php';
+    }
+    
+    if (needsRecaptcha()): ?>
+        <script src="<?php echo asset('assets/js/recaptcha-forms.js'); ?>"></script>
+    <?php endif; ?>
     
     <?php if (isset($additionalJS)): ?>
         <?php foreach ($additionalJS as $js): ?>

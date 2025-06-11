@@ -12,6 +12,40 @@ define('RECAPTCHA_SECRET_KEY', '6LebUF0rAAAAAGAjrNvLdyyxeg944MZ1Boy-rkJX');
 define('RECAPTCHA_MIN_SCORE', 0.5);
 
 /**
+ * Função alternativa para validar reCAPTCHA usando cURL
+ * 
+ * @param array $postData Dados para enviar
+ * @return string|false Resposta ou false em caso de erro
+ */
+function validateRecaptchaWithCurl($postData) {
+    $ch = curl_init();
+    
+    curl_setopt_array($ch, [
+        CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query($postData),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 20,
+        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_MAXREDIRS => 3,
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; reCAPTCHA-Validator/1.0)'
+    ]);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    
+    curl_close($ch);
+    
+    if ($response === false || $httpCode !== 200) {
+        return false;
+    }
+    
+    return $response;
+}
+
+/**
  * Valida token do reCAPTCHA v3
  * 
  * @param string $token Token do reCAPTCHA
@@ -40,21 +74,43 @@ function validateRecaptcha($token, $action = '') {
         'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
     ];
 
-    // Fazer requisição para Google
-    $context = stream_context_create([
-        'http' => [
-            'method' => 'POST',
-            'header' => 'Content-Type: application/x-www-form-urlencoded',
-            'content' => http_build_query($postData),
-            'timeout' => 10
-        ]
-    ]);
+    // Fazer requisição para Google com múltiplas tentativas
+    $maxRetries = 3;
+    $response = false;
+    
+    for ($i = 0; $i < $maxRetries; $i++) {
+        $context = stream_context_create([
+            'http' => [
+                'method' => 'POST',
+                'header' => 'Content-Type: application/x-www-form-urlencoded',
+                'content' => http_build_query($postData),
+                'timeout' => 15,
+                'ignore_errors' => true
+            ]
+        ]);
 
-    $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+        $response = @file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+        
+        if ($response !== false) {
+            break; // Sucesso, sair do loop
+        }
+        
+        // Se não é a última tentativa, aguardar um pouco
+        if ($i < $maxRetries - 1) {
+            sleep(1);
+        }
+    }
     
     if ($response === false) {
-        $result['error'] = 'Erro ao conectar com o servidor reCAPTCHA';
-        return $result;
+        // Tentar método alternativo com cURL se disponível
+        if (function_exists('curl_init')) {
+            $response = validateRecaptchaWithCurl($postData);
+        }
+        
+        if ($response === false) {
+            $result['error'] = 'Erro ao conectar com o servidor reCAPTCHA após múltiplas tentativas';
+            return $result;
+        }
     }
 
     $responseData = json_decode($response, true);

@@ -2,10 +2,34 @@
  * reCAPTCHA v3 Form Handlers
  * Programador PHP Freelancer - Sorocaba SP
  * Integração com Google Analytics
+ * 
+ * Este script só executa em páginas com formulários
  */
+
+// Verificar se reCAPTCHA é necessário nesta página
+function isRecaptchaPage() {
+    const currentPage = window.location.pathname.split('/').pop().replace('.php', '') || 'index';
+    // Manter sincronizado com getPagesWithForms() em includes/recaptcha-pages.php
+    const pagesWithForms = ['contato', 'index'];
+    return pagesWithForms.includes(currentPage);
+}
+
+// Só continuar se for uma página que precisa de reCAPTCHA
+if (!isRecaptchaPage()) {
+    console.log('reCAPTCHA não necessário nesta página');
+} else {
+    console.log('Inicializando reCAPTCHA para página com formulários');
+}
 
 // Configuração
 const RECAPTCHA_SITE_KEY = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
+
+// Variável para controlar tentativas de erro
+let recaptchaErrorCount = 0;
+const MAX_RECAPTCHA_ERRORS = 3;
+
+// Só definir funções se for uma página que precisa de reCAPTCHA
+if (isRecaptchaPage()) {
 
 /**
  * Submeter formulário de contato principal
@@ -23,13 +47,39 @@ function submitContactForm() {
 
     // Executar reCAPTCHA e submeter
     executeRecaptcha('contact_form', function(token) {
+        // Verificar se houve erro no reCAPTCHA
+        if (token.includes('error_')) {
+            recaptchaErrorCount++;
+            
+            if (recaptchaErrorCount >= MAX_RECAPTCHA_ERRORS) {
+                // Após muitos erros, permitir submissão sem reCAPTCHA
+                showNotification('Sistema de segurança temporariamente indisponível. Seu formulário será processado normalmente.', 'warning');
+                
+                // Adicionar flag indicando problema de reCAPTCHA
+                const errorFlag = document.createElement('input');
+                errorFlag.type = 'hidden';
+                errorFlag.name = 'recaptcha_bypass';
+                errorFlag.value = '1';
+                form.appendChild(errorFlag);
+                
+                form.submit();
+                return;
+            } else {
+                showNotification('Erro na verificação de segurança. Tente novamente em alguns segundos.', 'error');
+                toggleFormSubmitting(submitBtn, false);
+                return;
+            }
+        }
+
         addRecaptchaToForm(form, token, 'contact_form');
         
         // Track no Google Analytics - Tentativa de envio
-        gtag('event', 'contact_form_attempt', {
-            event_category: 'Form Submission',
-            event_label: 'Contact Form - reCAPTCHA Success'
-        });
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_form_attempt', {
+                event_category: 'Form Submission',
+                event_label: 'Contact Form - reCAPTCHA Success'
+            });
+        }
 
         // Submeter formulário
         form.submit();
@@ -52,14 +102,40 @@ function submitQuickForm(formId) {
 
     // Executar reCAPTCHA e submeter
     executeRecaptcha('quick_contact', function(token) {
+        // Verificar se houve erro no reCAPTCHA
+        if (token.includes('error_')) {
+            recaptchaErrorCount++;
+            
+            if (recaptchaErrorCount >= MAX_RECAPTCHA_ERRORS) {
+                // Após muitos erros, permitir submissão sem reCAPTCHA
+                showNotification('Sistema de segurança temporariamente indisponível. Seu formulário será processado normalmente.', 'warning');
+                
+                // Adicionar flag indicando problema de reCAPTCHA
+                const errorFlag = document.createElement('input');
+                errorFlag.type = 'hidden';
+                errorFlag.name = 'recaptcha_bypass';
+                errorFlag.value = '1';
+                form.appendChild(errorFlag);
+                
+                form.submit();
+                return;
+            } else {
+                showNotification('Erro na verificação de segurança. Tente novamente em alguns segundos.', 'error');
+                toggleFormSubmitting(submitBtn, false);
+                return;
+            }
+        }
+
         addRecaptchaToForm(form, token, 'quick_contact');
         
         // Track no Google Analytics - Tentativa de envio
-        gtag('event', 'quick_form_attempt', {
-            event_category: 'Form Submission',
-            event_label: 'Quick Contact Form - reCAPTCHA Success',
-            value: 100
-        });
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'quick_form_attempt', {
+                event_category: 'Form Submission',
+                event_label: 'Quick Contact Form - reCAPTCHA Success',
+                value: 100
+            });
+        }
 
         // Submeter formulário
         form.submit();
@@ -340,4 +416,6 @@ function trackLeadQuality(formData) {
     });
 
     return qualityScore;
-} 
+}
+
+} // Fim do bloco isRecaptchaPage()

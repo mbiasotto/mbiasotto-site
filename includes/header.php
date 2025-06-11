@@ -18,10 +18,16 @@ $pageDescription = $pageDescription ?? 'Programador PHP freelancer em Sorocaba S
 $pageKeywords = $pageKeywords ?? 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 $canonicalUrl = $canonicalUrl ?? url();
 
+// Incluir configuração de páginas com reCAPTCHA
+require_once __DIR__ . '/recaptcha-pages.php';
+
 // SEO: Determinar tipo de página para structured data otimizado
-$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$currentPage = getCurrentPage();
 $isServicePage = in_array($currentPage, ['servicos', 'programador-php-freelancer']);
 $isContactPage = $currentPage === 'contato';
+
+// Determinar se a página precisa do reCAPTCHA (centralizado)
+$needsRecaptcha = needsRecaptcha();
 
 // reCAPTCHA v3 Configuration
 $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
@@ -89,32 +95,80 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
       <?php endif; ?>
     </script>
     
-    <!-- Google reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_site_key; ?>"></script>
+    <?php if ($needsRecaptcha): ?>
+    <!-- Google reCAPTCHA v3 (carregado apenas em páginas com formulários) -->
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_site_key; ?>" async defer></script>
     <script>
         // reCAPTCHA v3 Setup
-        grecaptcha.ready(function() {
-            // Gerar token inicial para a página
-            grecaptcha.execute('<?php echo $recaptcha_site_key; ?>', {action: 'page_load'}).then(function(token) {
-                console.log('reCAPTCHA v3: Page token generated');
-            });
-        });
+        function initRecaptcha() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    // Gerar token inicial para a página
+                    grecaptcha.execute('<?php echo $recaptcha_site_key; ?>', {action: 'page_load'})
+                        .then(function(token) {
+                            console.log('reCAPTCHA v3: Page token generated for <?php echo $currentPage; ?>');
+                        })
+                        .catch(function(error) {
+                            console.error('Erro ao gerar token inicial reCAPTCHA:', error);
+                        });
+                });
+            } else {
+                console.warn('reCAPTCHA não carregado, tentando novamente em 2 segundos...');
+                setTimeout(initRecaptcha, 2000);
+            }
+        }
+        
+        // Tentar inicializar o reCAPTCHA quando a página carregar
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initRecaptcha);
+        } else {
+            initRecaptcha();
+        }
 
         // Função para executar reCAPTCHA em formulários
         function executeRecaptcha(action, callback) {
-            grecaptcha.execute('<?php echo $recaptcha_site_key; ?>', {action: action}).then(function(token) {
-                if (callback && typeof callback === 'function') {
-                    callback(token);
-                }
+            // Verificar se grecaptcha está disponível
+            if (typeof grecaptcha === 'undefined') {
+                console.error('reCAPTCHA não carregado');
                 
-                // Track no Google Analytics
-                gtag('event', 'recaptcha_executed', {
-                    event_category: 'Security',
-                    event_label: action,
-                    recaptcha_action: action
-                });
-                
-                console.log('reCAPTCHA v3: Token generated for action:', action);
+                // Tentar recarregar o script
+                var script = document.createElement('script');
+                script.src = 'https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_site_key; ?>';
+                script.onload = function() {
+                    setTimeout(function() {
+                        executeRecaptcha(action, callback);
+                    }, 1000);
+                };
+                script.onerror = function() {
+                    console.error('Erro ao carregar reCAPTCHA');
+                    if (callback) callback('error_loading_recaptcha');
+                };
+                document.head.appendChild(script);
+                return;
+            }
+
+            grecaptcha.ready(function() {
+                grecaptcha.execute('<?php echo $recaptcha_site_key; ?>', {action: action})
+                    .then(function(token) {
+                        if (callback && typeof callback === 'function') {
+                            callback(token);
+                        }
+                        
+                        // Track no Google Analytics
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'recaptcha_executed', {
+                                event_category: 'Security',
+                                event_label: action,
+                                recaptcha_action: action
+                            });
+                        }
+                        
+                        console.log('reCAPTCHA v3: Token generated for action:', action);
+                    })
+                    .catch(function(error) {
+                        console.error('Erro reCAPTCHA:', error);
+                        if (callback) callback('error_generating_token');
+                    });
             });
         }
 
@@ -146,6 +200,20 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
             });
         }
     </script>
+    <?php else: ?>
+    <script>
+        // Funções stub para páginas sem reCAPTCHA (evita erros JavaScript)
+        function executeRecaptcha(action, callback) {
+            console.warn('reCAPTCHA não carregado nesta página (sem formulários)');
+            if (callback) callback('no_recaptcha_needed');
+        }
+        
+        function submitFormWithRecaptcha(formElement, action = 'contact_form') {
+            console.warn('submitFormWithRecaptcha chamado em página sem reCAPTCHA');
+            formElement.submit();
+        }
+    </script>
+    <?php endif; ?>
     
     <!-- SEO: Meta tags otimizadas para programador PHP freelancer -->
     <title><?php echo $pageTitle; ?></title>

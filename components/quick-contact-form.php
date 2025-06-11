@@ -97,7 +97,7 @@ $isSimplified = $isSimplified ?? true;
                         <div class="text-end">
                             <button type="button" class="btn-form-submit px-5" id="<?php echo $formId; ?>Btn" onclick="submitQuickForm('<?php echo $formId; ?>')">
                                 <i class="fas fa-paper-plane me-2"></i>
-                                <span class="btn-text">Solicitar Orçamento Gratuito</span>
+                                <span class="btn-text">Solicitar Orçamento</span>
                                 <span class="spinner-border spinner-border-sm d-none ms-2" role="status"></span>
                             </button>
                         </div>
