@@ -123,12 +123,8 @@
     
     if (needsRecaptcha()): ?>
         <script src="<?php echo asset('assets/js/form-masks.js'); ?>"></script>
-        <script src="<?php echo asset('assets/js/recaptcha-forms.js'); ?>"></script>
-    <?php endif; ?>
-    
-    <!-- Form Submission System (carregado em todas as páginas com formulários) -->
-    <?php if (needsRecaptcha()): ?>
-        <script src="<?php echo asset('assets/js/form-submission.js'); ?>"></script>
+        <!-- Form Submission System (versão simplificada e robusta) -->
+        <script src="<?php echo asset('assets/js/form-submission-simple.js'); ?>"></script>
     <?php endif; ?>
     
     <?php if (isset($additionalJS)): ?>

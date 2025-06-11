@@ -275,7 +275,7 @@ include 'includes/navigation.php';
 </style>
 
 <?php 
-// Adicionar JavaScript específico para a página de contato
-$additionalJS = ['assets/js/contact-form.js'];
+// Remover JavaScript específico antigo que está causando conflito
+// $additionalJS = ['assets/js/contact-form.js'];
 include 'includes/footer.php'; 
 ?>
