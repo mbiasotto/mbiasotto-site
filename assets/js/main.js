@@ -177,11 +177,99 @@ $(document).ready(() => {
     )
   })
 
-  // ===== MOBILE MENU CLOSE ON LINK CLICK =====
-  $(".navbar-nav .nav-link").on("click", () => {
-    if ($(window).width() < 992) {
-      $(".navbar-collapse").collapse("hide")
+  // ===== MOBILE SIDEBAR MENU =====
+  const $mobileOverlay = $("#mobileOverlay")
+  const $navbarCollapse = $("#navbarNav")
+  const $navbarToggler = $(".navbar-toggler")
+  
+  // Função para abrir menu
+  function openMobileMenu() {
+    if ($(window).width() <= 768) {
+      $mobileOverlay.addClass("show")
+      $navbarCollapse.addClass("show")
+      $("body").css("overflow", "hidden")
+      $navbarToggler.attr("aria-expanded", "true")
     }
+  }
+
+  // Função para fechar menu
+  function closeMobileMenu() {
+    $mobileOverlay.removeClass("show")
+    $navbarCollapse.removeClass("show")
+    $("body").css("overflow", "")
+    $navbarToggler.attr("aria-expanded", "false")
+  }
+
+  // Event listeners
+  $navbarToggler.on("click", (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if ($navbarCollapse.hasClass("show")) {
+      closeMobileMenu()
+    } else {
+      openMobileMenu()
+    }
+  })
+
+  // Fechar ao clicar no botão X - usar delegação de eventos
+  $(document).on("click", "#mobileMenuClose", (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    closeMobileMenu()
+  })
+
+  // Fechar ao clicar no overlay
+  $mobileOverlay.on("click", (e) => {
+    if (e.target === e.currentTarget) {
+      closeMobileMenu()
+    }
+  })
+
+  // Fechar ao clicar em um link
+  $(document).on("click", ".navbar-nav .nav-link", () => {
+    if ($(window).width() <= 768) {
+      setTimeout(closeMobileMenu, 300) // Pequeno delay para UX
+    }
+  })
+
+  // Fechar menu se redimensionar para desktop
+  $(window).on("resize", () => {
+    if ($(window).width() > 768) {
+      closeMobileMenu()
+    }
+  })
+
+  // Fechar com tecla ESC
+  $(document).on("keydown", (e) => {
+    if (e.key === "Escape" && $navbarCollapse.hasClass("show")) {
+      closeMobileMenu()
+    }
+  })
+
+  // ===== MOBILE FORM OPTIMIZATIONS =====
+  // Prevent zoom on iOS when focusing inputs
+  if (window.innerWidth <= 768) {
+    $('input[type="email"], input[type="tel"], input[type="text"], textarea, select').attr('autocomplete', 'on')
+  }
+
+  // ===== MOBILE TOUCH ENHANCEMENTS =====
+  // Add touch feedback to interactive elements
+  $(".service-card, .testimonial-card, .btn").on("touchstart", function() {
+    $(this).addClass("touch-active")
+  }).on("touchend touchcancel", function() {
+    $(this).removeClass("touch-active")
+  })
+
+  // ===== MOBILE PERFORMANCE OPTIMIZATIONS =====
+  // Debounce scroll events for better performance
+  let scrollTimeout
+  $(window).scroll(function() {
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout)
+    }
+    scrollTimeout = setTimeout(() => {
+      // Keep existing scroll functions working
+    }, 10)
   })
 
   // ===== FORM VALIDATION ENHANCEMENT =====

@@ -20,18 +20,15 @@ function isActive($page, $current) {
                  itemprop="logo">
         </a>
         
-        <!-- SEO: Botão do menu mobile com aria-labels -->
-        <button class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav" 
-                aria-expanded="false" 
-                aria-label="Alternar menu de navegação">
-            <span class="navbar-toggler-icon" aria-hidden="true"></span>
-        </button>
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
         
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Botão fechar mobile -->
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+            
             <!-- SEO: Lista de navegação com roles e aria-labels -->
             <ul class="navbar-nav ms-auto align-items-center" role="menubar" aria-label="Menu principal">
                 <li class="nav-item" role="none">
@@ -77,5 +74,14 @@ function isActive($page, $current) {
                 </li>
             </ul>
         </div>
+        
+        <!-- SEO: Botão do menu mobile com aria-labels -->
+        <button class="navbar-toggler" 
+                type="button" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Alternar menu de navegação">
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
     </div>
 </nav> 

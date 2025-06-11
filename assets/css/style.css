@@ -137,6 +137,43 @@ p {
 .bg-gradient-primary { background: var(--gradient-primary) !important; }
 .bg-dark { background-color: var(--dark) !important; }
 
+/* ===== MELHORIAS MOBILE NAVIGATION ===== */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: var(--transition);
+}
+
+/* ===== MELHORIAS TOUCH MOBILE ===== */
+@media (max-width: 768px) {
+  /* Aumenta área de toque para links */
+  .navbar-nav .nav-link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Melhora botões para touch */
+  .btn,
+  .btn-form-submit,
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
+
 /* ===== SISTEMA DE BOTÕES PADRONIZADO ===== */
 /*
   TIPOS DE BOTÃO:
@@ -2120,7 +2157,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233b82f6' fill-opacity='0.04'%3E%3Cpath d='M10 10h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M8 14h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M10 18h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M8 22h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3Cpath d='M50 10h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M48 14h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M50 18h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M48 22h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3Cpath d='M10 50h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M8 54h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M10 58h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M8 62h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3Cpath d='M50 50h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M48 54h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M50 58h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M48 62h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233b82f6' fill-opacity='0.04'%3E%3Cpath d='M10 10h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2zm4 0h2v2h-2v-2z'/%3E%3Cpath d='M8 14h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M10 18h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M8 22h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3Cpath d='M50 10h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M48 14h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M50 18h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M48 22h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3Cpath d='M10 50h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M8 54h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M10 58h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M8 62h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3Cpath d='M50 50h4v2h-4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z'/%3E%3Cpath d='M48 54h8v2h-8v-2zm10 0h8v2h-8v-2z'/%3E%3Cpath d='M50 58h6v2h-6v-2zm8 0h6v2h-6v-2z'/%3E%3Cpath d='M48 62h10v2h-10v-2zm12 0h10v2h-10v-2z'/%3E%3C/g%3E%3C/svg%3E");
   z-index: 0;
 }
 
@@ -2216,6 +2253,47 @@ p {
   font-weight: 600;
   color: var(--text);
   margin-bottom: 0.5rem;
+}
+
+/* ===== MELHORIAS ESPECÍFICAS FORMULÁRIOS MOBILE ===== */
+@media (max-width: 768px) {
+  .contact-form-section .container,
+  .contact-main-section .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .contact-form-card {
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .form-control,
+  .form-select {
+    font-size: 16px; /* Evita zoom no iOS */
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Melhora select no mobile */
+  select.form-control,
+  .form-select {
+    background-size: 20px;
+    padding-right: 2.5rem;
+  }
+  
+  /* Textarea mais amigável no mobile */
+  textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+  }
 }
 
 .navbar-scrolled{
@@ -2405,6 +2483,261 @@ p {
 
 /* ===== RESPONSIVIDADE PADRONIZADA ===== */
 @media (max-width: 768px) {
+  /* ===== MENU MOBILE LATERAL ===== */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 500px;
+    height: 100vh;
+    background-color: var(--primary);
+    z-index: 9999;
+    padding: 2rem 1.5rem;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .navbar-collapse.show {
+    right: 0;
+  }
+  
+  /* Esconder toggler quando menu aberto */
+  .mobile-overlay.show ~ .navbar-toggler {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Overlay para esconder conteúdo */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Botão fechar */
+  .mobile-menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10001;
+  }
+  
+  .mobile-menu-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Links do menu */
+  .navbar-nav {
+    flex-direction: column;
+    margin-top: 4rem;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-link {
+    color: white !important;
+    padding: 0.875rem 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #60a5fa !important;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .navbar-nav .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+  
+  .btn-cta-navbar {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 280px;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn-cta-navbar:hover {
+    background: white;
+    color: var(--primary);
+  }
+  
+  /* Esconder elementos desktop no mobile */
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  /* Ajustes para o collapse padrão do Bootstrap não interferir */
+  .navbar-collapse:not(.show) {
+    display: block !important;
+  }
+  
+  /* Garantir que o menu apareça sempre no mobile */
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      display: block !important;
+    }
+  }
+
+  /* ===== STATS - DUAS COLUNAS NO MOBILE ===== */
+  .stats-section .row .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .stat-item {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* ===== FORMULÁRIOS - BOTÕES MELHORADOS ===== */
+  .btn-form-submit,
+  .contact-form .btn,
+  .contact-form-modern .btn-primary,
+  .contact-form-section .btn-primary,
+  .btn-cta-primary,
+  .btn-cta-secondary,
+  .btn-primary-standard,
+  .btn-secondary-standard {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+  
+  /* ===== FORMULÁRIOS - MENOS SOMBRAS E MELHOR USO DO ESPAÇO ===== */
+  .contact-form-card,
+  .contact-form-modern,
+  .lead-conversion-card {
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .contact-info-card {
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  /* Remove segunda sombra nos cards */
+  .card-base,
+  .card-standard,
+  .service-card,
+  .testimonial-card {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* ===== MELHORIAS GERAIS MOBILE ===== */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-section {
+    padding: 100px 0 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 !important;
+  }
+  
+  /* Badges mais compactos */
+  .hero-badges {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .badge-custom {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem;
+  }
+
   /* Tipografia Responsiva */
   .title-hero { font-size: 2.5rem; }
   .title-section { font-size: 2rem; }
@@ -2412,19 +2745,11 @@ p {
   .subtitle-hero { font-size: 1.125rem; }
   .subtitle-section { font-size: 1rem; }
   
-  /* Botões Responsivos */
+  /* Botões Responsivos Existentes */
   .btn-base,
-  .btn-primary-standard,
-  .btn-secondary-standard,
   .btn-form-submit { 
     padding: 0.625rem 1.25rem; 
     font-size: 0.875rem; 
-  }
-  
-  .btn-cta-primary,
-  .btn-cta-secondary {
-    padding: 1rem 2rem;
-    font-size: 1rem;
   }
   
   .btn-cta-navbar {
@@ -2454,34 +2779,12 @@ p {
     font-size: 1rem;
   }
 
-  /* Elementos Existentes */
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
   .section-title {
     font-size: 2.5rem;
   }
 
   .cta-title {
     font-size: 2.5rem;
-  }
-
-  .hero-badges {
-    justify-content: center;
-  }
-
-  .badge-custom {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .contact-form-card {
-    padding: 1.5rem;
   }
 
   .testimonial-card {
@@ -2532,6 +2835,42 @@ p {
 }
 
 @media (max-width: 576px) {
+  /* ===== EXTRA SMALL MOBILE OPTIMIZATIONS ===== */
+  
+  /* Stats ainda menores para telas pequenas */
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  
+  /* Formulários ainda mais compactos */
+  .contact-form-card,
+  .contact-form-modern,
+  .lead-conversion-card {
+    margin: 0 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Botões mais compactos */
+  .btn-form-submit,
+  .contact-form .btn,
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-title {
+    font-size: 1.9rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
   /* Tipografia Mobile */
   .title-hero { font-size: 2rem; }
   .title-section { font-size: 1.75rem; }
@@ -2550,10 +2889,6 @@ p {
     padding-top: 80px;
   }
 
-  .hero-title {
-    font-size: 2rem;
-  }
-
   .section-title {
     font-size: 2rem;
   }
@@ -2562,19 +2897,7 @@ p {
     font-size: 2rem;
   }
 
-  .stat-number {
-    font-size: 2.5rem;
-  }
-
   .service-card {
-    padding: 1.5rem;
-  }
-
-  .contact-form-card {
-    padding: 1.5rem;
-  }
-
-  .testimonial-card {
     padding: 1.5rem;
   }
 
@@ -3184,10 +3507,7 @@ html {
 
 /* ===== FORM STYLES ===== */
 .contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    
 }
 
 .contact-form .form-label {
@@ -3622,5 +3942,103 @@ html {
 @media (max-width: 576px) {
   .error-number {
     font-size: 4rem;
+  }
+}
+
+/* ===== MELHORIAS ADICIONAIS MOBILE UX ===== */
+@media (max-width: 768px) {
+  /* Melhora scrolling suave no mobile */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Otimiza performance de animações */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Melhora visibilidade de focus */
+  .btn:focus,
+  .form-control:focus,
+  .nav-link:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.5);
+    outline-offset: 2px;
+  }
+  
+  /* Melhora cards para touch */
+  .service-card,
+  .testimonial-card,
+  .processo-step-card {
+    transform: none !important;
+    transition: box-shadow var(--transition);
+  }
+  
+  .service-card:active,
+  .testimonial-card:active {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Melhora hero section mobile */
+  .hero-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Melhora espaçamento geral */
+  section {
+    padding: 3rem 0;
+  }
+  
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* ===== MELHORIAS EXTRA SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 60vh;
+    padding: 80px 0 40px 0;
+  }
+  
+  .stats-section .stat-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .service-card {
+    padding: 1.25rem;
+  }
+  
+  .contact-form-card,
+  .contact-form-modern {
+    margin: 0 0.25rem;
+    padding: 1.25rem 1rem;
+  }
+  
+  .btn-form-submit,
+  .contact-form .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== MOBILE TOUCH FEEDBACK ===== */
+@media (max-width: 768px) {
+  .touch-active {
+    transform: scale(0.98) !important;
+    opacity: 0.8;
+    transition: all 0.1s ease;
+  }
+  
+  .service-card.touch-active,
+  .testimonial-card.touch-active {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .btn.touch-active {
+    transform: scale(0.95) !important;
   }
 }

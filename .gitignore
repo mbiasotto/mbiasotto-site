@@ -1,14 +1,273 @@
+# ==============================================
+# .gitignore - Programador PHP Freelancer
+# Maurício Biasotto - Segurança e Boas Práticas
+# ==============================================
+
+# ==========================================
+# ARQUIVOS SENSÍVEIS DE SEGURANÇA
+# ==========================================
+
+# Configurações com credenciais
 *.env
 .env.*
 *.sql
 *.backup
 
+# Logs
 *.log
 /storage/logs/*.log
+/tmp/rate_limit_*
+
+# Cache e temporários
 /tmp/*
 *.tmp
 
+# Development
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Dependencies (se usar)
+/vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# ==========================================
+# PHP & COMPOSER
+# ==========================================
+
+# Vendor directory
+/vendor/
+composer.phar
+composer.lock
+
+# Autoload files
+/bootstrap/compiled.php
+
+# ==========================================
+# LOGS & CACHE
+# ==========================================
+
+# Logs de aplicação
+/storage/logs/*.log
+/logs/*.log
+*.log
+
+# Cache files
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/cache/*
+/tmp/*
+
+# Rate limiting files
+/tmp/rate_limit_*
+
+# reCAPTCHA logs (manter estrutura mas não dados sensíveis)
+/storage/logs/recaptcha-suspicious.log
+
+# ==========================================
+# UPLOADS & MEDIA
+# ==========================================
+
+# Uploads de usuários (manter estrutura)
+/uploads/*
+!/uploads/.gitkeep
+/storage/app/public/*
+!/storage/app/public/.gitkeep
+
+# Imagens temporárias
+/assets/images/temp/*
+/assets/uploads/*
+
+# ==========================================
+# DEVELOPMENT & IDE
+# ==========================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PhpStorm/IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# NetBeans
+nbproject/
+
+# Eclipse
+.project
+.metadata
+*.tmp
+*.bak
+.settings/
+
+# ==========================================
+# SYSTEM FILES
+# ==========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+*.tmp
+
+# ==========================================
+# NODE.JS & FRONTEND
+# ==========================================
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+/dist/
+/build/
+
+# Package locks (manter apenas um)
+yarn.lock
+
+# ==========================================
+# DEPLOYMENT & CI/CD
+# ==========================================
+
+# Deploy scripts com credenciais
+deploy.sh
+deploy.php
+.htpasswd
+
+# CI/CD temporários
+.github/workflows/.env
+
+# FTP/SFTP configs
+.ftpconfig
+.sftp-config.json
+
+# ==========================================
+# TESTING
+# ==========================================
+
+# PHPUnit
+/phpunit.xml
+phpunit.result.cache
+.phpunit.cache
+
+# Coverage reports
+/coverage/
+clover.xml
+
+# ==========================================
+# BACKUP & TEMPORÁRIOS
+# ==========================================
+
+# Backup files
+*.backup
+*.back
+*~
+*.orig
+
+# Temporary files
+*.tmp
+*.temp
+/temp/
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ==========================================
+# ESPECÍFICO DO PROJETO
+# ==========================================
+
+# Arquivos de configuração local
+/includes/config-local.php
+/includes/database-local.php
+
+# Emails de teste (evitar vazar dados)
+/emails/*.html
+/test-emails/
+
+# Scripts de manutenção sensíveis
+/scripts/production/
+/scripts/import-*.php
+/scripts/migration-*.php
+
+# Estatísticas e relatórios
+/reports/
+/stats/
+
+# ==========================================
+# ASSETS COMPILADOS
+# ==========================================
+
+# CSS/JS compilados (se usar build tools)
+/assets/css/compiled/
+/assets/js/compiled/
+/assets/dist/
+
+# Source maps
+*.map
+
+# ==========================================
+# DOCUMENTAÇÃO SENSÍVEL
+# ==========================================
+
+# Documentos com informações internas
+/docs/internal/
+/docs/private/
+TODO-private.md
+NOTES-internal.md
+
+# Senhas e credenciais em texto
+passwords.txt
+credentials.txt
+keys.txt
+
+# ==========================================
+# OUTROS
+# ==========================================
+
+# Large files que não devem estar no repo
+*.mp4
+*.avi
+*.mov
+*.pdf
+*.doc
+*.docx
+*.psd
+
+# Arquivos específicos que podem conter dados sensíveis
+contacts.txt
+clients.txt
+leads.csv

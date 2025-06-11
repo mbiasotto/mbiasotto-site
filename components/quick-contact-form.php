@@ -94,14 +94,6 @@ $isSimplified = $isSimplified ?? true;
                             <textarea name="mensagem" class="form-control" rows="<?php echo $isSimplified ? '3' : '5'; ?>" placeholder="Conte-me sobre seu projeto, objetivos e funcionalidades desejadas..." required minlength="10"></textarea>
                         </div>
                         
-                        <!-- reCAPTCHA Badge -->
-                        <div class="recaptcha-info mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-shield-alt me-1"></i>
-                                Protegido pelo Google reCAPTCHA
-                            </small>
-                        </div>
-                        
                         <div class="text-end">
                             <button type="button" class="btn-form-submit px-5" id="<?php echo $formId; ?>Btn" onclick="submitQuickForm('<?php echo $formId; ?>')">
                                 <i class="fas fa-paper-plane me-2"></i>
