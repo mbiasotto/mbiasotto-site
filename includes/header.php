@@ -38,10 +38,22 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google Analytics 4 (carregamento otimizado) -->
+    <!-- DNS Prefetch para melhor performance mobile -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preconnect para recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Analytics 4 (otimizado para mobile - LCP) -->
     <script>
-        // Carrega Analytics de forma assíncrona para melhor performance mobile
+        // Delay Analytics para melhorar LCP (carrega após hero render)
         function loadGoogleAnalytics() {
+            if (window.analyticsLoaded) return;
+            window.analyticsLoaded = true;
+            
             const script = document.createElement('script');
             script.async = true;
             script.src = 'https://www.googletagmanager.com/gtag/js?id=G-RGVCBGF67P';
@@ -61,16 +73,17 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
             };
         }
         
-        // Carrega Analytics após 3 segundos ou primeiro scroll para melhor performance
-        setTimeout(loadGoogleAnalytics, 3000);
-        window.addEventListener('scroll', function() {
-            loadGoogleAnalytics();
-        }, { once: true });
-        
-        // Fallback: carrega analytics se demorar muito
-        window.addEventListener('load', function() {
-            setTimeout(loadGoogleAnalytics, 5000);
+        // Mobile: Carrega Analytics após LCP (5s) ou interação do usuário
+        <?php if (isMobile()): ?>
+        setTimeout(loadGoogleAnalytics, 5000);
+        ['scroll', 'click', 'touchstart'].forEach(event => {
+            window.addEventListener(event, loadGoogleAnalytics, { once: true, passive: true });
         });
+        <?php else: ?>
+        // Desktop: Carrega mais rápido
+        setTimeout(loadGoogleAnalytics, 2000);
+        window.addEventListener('scroll', loadGoogleAnalytics, { once: true });
+        <?php endif; ?>
     </script>
     <script>
         // Funções globais para Analytics (definidas quando o script carregar)
@@ -90,8 +103,39 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     </script>
     
     <?php if ($needsRecaptcha): ?>
-    <!-- Google reCAPTCHA v3 (carregado apenas em páginas com formulários) -->
-    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_site_key; ?>" async defer></script>
+    <!-- Google reCAPTCHA v3 (carregado APENAS quando necessário - mobile optimization) -->
+    <script>
+        // Carregar reCAPTCHA sob demanda para melhorar LCP
+        function loadRecaptcha() {
+            if (window.recaptchaLoaded) return;
+            window.recaptchaLoaded = true;
+            
+            const script = document.createElement('script');
+            script.src = 'https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_site_key; ?>';
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+        
+        // Mobile: Carrega reCAPTCHA apenas quando usuário interage com formulário
+        <?php if (isMobile()): ?>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carregar apenas quando focar em campo de formulário
+            const formInputs = document.querySelectorAll('input, textarea, select');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', loadRecaptcha, { once: true });
+            });
+            
+            // Fallback: carregar após 10s se não houver interação
+            setTimeout(loadRecaptcha, 10000);
+        });
+        <?php else: ?>
+        // Desktop: Carrega mais cedo
+        window.addEventListener('load', function() {
+            setTimeout(loadRecaptcha, 3000);
+        });
+        <?php endif; ?>
+    </script>
     <script>
         // reCAPTCHA v3 Setup
         function initRecaptcha() {
@@ -267,6 +311,9 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo asset('assets/css/style.css'); ?>">
+    
+    <!-- Accessibility Fixes CSS -->
+    <link rel="stylesheet" href="<?php echo asset('assets/css/accessibility-fixes.css'); ?>">
     
     <!-- SEO: Schema.org Structured Data otimizado para programador PHP freelancer -->
     <script type="application/ld+json">

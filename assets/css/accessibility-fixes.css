@@ -1,0 +1,203 @@
+/**
+ * Correções de Acessibilidade - CSS
+ * Melhorias básicas para aumentar pontuação de acessibilidade de 88 para 95+
+ */
+
+/* ===== MELHORIAS DE CONTRASTE ===== */
+
+/* Melhorar contraste dos subtítulos das seções */
+.section-subtitle {
+    color: #4a5568 !important; /* Escurecer de #718096 para melhor contraste */
+    font-weight: 400; /* Aumentar peso da fonte para melhor legibilidade */
+}
+
+/* Melhorar contraste dos textos secundários */
+.author-position-modern,
+.testimonial-text-modern {
+    color: #2d3748 !important; /* Escurecer para melhor legibilidade */
+}
+
+/* Garantir contraste mínimo de 4.5:1 */
+.text-muted,
+.text-light {
+    color: #4a5568 !important;
+}
+
+/* ===== SKIP LINK PARA NAVEGAÇÃO POR TECLADO ===== */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 6px;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ===== MELHORAR FOCO VISÍVEL ===== */
+
+/* Botões do carousel */
+.testimonial-btn:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px #3b82f6;
+}
+
+/* Dots do carousel */
+.testimonial-dot:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Formulários */
+select:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== MELHORIAS PARA LEITORES DE TELA ===== */
+
+/* Ocultar elementos visualmente mas manter para leitores de tela */
+.sr-only,
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Mostrar elementos quando focalizados */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ===== MELHORIAS PARA TOUCH DEVICES ===== */
+
+/* Aumentar área de toque para botões pequenos */
+.testimonial-btn,
+.testimonial-dot {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* ===== FEEDBACK VISUAL PARA INTERAÇÕES ===== */
+
+/* Estados hover e focus mais visíveis */
+.testimonial-btn:hover,
+.testimonial-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.testimonial-dot:hover,
+.testimonial-dot:focus {
+    transform: scale(1.2);
+    background-color: #3b82f6;
+}
+
+/* ===== CORES DE ALTO CONTRASTE ===== */
+
+/* Para usuários que preferem alto contraste */
+@media (prefers-contrast: high) {
+    .section-subtitle {
+        color: #1a202c !important;
+        font-weight: 600 !important;
+    }
+    
+    .author-position-modern,
+    .testimonial-text-modern {
+        color: #1a202c !important;
+    }
+    
+    .testimonial-btn {
+        border: 2px solid #000;
+    }
+}
+
+/* ===== REDUÇÃO DE MOVIMENTO ===== */
+
+/* Para usuários que preferem movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-btn,
+    .testimonial-dot {
+        transition: none;
+    }
+    
+    .testimonial-btn:hover,
+    .testimonial-btn:focus {
+        transform: none;
+    }
+    
+    .testimonial-dot:hover,
+    .testimonial-dot:focus {
+        transform: none;
+    }
+}
+
+/* ===== MELHORIAS PARA FORMULÁRIOS ===== */
+
+/* Texto de ajuda mais legível */
+.form-text {
+    color: #4a5568;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Labels mais destacados */
+.form-label {
+    color: #2d3748;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Estados de erro mais acessíveis */
+.is-invalid {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1) !important;
+}
+
+.invalid-feedback {
+    color: #e53e3e;
+    font-weight: 500;
+}
+
+/* ===== MODO ESCURO ===== */
+
+/* Para usuários que preferem tema escuro */
+@media (prefers-color-scheme: dark) {
+    .section-subtitle {
+        color: #a0aec0 !important;
+    }
+    
+    .author-position-modern,
+    .testimonial-text-modern {
+        color: #e2e8f0 !important;
+    }
+} 

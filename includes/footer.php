@@ -103,6 +103,9 @@
     <script src="<?php echo asset('assets/js/main.js'); ?>"></script>
     <script src="<?php echo asset('assets/js/navbar-scroll.js'); ?>"></script>
     
+    <!-- Accessibility Fixes JS -->
+    <script src="<?php echo asset('assets/js/accessibility-fixes.js'); ?>"></script>
+    
     <!-- Google Analytics Events Tracking (carregado após 1 segundo) -->
     <script>
         // Carrega analytics events após 1 segundo para não bloquear

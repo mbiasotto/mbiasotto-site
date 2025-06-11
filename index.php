@@ -276,7 +276,7 @@ include 'components/stats.php';
                                     <div class="testimonial-author-modern">
                                         <div class="author-avatar">JS</div>
                                         <div class="author-info">
-                                            <h5 class="author-name-modern">João Silva</h5>
+                                            <h4 class="author-name-modern">João Silva</h4>
                                             <p class="author-position-modern">CEO, TechCorp Sorocaba</p>
                                         </div>
                                     </div>
@@ -294,7 +294,7 @@ include 'components/stats.php';
                                     <div class="testimonial-author-modern">
                                         <div class="author-avatar">MF</div>
                                         <div class="author-info">
-                                            <h5 class="author-name-modern">Maria Fernanda</h5>
+                                            <h4 class="author-name-modern">Maria Fernanda</h4>
                                             <p class="author-position-modern">Diretora, Inovação Digital</p>
                                         </div>
                                     </div>
@@ -312,7 +312,7 @@ include 'components/stats.php';
                                     <div class="testimonial-author-modern">
                                         <div class="author-avatar">CA</div>
                                         <div class="author-info">
-                                            <h5 class="author-name-modern">Carlos Andrade</h5>
+                                            <h4 class="author-name-modern">Carlos Andrade</h4>
                                             <p class="author-position-modern">Gestor de TI, LogiSys</p>
                                         </div>
                                     </div>
@@ -321,11 +321,11 @@ include 'components/stats.php';
                         </div>
                         
                         <div class="testimonial-controls">
-                            <button class="testimonial-btn" id="prevTestimonial">
-                                <i class="fas fa-chevron-left"></i>
+                            <button class="testimonial-btn" id="prevTestimonial" aria-label="Depoimento anterior">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
                             </button>
-                            <button class="testimonial-btn" id="nextTestimonial">
-                                <i class="fas fa-chevron-right"></i>
+                            <button class="testimonial-btn" id="nextTestimonial" aria-label="Próximo depoimento">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
                             </button>
                         </div>
                         
@@ -356,53 +356,117 @@ include 'components/stats.php';
                 <div class="clients-track">
                     <!-- Duplicamos os logos para loop infinito -->
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=TechCorp" alt="TechCorp">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="techcorp-title">
+                            <title id="techcorp-title">TechCorp</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">TechCorp</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=Inovação" alt="Inovação Digital">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="inovacao-title">
+                            <title id="inovacao-title">Inovação Digital</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Inovação</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=LogiSys" alt="LogiSys">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="logisys-title">
+                            <title id="logisys-title">LogiSys</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LogiSys</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=StartupSP" alt="StartupSP">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="startupsp-title">
+                            <title id="startupsp-title">StartupSP</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">StartupSP</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=DevShop" alt="DevShop">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="devshop-title">
+                            <title id="devshop-title">DevShop</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DevShop</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=WebCorp" alt="WebCorp">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="webcorp-title">
+                            <title id="webcorp-title">WebCorp</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">WebCorp</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=CloudTech" alt="CloudTech">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="cloudtech-title">
+                            <title id="cloudtech-title">CloudTech</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CloudTech</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=DataSoft" alt="DataSoft">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="datasoft-title">
+                            <title id="datasoft-title">DataSoft</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">DataSoft</text>
+                        </svg>
                     </div>
                     <!-- Duplicate for infinite loop -->
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=TechCorp" alt="TechCorp">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="techcorp-title2">
+                            <title id="techcorp-title2">TechCorp</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">TechCorp</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=Inovação" alt="Inovação Digital">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="inovacao-title2">
+                            <title id="inovacao-title2">Inovação Digital</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Inovação</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=LogiSys" alt="LogiSys">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="logisys-title2">
+                            <title id="logisys-title2">LogiSys</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LogiSys</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=StartupSP" alt="StartupSP">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="startupsp-title2">
+                            <title id="startupsp-title2">StartupSP</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">StartupSP</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=DevShop" alt="DevShop">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="devshop-title2">
+                            <title id="devshop-title2">DevShop</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DevShop</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=WebCorp" alt="WebCorp">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="webcorp-title2">
+                            <title id="webcorp-title2">WebCorp</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">WebCorp</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=CloudTech" alt="CloudTech">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="cloudtech-title2">
+                            <title id="cloudtech-title2">CloudTech</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CloudTech</text>
+                        </svg>
                     </div>
                     <div class="client-logo-modern">
-                        <img src="https://via.placeholder.com/100x40/1e3a8a/ffffff?text=DataSoft" alt="DataSoft">
+                        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="datasoft-title2">
+                            <title id="datasoft-title2">DataSoft</title>
+                            <rect width="100" height="40" fill="#1e3a8a" rx="4"/>
+                            <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">DataSoft</text>
+                        </svg>
                     </div>
                 </div>
             </div>

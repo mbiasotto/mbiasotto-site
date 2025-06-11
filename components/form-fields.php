@@ -38,8 +38,8 @@ $isSimplified = $isSimplified ?? false;
 </div>
 
 <div class="mb-3">
-    <label class="form-label">Tipo de Projeto *</label>
-    <select name="tipo_projeto" class="form-select" required>
+    <label for="tipo_projeto" class="form-label">Tipo de Projeto *</label>
+    <select name="tipo_projeto" id="tipo_projeto" class="form-select" required aria-describedby="tipo_projeto_help">
         <option value="">O que você precisa?</option>
         <option value="desenvolvimento-php">Desenvolvimento PHP</option>
         <option value="laravel">Sistema Laravel</option>
@@ -51,12 +51,13 @@ $isSimplified = $isSimplified ?? false;
         <option value="consultoria">Consultoria</option>
         <option value="outro">Outro</option>
     </select>
+    <div id="tipo_projeto_help" class="form-text">Selecione o tipo de projeto que melhor se adapta às suas necessidades</div>
 </div>
 
 <?php if ($showBudget): ?>
 <div class="mb-3">
-    <label class="form-label">Orçamento Previsto</label>
-    <select name="orcamento" class="form-select">
+    <label for="orcamento" class="form-label">Orçamento Previsto</label>
+    <select name="orcamento" id="orcamento" class="form-select" aria-describedby="orcamento_help">
         <option value="">Qual seu orçamento? (opcional)</option>
         <option value="ate-5k">Até R$ 5.000</option>
         <option value="5k-10k">R$ 5.000 - R$ 10.000</option>
@@ -64,6 +65,7 @@ $isSimplified = $isSimplified ?? false;
         <option value="20k-mais">Acima de R$ 20.000</option>
         <option value="nao-definido">Ainda não defini</option>
     </select>
+    <div id="orcamento_help" class="form-text">Informe o orçamento previsto para ajudarmos na proposta (opcional)</div>
 </div>
 <?php endif; ?>
 
