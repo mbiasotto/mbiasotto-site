@@ -24,12 +24,6 @@ RewriteRule ^ /%1? [NC,L,R=301]
 Redirect 301 /index.html /
 Redirect 301 /home /
 
-# redirect do site antigo
-Redirect 301 /servicos.php /servicos
-Redirect 301 /trabalhos-realizados.php /servicos
-Redirect 301 /servicos/marketing-de-busca-seo-sem.php /servicos
-Redirect 301 /programador-php-freelancer.php /programador-php-freelancer
-
 # ===========================================
 # 3. COMPRESSÃO (SE DISPONÍVEL)
 # ===========================================

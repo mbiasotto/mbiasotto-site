@@ -1,0 +1,86 @@
+# ===========================================
+# .HTACCESS MINIMALISTA - PERFORMANCE ESSENCIAL
+# ===========================================
+
+RewriteEngine On
+
+# ===========================================
+# 1. COMPRESSÃO GZIP (ESSENCIAL PARA PERFORMANCE)
+# ===========================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# ===========================================
+# 2. CACHE BÁSICO (MELHORA PERFORMANCE)
+# ===========================================
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+</IfModule>
+
+# ===========================================
+# 3. URLs LIMPAS (REMOVE .php)
+# ===========================================
+
+# Redirecionar .php para URL limpa
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1? [NC,L,R=301]
+
+# Processar URLs sem extensão
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# ===========================================
+# 4. REDIRECTS BÁSICOS SEO
+# ===========================================
+
+Redirect 301 /index.html /
+Redirect 301 /servicos.html /servicos
+Redirect 301 /contato.html /contato
+Redirect 301 /home /
+
+# ===========================================
+# 5. SEGURANÇA BÁSICA
+# ===========================================
+
+# Bloquear acesso a arquivos sensíveis
+<Files "config.php">
+    Require all denied
+</Files>
+
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# ===========================================
+# 6. HEADERS BÁSICOS DE PERFORMANCE
+# ===========================================
+
+<IfModule mod_headers.c>
+    # Cache control básico
+    Header set Cache-Control "public, max-age=2592000" "expr=%{REQUEST_URI} =~ m#\.(css|js|png|jpg|jpeg|gif|ico|svg|woff2)$#"
+    
+    # Compressão
+    Header set Vary "Accept-Encoding"
+</IfModule>
+
+# ===========================================
+# 7. PÁGINA 404 CUSTOMIZADA
+# ===========================================
+
+ErrorDocument 404 /404.php 
