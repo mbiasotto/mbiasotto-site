@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Programador PHP Freelancer Sorocaba SP | Especialista Laravel & APIs - DevPHP Solutions';
+$pageTitle = 'Programador PHP Freelancer Sorocaba SP | Especialista Laravel & APIs';
 $pageDescription = 'Programador PHP freelancer Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
 $pageKeywords = 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 
@@ -264,7 +264,7 @@ include 'components/stats.php';
                                 <article class="testimonial-card-modern" itemscope itemtype="https://schema.org/Review">
                                     <div class="testimonial-quote-modern" aria-hidden="true">"</div>
                                     <blockquote class="testimonial-text-modern" itemprop="reviewBody">
-                                        Trabalhar with DevPHP Solutions foi uma experiência excepcional. O projeto foi 
+                                        Trabalhar o MB foi uma experiência excepcional. O projeto foi 
                                         entregue no prazo, com qualidade superior e total transparência no processo. 
                                         Recomendo para qualquer empresa que busca excelência em desenvolvimento web.
                                     </blockquote>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="mb-3">
-                        <img src="<?php echo asset('assets/images/logo-white.png'); ?>" alt="DevPHP Solutions - Programador PHP Freelancer Sorocaba SP" height="50">
+                        <img src="<?php echo asset('assets/images/logo-white.png'); ?>" alt="MBIASOTTO - Programador PHP Freelancer Sorocaba SP" height="50">
                     </div>
                     <p>Desenvolvedor PHP Freelancer com 20 anos de experiência, especializado em Laravel, SlimPHP, APIs e automações. Transformando ideias em soluções digitais eficientes para empresas de todos os portes.</p>
                     
