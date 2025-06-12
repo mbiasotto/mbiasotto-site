@@ -280,8 +280,43 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo asset('assets/css/style.css'); ?>">
+    <!-- Custom CSS (MINIFIED for 4KB savings) -->
+    <link rel="stylesheet" href="<?php echo asset('assets/css/style.min.css'); ?>">
+    
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+        /* Critical Hero Section Styles */
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        .hero-title { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            margin-bottom: 1.5rem;
+        }
+        .hero-subtitle { 
+            font-size: 1.25rem; 
+            opacity: 0.9; 
+            margin-bottom: 2rem;
+        }
+        .btn-cta-primary {
+            background: #3b82f6;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.125rem; }
+        }
+    </style>
     
     <!-- Schema.org básico -->
     <script type="application/ld+json">
@@ -298,6 +333,77 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
             "addressCountry": "BR"
         }
     }
+    </script>
+    
+    <!-- Performance Optimized Script Loading -->
+    <script>
+        // Script loading management to reduce unused JS
+        window.PageOptimizer = {
+            scriptsLoaded: new Set(),
+            
+            // Load scripts only when needed
+            loadScript: function(src, callback) {
+                if (this.scriptsLoaded.has(src)) {
+                    if (callback) callback();
+                    return;
+                }
+                
+                const script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                script.onload = () => {
+                    this.scriptsLoaded.add(src);
+                    if (callback) callback();
+                };
+                document.head.appendChild(script);
+            },
+            
+            // Load CSS dynamically
+            loadCSS: function(href) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                document.head.appendChild(link);
+            },
+            
+            // Check if specific functionality is needed
+            needsFormScripts: function() {
+                return document.querySelector('form') !== null;
+            },
+            
+            needsTestimonialsScript: function() {
+                return document.querySelector('.testimonial-carousel') !== null;
+            }
+        };
+        
+        // Load critical scripts immediately after DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Always load main.min.js (optimized)
+            PageOptimizer.loadScript('<?php echo asset("assets/js/main.min.js"); ?>');
+            
+            // Load form scripts only if forms exist
+            if (PageOptimizer.needsFormScripts()) {
+                PageOptimizer.loadScript('<?php echo asset("assets/js/form-submission-simple.min.js"); ?>');
+                PageOptimizer.loadScript('<?php echo asset("assets/js/form-masks.min.js"); ?>');
+            }
+            
+            // Load testimonials script only if carousel exists
+            if (PageOptimizer.needsTestimonialsScript()) {
+                PageOptimizer.loadScript('<?php echo asset("assets/js/testimonials.js"); ?>');
+            }
+            
+            // Load analytics events after user interaction or 3 seconds
+            setTimeout(() => {
+                PageOptimizer.loadScript('<?php echo asset("assets/js/analytics-events.min.js"); ?>');
+            }, 3000);
+            
+            // Load other scripts on user interaction
+            ['scroll', 'click', 'touchstart'].forEach(event => {
+                window.addEventListener(event, function() {
+                    PageOptimizer.loadScript('<?php echo asset("assets/js/navbar-scroll.js"); ?>');
+                }, { once: true, passive: true });
+            });
+        });
     </script>
 
 </head>

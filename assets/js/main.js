@@ -25,14 +25,27 @@ $(document).ready(() => {
   // Inicializar animações
   initScrollAnimations();
 
-  // ===== NAVBAR SCROLL EFFECT =====
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $(".navbar").addClass("navbar-scrolled")
+  // ===== NAVBAR SCROLL EFFECT (OPTIMIZED WITH PASSIVE) =====
+  let ticking = false;
+  
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      document.querySelector(".navbar").classList.add("navbar-scrolled");
     } else {
-      $(".navbar").removeClass("navbar-scrolled")
+      document.querySelector(".navbar").classList.remove("navbar-scrolled");
     }
-  })
+    ticking = false;
+  }
+  
+  function requestNavbarUpdate() {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
+  }
+  
+  // Use passive listener for better performance
+  window.addEventListener('scroll', requestNavbarUpdate, { passive: true });
 
   // ===== SMOOTH SCROLLING =====
   $('a[href^="#"]').on("click", function (event) {
@@ -165,16 +178,28 @@ $(document).ready(() => {
     })
   }
 
-  // ===== BACK TO TOP BUTTON =====
+  // ===== BACK TO TOP BUTTON (OPTIMIZED WITH PASSIVE) =====
   const $backToTop = $("#backToTop")
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
+  let backToTopTicking = false;
+  
+  function updateBackToTop() {
+    if (window.scrollY > 300) {
       $backToTop.addClass("show")
     } else {
       $backToTop.removeClass("show")
     }
-  })
+    backToTopTicking = false;
+  }
+  
+  function requestBackToTopUpdate() {
+    if (!backToTopTicking) {
+      requestAnimationFrame(updateBackToTop);
+      backToTopTicking = true;
+    }
+  }
+  
+  // Use passive listener for better performance
+  window.addEventListener('scroll', requestBackToTopUpdate, { passive: true });
 
   $backToTop.on("click", () => {
     $("html, body").animate(
