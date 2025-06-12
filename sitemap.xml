@@ -46,12 +46,97 @@
   <priority>0.7</priority>
 </url>
 
-<!-- Página de Sucesso -->
+<!-- Matérias Especializadas -->
 <url>
-  <loc>https://mbiasotto.com/sucesso</loc>
-  <lastmod>2024-01-15T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
+  <loc>https://mbiasotto.com/materias</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Matérias Específicas -->
+<url>
+  <loc>https://mbiasotto.com/contratar-programador-php-freelancer-especialista</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/programacao-php-vale-pena-2025-analise</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/quanto-custa-desenvolvimento-site-sistema-php</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/freelancer-vs-agencia-php</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/manutencao-sistema-php-urgente</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/sistema-pronto-vs-sob-medida</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/erros-contratar-programador-php</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/programador-php-profissional-entrega</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/integracoes-php-whatsapp-pagseguro</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/modernizar-sistema-php-antigo</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/automacao-php-chatbot-whatsapp-n8n-processos</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mbiasotto.com/chatbot-ia-mcp-fluxo-atendimento-php</loc>
+  <lastmod>2024-12-06T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
 </url>
 
 </urlset> 

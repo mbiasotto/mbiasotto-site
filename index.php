@@ -134,10 +134,10 @@ include 'components/stats.php';
                     ],
                     [
                         'icon' => 'fas fa-bolt',
-                        'title' => 'Automações com n8n e IA',
-                        'description' => 'Criação de fluxos de automação com n8n e integração com inteligência artificial para otimizar processos.',
+                        'title' => 'Automações com N8N e IA',
+                        'description' => 'Criação de fluxos de automação com N8N e integração com inteligência artificial para otimizar processos.',
                         'delay' => '700',
-                        'aria_label' => 'Automações empresariais com n8n e inteligência artificial'
+                        'aria_label' => 'Automações empresariais com N8N e inteligência artificial'
                     ],
                     [
                         'icon' => 'fas fa-palette',
@@ -284,7 +284,7 @@ include 'components/stats.php';
                                 <article class="testimonial-card-modern" itemscope itemtype="https://schema.org/Review">
                                     <div class="testimonial-quote-modern" aria-hidden="true">"</div>
                                     <blockquote class="testimonial-text-modern" itemprop="reviewBody">
-                                        A automação com n8n transformou nossos processos. Economizamos horas de trabalho manual 
+                                        A automação com N8N transformou nossos processos. Economizamos horas de trabalho manual 
                                         e ganhamos muito mais eficiência. O investimento se pagou em menos de 2 meses.
                                     </blockquote>
                                     <div class="testimonial-author-modern">
@@ -450,6 +450,8 @@ include 'components/stats.php';
             </div>
         </div>
     </section>
+
+    <?php include 'components/materias-home.php'; ?>
 
     <?php include 'components/cta-section.php'; ?>
 
