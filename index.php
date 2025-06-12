@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Programador PHP Freelancer Sorocaba SP | Especialista Laravel & APIs';
+$pageTitle = 'Programador PHP Freelancer Sorocaba-SP | Especialista Laravel, APIs, N8N, MCP e automações';
 $pageDescription = 'Programador PHP freelancer Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
 $pageKeywords = 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 

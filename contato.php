@@ -1,7 +1,7 @@
 <?php
 // Configurações da página
-$pageTitle = 'Contato | Maurício Biasotto';
-$pageDescription = 'Entre em contato para solicitar seu orçamento. Desenvolvimento PHP, Laravel, APIs e automações para sua empresa.';
+$pageTitle = 'Contato Programador PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações para sua empresa ';
+$pageDescription = 'Entre em contato para solicitar seu orçamento. Desenvolvimento PHP, Laravel, APIs N8N e automações para sua empresa.';
 
 // Include header
 include 'includes/header.php';

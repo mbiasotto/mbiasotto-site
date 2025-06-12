@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página - Otimizadas para SEO de perfil profissional
-$pageTitle = 'Maurício Biasotto - Programador PHP Freelancer | 20+ Anos Experiência Sorocaba SP';
+$pageTitle = 'Programador PHP Freelancer | 20+ Anos Experiência | Especialista Laravel, APIs, N8N, MCP e automações';
 $pageDescription = 'Maurício Biasotto: Desenvolvedor PHP freelancer com +20 anos experiência. Especialista Laravel, SlimPHP, APIs REST. Projetos para Votorantim, Cargill, SabeSP, MasterCard Brasil.';
 $pageKeywords = 'mauricio biasotto, programador php freelancer, desenvolvedor php experiente, laravel especialista, slimphp, apis rest, sorocaba sp, freelancer php brasil, desenvolvimento sob demanda';
 

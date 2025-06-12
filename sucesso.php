@@ -1,6 +1,6 @@
 <?php
 // Configurações da página
-$pageTitle = 'Mensagem Enviada com Sucesso | Mauricio Biasotto';
+$pageTitle = 'Mensagem Enviada com Sucesso';
 $pageDescription = 'Sua mensagem foi enviada com sucesso. Retornarei em breve para discutir seu projeto.';
 $bodyClass = 'success-page'; // Classe específica para a página
 

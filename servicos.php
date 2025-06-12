@@ -1,6 +1,6 @@
 <?php
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Serviços Desenvolvimento PHP | Laravel, APIs e Sistemas Web Sob Demanda';
+$pageTitle = 'Serviços Desenvolvimento PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações';
 $pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, APIs REST, sistemas web, apps móveis, automações n8n. Programador PHP freelancer Sorocaba SP. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento php, laravel framework, apis rest, sistemas web, manutenção php, programador php freelancer, desenvolvimento sob demanda, sorocaba sp';
 

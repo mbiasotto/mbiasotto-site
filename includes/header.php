@@ -13,7 +13,7 @@ if (!isset($_SESSION['csrf_token'])) {
 }
 
 // Configurações padrão da página - Otimizado para SEO
-$pageTitle = $pageTitle ?? 'Programador PHP Freelancer Sorocaba SP | Especialista Laravel & APIs';
+$pageTitle = $pageTitle ?? 'Programador PHP Freelancer Sorocaba - SP | Especialista Laravel & APIs';
 $pageDescription = $pageDescription ?? 'Programador PHP freelancer em Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n e sistemas web sob demanda. Orçamento gratuito!';
 $pageKeywords = $pageKeywords ?? 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 $canonicalUrl = $canonicalUrl ?? url();
@@ -254,7 +254,7 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <?php endif; ?>
     
     <!-- Meta tags essenciais -->
-    <title><?php echo $pageTitle; ?></title>
+    <title><?php echo $pageTitle; ?> - Sorocaba, SP</title>
     <meta name="description" content="<?php echo $pageDescription; ?>">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="<?php echo $canonicalUrl; ?>">

@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página
-$pageTitle = 'Como Trabalhamos | Programador PHP Freelancer Sorocaba SP';
+$pageTitle = 'Contratando um Programador PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações';
 $pageDescription = 'Metodologia profissional e transparente para desenvolvimento de projetos PHP em Sorocaba. Conheça nosso processo estruturado.';
 
 // Configurações do Hero interno
