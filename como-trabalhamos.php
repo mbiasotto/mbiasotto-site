@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página
-$pageTitle = 'Contratando um Programador PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações';
+$pageTitle = 'Contratando um Programador PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
 $pageDescription = 'Metodologia profissional e transparente para desenvolvimento de projetos PHP em Sorocaba. Conheça nosso processo estruturado.';
 
 // Configurações do Hero interno

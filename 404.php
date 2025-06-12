@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página
-$pageTitle = 'Página não encontrada - 404 | Programador PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações';
+$pageTitle = 'Página não encontrada - 404 | Programador PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
 $pageDescription = 'A página que você está procurando não foi encontrada. Navegue pelas nossas soluções em desenvolvimento PHP e Laravel.';
 
 // Set 404 status

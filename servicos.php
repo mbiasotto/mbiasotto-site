@@ -1,12 +1,12 @@
 <?php
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Serviços Desenvolvimento PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações';
+$pageTitle = 'Serviços Desenvolvimento PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
 $pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, APIs REST, sistemas web, apps móveis, automações n8n. Programador PHP freelancer Sorocaba SP. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento php, laravel framework, apis rest, sistemas web, manutenção php, programador php freelancer, desenvolvimento sob demanda, sorocaba sp';
 
 // Configurações do Hero interno
-$heroTitle = 'Soluções personalizadas para seu negócio por um Programador PHP Especialista';
-$heroSubtitle = 'Desenvolvimento PHP, Laravel, APIs e automações que transformam suas ideias em realidade digital';
+$heroTitle = 'Soluções personalizadas para seu negócio (PHP, Laravel, APPs, APIs, N8N, MCP, ChatBots e automações)';
+$heroSubtitle = 'Desenvolvimento PHP Freelancer, Laravel, APIs, N8N, MCP, ChatBots e automações que transformam suas ideias em realidade digital';
 $isInternal = true;
 
 // Include header

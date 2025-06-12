@@ -3,27 +3,9 @@
 require_once 'includes/config.php';
 
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Programador PHP Freelancer Sorocaba-SP | Especialista Laravel, APIs, N8N, MCP e automações';
+$pageTitle = 'Programador PHP Freelancer Sorocaba-SP | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
 $pageDescription = 'Programador PHP freelancer Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
 $pageKeywords = 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
-
-// Configurações do Hero
-$heroTitle = 'Programador PHP Freelancer<span class="d-block text-blue-200">Sorocaba, SP</span>';
-$heroSubtitle = 'Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com n8n. Soluções personalizadas para impulsionar o seu negócio em Sorocaba e região.';
-$heroButtons = [
-    [
-        'text' => 'Solicitar Orçamento Gratuito',
-        'url' => url('contato'),
-        'class' => 'btn btn-primary btn-lg me-3 mb-3 btn-pulse'
-    ],
-    [
-        'text' => 'Conhecer Serviços',
-        'url' => url('servicos'),
-        'class' => 'btn btn-secondary btn-lg mb-3'
-    ]
-];
-$heroBadges = ['PHP Moderno', 'Framework Laravel Expert', 'APIs RESTful', 'Automações n8n'];
-$showScrollBtn = true;
 
 // JavaScript adicional
 $additionalJS = ['assets/js/testimonials.js'];
@@ -33,7 +15,6 @@ include 'includes/header.php';
 ?>
 
 <?php include 'includes/navigation.php'; ?>
-
 
 
     <!-- Hero Section -->
@@ -48,7 +29,7 @@ include 'includes/header.php';
                         <span class="text-blue-200">Sorocaba / São Paulo</span>
                         </h1>
                         <p class="hero-subtitle mb-5" itemprop="description">
-                            Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com n8n. 
+                            Desenvolvimento profissional em PHP, Framework Laravel, APPs, APIs, ChatBots e automações com N8N (MCP). 
                             Soluções personalizadas para impulsionar o seu negócio em Sorocaba / São Paulo.
                         </p>
                     
@@ -71,8 +52,10 @@ include 'includes/header.php';
                             <span class="badge-custom" role="listitem">PHP</span>
                             <span class="badge-custom" role="listitem">Framework Laravel</span>
                             <span class="badge-custom" role="listitem">APIs RESTful</span>
+                            <span class="badge-custom" role="listitem">APPs</span>
                             <span class="badge-custom" role="listitem">Automações N8N</span>
                             <span class="badge-custom" role="listitem">MCP</span>
+                            <span class="badge-custom" role="listitem">ChatBots</span>
                         </div>
                     </div>
                 </div>

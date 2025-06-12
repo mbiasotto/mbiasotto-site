@@ -1,6 +1,6 @@
 <?php
 // Configurações da página
-$pageTitle = 'Contato Programador PHP Freelancer | Especialista Laravel, APIs, N8N, MCP e automações para sua empresa ';
+$pageTitle = 'Contato Programador PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações para sua empresa ';
 $pageDescription = 'Entre em contato para solicitar seu orçamento. Desenvolvimento PHP, Laravel, APIs N8N e automações para sua empresa.';
 
 // Include header
