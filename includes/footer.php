@@ -65,7 +65,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>
-                            <span>Sorocaba, SP - Brasil</span>
+                            <span>Sorocaba / São Paulo - Brasil</span>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
             
             <div class="row align-items-center">
                 <div class="col-md-12 text-center">
-                    <p class="mb-0">&copy; <?php echo date('Y'); ?> Programador PHP Freelancer. Todos os direitos reservados.</p>
+                    <p class="mb-0">&copy; <?php echo date('Y'); ?> Programador PHP Freelancer (Sorocaba / São Paulo). Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@ include 'components/hero.php';
                 <h1 id="about-title" class="section-title mb-4">Quem Sou</h1>
                 <div class="about-text" itemscope itemtype="https://schema.org/Person">
                     <p class="mb-4" itemprop="description">
-                        Sou um desenvolvedor PHP com 20 anos de experiência em Full Stack PHP Development, especializado nos frameworks SlimPHP e Laravel. Baseado em Sorocaba, SP, tenho o privilégio de trabalhar em projetos para empresas renomadas como Grupo Votorantim, Cargill, SabeSP e MasterCard Brasil.
+                        Sou um desenvolvedor PHP com 20 anos de experiência em Full Stack PHP Development, especializado nos frameworks SlimPHP e Laravel. Baseado em Sorocaba (São Paulo), tenho o privilégio de trabalhar em projetos para empresas renomadas como Grupo Votorantim, Cargill, SabeSP e MasterCard Brasil.
                     </p>
 
                     <p class="mb-4">
@@ -48,7 +48,7 @@ include 'components/hero.php';
                     </p>
                     
                     <!-- SEO: Dados estruturados para pessoa -->
-                    <meta itemprop="name" content="Maurício Biasotto">
+                    <meta itemprop="name" content="Mauricio Biasotto">
                     <meta itemprop="jobTitle" content="Programador PHP Freelancer">
                     <meta itemprop="address" content="Sorocaba, SP, Brasil">
                     <meta itemprop="email" content="mauricio@mbiasotto.com">

@@ -45,11 +45,11 @@ include 'includes/header.php';
                         
                         <h1 id="hero-title" class="hero-title mb-4" itemprop="headline">
                         Programador PHP Freelancer<br>
-                        <span class="text-blue-200">Sorocaba, SP</span>
+                        <span class="text-blue-200">Sorocaba / São Paulo</span>
                         </h1>
                         <p class="hero-subtitle mb-5" itemprop="description">
                             Desenvolvimento profissional em PHP, Framework Laravel, APIs e automações com n8n. 
-                            Soluções personalizadas para impulsionar o seu negócio em Sorocaba e região.
+                            Soluções personalizadas para impulsionar o seu negócio em Sorocaba / São Paulo.
                         </p>
                     
                     <!-- Hero Buttons -->

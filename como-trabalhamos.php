@@ -17,7 +17,7 @@ include 'includes/header.php';
 
 <?php
 // Configurações do Hero interno
-$heroTitle = 'Metodologia Comprovada para o Sucesso';
+$heroTitle = 'Metodologia comprovada de um Programador Freelancer de sucesso';
 $heroSubtitle = 'Processo estruturado e transparente que garante entregas de qualidade dentro do prazo';
 $isInternal = true;
 

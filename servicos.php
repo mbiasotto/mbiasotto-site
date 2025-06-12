@@ -5,7 +5,7 @@ $pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, AP
 $pageKeywords = 'desenvolvimento php, laravel framework, apis rest, sistemas web, manutenção php, programador php freelancer, desenvolvimento sob demanda, sorocaba sp';
 
 // Configurações do Hero interno
-$heroTitle = 'Soluções Personalizadas para Seu Negócio';
+$heroTitle = 'Soluções personalizadas para seu negócio por um Programador PHP Especialista';
 $heroSubtitle = 'Desenvolvimento PHP, Laravel, APIs e automações que transformam suas ideias em realidade digital';
 $isInternal = true;
 

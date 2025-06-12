@@ -254,7 +254,7 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <?php endif; ?>
     
     <!-- Meta tags essenciais -->
-    <title><?php echo $pageTitle; ?> - Sorocaba, SP</title>
+    <title><?php echo $pageTitle; ?> - Sorocaba / São Paulo</title>
     <meta name="description" content="<?php echo $pageDescription; ?>">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="<?php echo $canonicalUrl; ?>">

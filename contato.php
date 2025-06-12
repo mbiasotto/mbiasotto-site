@@ -51,7 +51,7 @@ include 'components/hero.php';
                             </div>
                             <div class="contact-info-content">
                                 <h5 class="mb-2">Localização</h5>
-                                <p class="mb-0">Sorocaba, SP - Brasil</p>
+                                <p class="mb-0">Sorocaba / São Paulo - Brasil</p>
                             </div>
                         </div>
                         
