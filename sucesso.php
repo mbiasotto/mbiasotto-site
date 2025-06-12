@@ -24,7 +24,7 @@ include 'components/hero.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="success-content" data-aos="fade-up">
+                    <div class="success-content fade-up">
                         <!-- Ícone de Sucesso -->
                         <div class="text-center mb-5">
                             <div class="success-icon mb-4" style="display: block;">
@@ -90,7 +90,7 @@ include 'components/hero.php';
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="row">
-                        <div class="col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-4 text-center mb-4 fade-left">
                             <div class="info-card">
                                 <i class="fas fa-shield-alt text-primary mb-3"></i>
                                 <h5>Segurança e Qualidade</h5>
@@ -98,7 +98,7 @@ include 'components/hero.php';
                             </div>
                         </div>
                         
-                        <div class="col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-4 text-center mb-4 fade-up">
                             <div class="info-card">
                                 <i class="fas fa-rocket text-primary mb-3"></i>
                                 <h5>Entrega Rápida</h5>
@@ -106,7 +106,7 @@ include 'components/hero.php';
                             </div>
                         </div>
                         
-                        <div class="col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-4 text-center mb-4 fade-right">
                             <div class="info-card">
                                 <i class="fas fa-headset text-primary mb-3"></i>
                                 <h5>Suporte Contínuo</h5>

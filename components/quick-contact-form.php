@@ -19,7 +19,7 @@ $isSimplified = $isSimplified ?? true;
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <div class="quick-form-card" data-aos="fade-up">
+                <div class="quick-form-card fade-up">
                     <div class="text-center mb-4">
                         <h3 class="quick-form-title"><?php echo $formTitle; ?></h3>
                         <p class="quick-form-subtitle"><?php echo $formSubtitle; ?></p>

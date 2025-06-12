@@ -29,14 +29,14 @@ include 'components/hero.php';
 <section class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">Nossa Metodologia</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title fade-up">Nossa Metodologia</h2>
+            <p class="section-subtitle fade-up">
                 Processo estruturado e transparente que garante qualidade e satisfação em cada projeto
             </p>
         </div>
 
         <div class="row mb-5">
-            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 mb-4 fade-up">
                 <div class="metodologia-card text-center">
                     <div class="metodologia-icon">
                         <i class="fas fa-users"></i>
@@ -46,7 +46,7 @@ include 'components/hero.php';
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 mb-4 fade-left">
                 <div class="metodologia-card text-center">
                     <div class="metodologia-icon">
                         <i class="fas fa-lightbulb"></i>
@@ -56,7 +56,7 @@ include 'components/hero.php';
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 mb-4 fade-right">
                 <div class="metodologia-card text-center">
                     <div class="metodologia-icon">
                         <i class="fas fa-rocket"></i>
@@ -73,14 +73,14 @@ include 'components/hero.php';
 <section class="py-5 bg-white">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">Processo de Desenvolvimento</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title fade-up">Processo de Desenvolvimento</h2>
+            <p class="section-subtitle fade-up">
                 6 etapas estruturadas para o sucesso do seu projeto
             </p>
         </div>
 
         <!-- Step 1 -->
-        <div class="process-step-detailed" data-aos="fade-up" data-aos-delay="100">
+        <div class="process-step-detailed fade-up">
             <div class="row align-items-start">
                 <div class="col-lg-2 col-md-3">
                     <div class="step-number-large">1</div>
@@ -119,7 +119,7 @@ include 'components/hero.php';
         </div>
 
         <!-- Step 2 -->
-        <div class="process-step-detailed" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-step-detailed fade-left">
             <div class="row align-items-start">
                 <div class="col-lg-2 col-md-3">
                     <div class="step-number-large">2</div>
@@ -158,7 +158,7 @@ include 'components/hero.php';
         </div>
 
         <!-- Step 3 -->
-        <div class="process-step-detailed" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-step-detailed fade-right">
             <div class="row align-items-start">
                 <div class="col-lg-2 col-md-3">
                     <div class="step-number-large">3</div>
@@ -191,7 +191,7 @@ include 'components/hero.php';
         </div>
 
         <!-- Step 4 -->
-        <div class="process-step-detailed" data-aos="fade-up" data-aos-delay="400">
+        <div class="process-step-detailed fade-up">
             <div class="row align-items-start">
                 <div class="col-lg-2 col-md-3">
                     <div class="step-number-large">4</div>
@@ -230,7 +230,7 @@ include 'components/hero.php';
         </div>
 
         <!-- Step 5 -->
-        <div class="process-step-detailed" data-aos="fade-up" data-aos-delay="500">
+        <div class="process-step-detailed fade-up">
             <div class="row align-items-start">
                 <div class="col-lg-2 col-md-3">
                     <div class="step-number-large">5</div>
@@ -263,7 +263,7 @@ include 'components/hero.php';
         </div>
 
         <!-- Step 6 -->
-        <div class="process-step-detailed" data-aos="fade-up" data-aos-delay="600">
+        <div class="process-step-detailed fade-up">
             <div class="row align-items-start">
                 <div class="col-lg-2 col-md-3">
                     <div class="step-number-large">6</div>

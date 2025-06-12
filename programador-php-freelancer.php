@@ -31,7 +31,7 @@ include 'components/hero.php';
 <section class="py-5 bg-white" role="main" aria-labelledby="about-title">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6" data-aos="fade-up">
+            <div class="col-lg-6 fade-up">
                 <!-- SEO: H1 principal da página -->
                 <h1 id="about-title" class="section-title mb-4">Quem Sou</h1>
                 <div class="about-text" itemscope itemtype="https://schema.org/Person">
@@ -56,7 +56,7 @@ include 'components/hero.php';
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 fade-right">
                 <div class="especialidades-card">
                     <!-- SEO: H2 para especialidades técnicas -->
                     <h2 class="especialidades-title">Especialidades</h2>
@@ -106,14 +106,14 @@ include 'components/hero.php';
     <div class="container">
         <div class="text-center mb-5">
             <!-- SEO: H2 para metodologia -->
-            <h2 id="metodologia-title" class="section-title" data-aos="fade-up">Metodologia de Trabalho</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <h2 id="metodologia-title" class="section-title fade-up">Metodologia de Trabalho</h2>
+            <p class="section-subtitle fade-up">
                 Processo estruturado e transparente que garante qualidade e satisfação em cada projeto
             </p>
         </div>
 
         <div class="row align-items-center mb-5">
-            <div class="col-lg-6" data-aos="fade-up">
+            <div class="col-lg-6 fade-left">
                 <!-- SEO: H3 para abordagem -->
                 <h3 class="metodologia-section-title">Abordagem Centrada no Cliente</h3>
                 <p class="metodologia-section-text mb-4">
@@ -128,7 +128,7 @@ include 'components/hero.php';
                 </p>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 fade-right">
                 <div class="row g-3" role="list" aria-label="Características da metodologia de trabalho">
                     <div class="col-6">
                         <div class="metodologia-feature-card text-center" role="listitem">
@@ -163,7 +163,7 @@ include 'components/hero.php';
         </div>
 
         <!-- Atendimento em Sorocaba -->
-        <div class="atendimento-sorocaba-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="atendimento-sorocaba-card fade-up">
             <!-- SEO: H3 para localização e diferencial -->
             <h3 class="atendimento-title">Atendimento em Sorocaba e Além</h3>
             <p class="atendimento-text mb-4">

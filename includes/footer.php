@@ -97,14 +97,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="<?php echo asset('assets/js/main.js'); ?>"></script>
     <script src="<?php echo asset('assets/js/navbar-scroll.js'); ?>"></script>
-    
-    <!-- Accessibility Fixes JS -->
-    <script src="<?php echo asset('assets/js/accessibility-fixes.js'); ?>"></script>
     
     <!-- Google Analytics Events Tracking (carregado após 1 segundo) -->
     <script>

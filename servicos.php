@@ -22,10 +22,10 @@ include 'components/hero.php';
     <section class="py-5 bg-light" role="main" aria-labelledby="services-main-title">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
-                <div class="col-lg-8">
+                <div class="col-lg-8 fade-up">
                     <!-- SEO: H1 principal da página otimizado -->
-                    <h1 id="services-main-title" class="section-title" data-aos="fade-up">Nossos Serviços</h1>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    <h1 id="services-main-title" class="section-title">Nossos Serviços</h1>
+                    <p class="section-subtitle">
                         Soluções personalizadas para cada necessidade do seu negócio
                     </p>
                 </div>
@@ -43,7 +43,7 @@ include 'components/hero.php';
                             ['PHP 7.4+ e PHP 8.x', 'Orientação a objetos', 'Integração com bancos'],
                             ['Autenticação segura', 'Otimização de performance', 'Código documentado']
                         ],
-                        'delay' => '100',
+                        'animation' => 'fade-up',
                         'aria_label' => 'Desenvolvimento PHP moderno para aplicações web robustas'
                     ],
                     [
@@ -55,7 +55,7 @@ include 'components/hero.php';
                             ['Laravel mais recente', 'APIs RESTful', 'Eloquent ORM'],
                             ['Autenticação Sanctum', 'Filas e jobs', 'Testes automatizados']
                         ],
-                        'delay' => '200',
+                        'animation' => 'fade-left',
                         'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas profissionais'
                     ],
                     [
@@ -67,7 +67,7 @@ include 'components/hero.php';
                             ['Design responsivo', 'Otimização SEO', 'Alta performance'],
                             ['UX/UI moderno', 'Formulários de contato', 'Integração com Analytics']
                         ],
-                        'delay' => '300',
+                        'animation' => 'fade-right',
                         'aria_label' => 'Criação de sites responsivos com foco em SEO e conversão'
                     ],
                     [
@@ -79,7 +79,7 @@ include 'components/hero.php';
                             ['React Native', 'Flutter', 'Nativo'],
                             ['API Integration', 'Push Notifications', 'App Store']
                         ],
-                        'delay' => '400',
+                        'animation' => 'fade-up',
                         'aria_label' => 'Desenvolvimento de aplicativos móveis para Android e iOS'
                     ]
                 ];
@@ -87,7 +87,7 @@ include 'components/hero.php';
                 foreach ($detailedServices as $index => $service):
                 ?>
                     <!-- Service -->
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="<?php echo $service['delay']; ?>" role="listitem">
+                    <div class="col-lg-6 <?php echo $service['animation']; ?>" role="listitem">
                     <article class="service-detail-card" itemscope itemtype="https://schema.org/Service">
                         <div class="service-detail-header">
                             <div class="service-detail-icon" aria-hidden="true">
@@ -132,24 +132,24 @@ include 'components/hero.php';
             
             <!-- SEO: Seção adicional com mais serviços -->
             <div class="row mt-5">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center fade-up">
                     <h2 class="section-title mb-4">Outros Serviços Especializados</h2>
                     <div class="row g-3">
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-4 fade-left">
                             <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
                                 <i class="fas fa-server service-extra-icon" aria-hidden="true"></i>
                                 <h3 class="service-extra-title" itemprop="name">APIs RESTful</h3>
                                 <p class="service-extra-desc" itemprop="description">Integração e desenvolvimento de APIs seguras</p>
                             </div>
                         </div>
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-4 fade-up">
                             <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
                                 <i class="fas fa-bolt service-extra-icon" aria-hidden="true"></i>
                                 <h3 class="service-extra-title" itemprop="name">Automações n8n</h3>
                                 <p class="service-extra-desc" itemprop="description">Automação de processos com IA</p>
                             </div>
                         </div>
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-4 fade-right">
                             <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
                                 <i class="fas fa-tools service-extra-icon" aria-hidden="true"></i>
                                 <h3 class="service-extra-title" itemprop="name">Manutenção PHP</h3>

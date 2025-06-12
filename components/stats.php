@@ -8,7 +8,7 @@
 $stats = $stats ?? [
     ['icon' => 'fas fa-star', 'number' => '20', 'label' => 'Anos de Experiência'],
     ['icon' => 'fas fa-users', 'number' => '900', 'label' => 'Projetos Entregues'],
-    ['icon' => 'fas fa-map-marker-alt', 'number' => '25', 'label' => 'Cidades Atendidas'],
+    ['icon' => 'fas fa-map-marker-alt', 'number' => '35', 'label' => 'Cidades Atendidas'],
     ['icon' => 'fas fa-globe', 'number' => '4', 'label' => 'Países']
 ];
 ?>
@@ -20,7 +20,7 @@ $stats = $stats ?? [
             <div class="col-lg-10">
                 <div class="row text-center">
                     <?php foreach ($stats as $index => $stat): ?>
-                        <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="<?php echo ($index + 1) * 100; ?>">
+                        <div class="col-md-3 mb-4 fade-up">
                             <div class="stat-item">
                                 <div class="stat-icon mb-3">
                                     <i class="<?php echo $stat['icon']; ?>"></i>

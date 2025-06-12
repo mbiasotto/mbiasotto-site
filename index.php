@@ -34,16 +34,15 @@ include 'includes/header.php';
 
 <?php include 'includes/navigation.php'; ?>
 
-    <!-- SEO: Comentário HTML com palavras-chave estratégicas -->
-    <!-- Seção Principal: Programador PHP Freelancer Sorocaba - Desenvolvimento Laravel e APIs -->
+
 
     <!-- Hero Section -->
 <section class="hero-section" role="banner" aria-labelledby="hero-title">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
-                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                        <!-- SEO: H1 otimizado com keywords principais -->
+                    <div class="hero-content">
+                        
                         <h1 id="hero-title" class="hero-title mb-4" itemprop="headline">
                         Programador PHP Freelancer<br>
                         <span class="text-blue-200">Sorocaba, SP</span>
@@ -54,7 +53,7 @@ include 'includes/header.php';
                         </p>
                     
                     <!-- Hero Buttons -->
-                        <div class="hero-buttons mb-5" data-aos="fade-up" data-aos-delay="200" role="group" aria-label="Ações principais">
+                        <div class="hero-buttons mb-5" role="group" aria-label="Ações principais">
                         <a href="<?php echo url('contato'); ?>" class="btn btn-cta-primary me-3 mb-3" 
                            aria-label="Solicitar orçamento gratuito para desenvolvimento PHP">
                                 <i class="fas fa-rocket me-2" aria-hidden="true"></i>
@@ -67,8 +66,8 @@ include 'includes/header.php';
                             </a>-->
                         </div>
                         
-                    <!-- Hero Badges -->
-                        <div class="hero-badges" data-aos="fade-up" data-aos-delay="400" role="list" aria-label="Tecnologias especializadas">
+                                            <!-- Hero Badges -->
+                        <div class="hero-badges" role="list" aria-label="Tecnologias especializadas">
                             <span class="badge-custom" role="listitem">PHP</span>
                             <span class="badge-custom" role="listitem">Framework Laravel</span>
                             <span class="badge-custom" role="listitem">APIs RESTful</span>
@@ -91,15 +90,14 @@ include 'includes/header.php';
 include 'components/stats.php';
 ?>
 
-    <!-- SEO: Comentário HTML - Serviços especializados em desenvolvimento PHP -->
     <!-- Services Section -->
     <section class="services-section py-5 services-bg" role="main" aria-labelledby="services-title">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
-                    <!-- SEO: H2 otimizado com palavras-chave de serviços -->
-                    <h2 id="services-title" class="section-title" data-aos="fade-up">Serviços Especializados</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+
+                    <h2 id="services-title" class="section-title fade-up">Serviços Especializados</h2>
+                    <p class="section-subtitle fade-up">
                         Soluções completas em desenvolvimento web e mobile com foco em PHP e tecnologias modernas 
                         para empresas em Sorocaba e região
                     </p>
@@ -177,12 +175,12 @@ include 'components/stats.php';
                 foreach ($services as $service):
                 ?>
                     <!-- Service -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="<?php echo $service['delay']; ?>" role="listitem">
+                    <div class="col-lg-4 col-md-6 mb-4" role="listitem">
                     <article class="service-card h-100" itemscope itemtype="https://schema.org/Service">
                         <div class="service-icon" aria-hidden="true">
                                 <i class="<?php echo $service['icon']; ?>"></i>
                         </div>
-                            <!-- SEO: H3 com palavras-chave específicas do serviço -->
+
                             <h3 class="service-title" itemprop="name"><?php echo $service['title']; ?></h3>
                             <p class="service-description" itemprop="description"><?php echo $service['description']; ?></p>
                             <a href="<?php echo url('servicos'); ?>" class="service-link" 
@@ -196,15 +194,14 @@ include 'components/stats.php';
         </div>
     </section>
 
-    <!-- SEO: Comentário HTML - Seção de conversão para orçamento -->
     <!-- Lead Capture Section -->
     <section class="py-5 bg-white" role="complementary" aria-labelledby="lead-capture-title">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="row align-items-center">
-                        <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-                            <!-- SEO: H2 focado em conversão -->
+                        <div class="col-lg-5 mb-4 mb-lg-0 fade-left">
+
                             <h2 id="lead-capture-title" class="section-title mb-4">Pronto para transformar sua ideia em realidade?</h2>
                             <p class="mb-4">Receba uma análise gratuita do seu projeto e descubra como posso ajudar a impulsionar seu negócio com soluções tecnológicas personalizadas.</p>
                             
@@ -227,7 +224,7 @@ include 'components/stats.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7" data-aos="fade-left">
+                        <div class="col-lg-7 fade-right">
                             <?php
                             // Configurações do formulário para home
                             $formTitle = 'Solicite um orçamento';
@@ -247,22 +244,20 @@ include 'components/stats.php';
         </div>
     </section>
 
-    <!-- SEO: Comentário HTML - Depoimentos de clientes sobre desenvolvimento PHP -->
     <!-- Testimonial Section -->
     <section class="py-5 bg-white" role="complementary" aria-labelledby="testimonials-title">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mb-5">
-                    <!-- SEO: H2 para depoimentos -->
-                    <h2 id="testimonials-title" class="section-title" data-aos="fade-up">O que dizem nossos clientes</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+
+                    <h2 id="testimonials-title" class="section-title fade-up">O que dizem nossos clientes</h2>
+                    <p class="section-subtitle fade-up">
                         Experiências reais de clientes satisfeitos com nossos serviços
                     </p>
                 </div>
                 
                 <div class="col-lg-10">
-                    <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="200" 
-                         role="region" aria-label="Carrossel de depoimentos de clientes">
+                    <div class="testimonial-carousel" role="region" aria-label="Carrossel de depoimentos de clientes">
                         <div class="testimonial-slides" id="testimonialSlides">
                             <!-- Depoimento 1 -->
                             <div class="testimonial-slide">
@@ -345,14 +340,14 @@ include 'components/stats.php';
         <div class="container">
             <div class="row justify-content-center text-center mb-4">
                 <div class="col-lg-8">
-                    <h2 class="section-title" data-aos="fade-up">Empresas que confiam em nosso trabalho</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="section-title fade-up">Empresas que confiam em nosso trabalho</h2>
+                    <p class="section-subtitle fade-up">
                         Mais de 50 projetos entregues para empresas de diversos segmentos
                     </p>
                 </div>
             </div>
             
-            <div class="clients-carousel" data-aos="fade-up" data-aos-delay="200">
+            <div class="clients-carousel">
                 <div class="clients-track">
                     <!-- Duplicamos os logos para loop infinito -->
                     <div class="client-logo-modern">

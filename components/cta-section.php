@@ -18,7 +18,7 @@ $ctaClass = 'cta-section-default';
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-8">
-                <div class="cta-content" data-aos="fade-up">
+                <div class="cta-content fade-up">
                     <h2 class="cta-title text-white mb-4"><?php echo $ctaTitle; ?></h2>
                     <p class="cta-subtitle text-white-50 mb-5"><?php echo $ctaSubtitle; ?></p>
                     <a href="<?php echo $ctaButtonUrl; ?>" class="btn btn-cta-enhanced">

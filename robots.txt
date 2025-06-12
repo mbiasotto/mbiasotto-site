@@ -4,21 +4,6 @@
 User-agent: *
 Allow: /
 
-# Permitir acesso a recursos importantes para SEO
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/images/
-
-# Bloquear acesso a arquivos e diretórios sensíveis
-Disallow: /includes/
-Disallow: /components/
-Disallow: /vendor/
-Disallow: /.git/
-Disallow: /test.php
-Disallow: /composer.json
-Disallow: /composer.lock
-Disallow: /.htaccess
-
 # Páginas importantes para indexação (programador PHP freelancer)
 Allow: /index.php
 Allow: /servicos

@@ -25,12 +25,12 @@ $heroClass = $isInternal ? 'hero-section hero-internal' : 'hero-section';
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-<?php echo $isInternal ? '8' : '10'; ?>">
-                <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-content fade-up">
                     <h1 class="hero-title mb-4"><?php echo $title; ?></h1>
                     <p class="hero-subtitle mb-5"><?php echo $subtitle; ?></p>
                     
                     <?php if (!empty($buttons)): ?>
-                        <div class="hero-buttons mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <div class="hero-buttons mb-5 fade-up">
                             <?php foreach ($buttons as $button): ?>
                                 <a href="<?php echo $button['url']; ?>" class="<?php echo $button['class']; ?>">
                                     <?php echo $button['text']; ?>
@@ -41,7 +41,7 @@ $heroClass = $isInternal ? 'hero-section hero-internal' : 'hero-section';
                     
                     <?php if (!empty($badges)): ?>
                         <!-- Badges -->
-                        <div class="hero-badges" data-aos="fade-up" data-aos-delay="400">
+                        <div class="hero-badges fade-up">
                             <?php foreach ($badges as $badge): ?>
                                 <span class="badge-custom"><?php echo $badge; ?></span>
                             <?php endforeach; ?>

@@ -6,29 +6,23 @@ $pageDescription = 'Entre em contato para solicitar seu orçamento. Desenvolvime
 // Include header
 include 'includes/header.php';
 include 'includes/navigation.php';
+
+// Configurações do Hero interno
+$heroTitle = 'Vamos Transformar Sua Ideia em Realidade';
+$heroSubtitle = 'Conte-me sobre seu projeto e receba uma proposta personalizada em até 24 horas';
+$isInternal = true;
+
+// Incluir Hero
+include 'components/hero.php';
 ?>
 
-    <!-- Hero Section -->
-    <section class="hero-section hero-internal">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <div class="hero-content" data-aos="fade-up">
-                        <h1 class="hero-title mb-4">Vamos Transformar Sua Ideia em Realidade</h1>
-                        <p class="hero-subtitle mb-5">Conte-me sobre seu projeto e receba uma proposta personalizada em até 24 horas</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-        
     <!-- Contact Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
                 <!-- Informações de Contato -->
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="contact-info-simple p-4 h-100">
+                    <div class="contact-info-simple p-4 h-100 fade-left">
                         <h3 class="contact-info-title-simple mb-4">Informações de Contato</h3>
                         
                         <div class="contact-info-item-simple mb-4">
@@ -75,7 +69,7 @@ include 'includes/navigation.php';
                 
                 <!-- Formulário de Contato -->
                 <div class="col-lg-8">
-                    <div class="contact-form-modern">
+                    <div class="contact-form-modern fade-right">
                         
                         <?php
                         // Exibir mensagem de erro se houver
@@ -116,13 +110,13 @@ include 'includes/navigation.php';
     <section class="py-5 bg-white">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5">
+                <div class="col-lg-8 text-center mb-5 fade-up">
                     <h2 class="section-title">Perguntas Frequentes</h2>
                     <p class="section-subtitle">Respostas para as dúvidas mais comuns sobre meus serviços</p>
                 </div>
                 
                 <div class="col-lg-10">
-                    <div class="accordion" id="faqAccordion">
+                    <div class="accordion fade-up" id="faqAccordion">
                         <!-- Pergunta 1 -->
                         <div class="accordion-item mb-3 border-0 shadow-sm rounded">
                             <h2 class="accordion-header" id="headingOne">

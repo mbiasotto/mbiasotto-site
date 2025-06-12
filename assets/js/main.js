@@ -1,21 +1,29 @@
 $(document).ready(() => {
-  // ===== LOADING SCREEN =====
-  $(window).on("load", () => {
-    setTimeout(() => {
-      $("#loading-screen").addClass("fade-out")
-      setTimeout(() => {
-        $("#loading-screen").remove()
-      }, 500)
-    }, 1000)
-  })
 
-  // ===== AOS ANIMATION INITIALIZATION =====
-  AOS.init({
-    duration: 800,
-    easing: "ease-in-out",
-    once: true,
-    offset: 100,
-  })
+  // ===== SCROLL ANIMATIONS =====
+  function initScrollAnimations() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Adicionar animações aos elementos
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right, .service-card, .testimonial-card-modern, .client-logo-modern, .cta-content, .hero-content, .stat-item, .quick-form-card, .error-content, .success-content, .contact-info-simple, .contact-form-modern, .metodologia-card, .process-step-detailed, .service-detail-card, .additional-service-card, .suggestion-card, .info-card, .next-step-card, .accordion').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Inicializar animações
+  initScrollAnimations();
 
   // ===== NAVBAR SCROLL EFFECT =====
   $(window).scroll(function () {

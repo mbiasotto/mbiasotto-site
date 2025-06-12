@@ -30,7 +30,7 @@ include 'components/hero.php';
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="error-content" data-aos="fade-up">
+                <div class="error-content fade-up">
                     <!-- Número 404 -->
                     <div class="text-center mb-5">
                         <div class="error-number">404</div>
@@ -38,7 +38,7 @@ include 'components/hero.php';
                     </div>
                     
                     <div class="row mb-5">
-                        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-4 mb-3 fade-left">
                             <div class="suggestion-card">
                                 <i class="fas fa-home fa-2x text-primary mb-3"></i>
                                 <h4>Página Inicial</h4>
@@ -47,7 +47,7 @@ include 'components/hero.php';
                             </div>
                         </div>
                         
-                        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-4 mb-3 fade-up">
                             <div class="suggestion-card">
                                 <i class="fas fa-code fa-2x text-primary mb-3"></i>
                                 <h4>Nossos Serviços</h4>
@@ -56,7 +56,7 @@ include 'components/hero.php';
                             </div>
                         </div>
                         
-                        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-4 mb-3 fade-right">
                             <div class="suggestion-card">
                                 <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
                                 <h4>Entre em Contato</h4>

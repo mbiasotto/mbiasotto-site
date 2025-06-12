@@ -79,6 +79,26 @@
   --gradient-end: #3b82f6;
 }
 
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-up, .fade-left, .fade-right, .service-card, .testimonial-card-modern, .client-logo-modern, .cta-content, .hero-content, .stat-item, .quick-form-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-left {
+  transform: translateX(-30px);
+}
+
+.fade-right {
+  transform: translateX(30px);
+}
+
+.animate-in {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
 /* ===== GLOBAL STYLES ===== */
 * {
   margin: 0;
