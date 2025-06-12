@@ -85,7 +85,7 @@ include 'components/hero.php';
     </section>
 
     <!-- Additional Info Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -118,6 +118,8 @@ include 'components/hero.php';
             </div>
         </div>
     </section>
+
+    <?php include 'components/materias-home.php'; ?>
 
     <!-- Google Analytics Event Tracking -->
     <script>

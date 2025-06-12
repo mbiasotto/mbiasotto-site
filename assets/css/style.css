@@ -1141,12 +1141,14 @@ p {
 .service-detail-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  width: 60px;
+  height: 60px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-size: 1.5rem;
   margin-right: 1rem;
   box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
@@ -4121,4 +4123,109 @@ html {
   .btn.touch-active {
     transform: scale(0.95) !important;
   }
+}
+
+/* =============================
+   COMPONENTE: Serviços Relacionados
+   Estilos centralizados para o bloco de serviços relacionados
+   ============================= */
+.related-service-card {
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.related-service-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.service-icon-related {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-icon-related i {
+    font-size: 2rem;
+    color: white;
+}
+
+.related-service-card:hover .service-icon-related {
+    transform: scale(1.1);
+}
+
+.service-title-related {
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-description-related {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.related-service-card .btn {
+    margin-top: auto;
+    border-radius: 25px;
+    padding: 0.7rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.related-service-card .btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .related-service-card {
+        padding: 2rem 1.5rem;
+    }
+    .service-icon-related {
+        width: 60px;
+        height: 60px;
+    }
+    .service-icon-related i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ajuste do botão de serviços relacionados para tamanho menor e padrão */
+.related-service-card .btn-primary-standard {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    min-width: unset;
+    width: auto;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.related-service-card .btn-primary-standard i {
+    font-size: 1.1em;
 }

@@ -95,64 +95,74 @@ include 'components/stats.php';
                         'title' => 'Desenvolvimento PHP',
                         'description' => 'Desenvolvimento de aplicações web robustas e escaláveis utilizando PHP moderno e boas práticas para empresas em Sorocaba.',
                         'delay' => '100',
-                        'aria_label' => 'Serviço de desenvolvimento PHP para aplicações web'
+                        'aria_label' => 'Serviço de desenvolvimento PHP para aplicações web',
+                        'link' => 'desenvolvimento-php'
                     ],
                     [
                         'icon' => 'fas fa-layer-group', 
                         'title' => 'Framework Laravel',
                         'description' => 'Desenvolvimento de sistemas e aplicações web com Framework Laravel, o framework PHP mais popular e robusto do mercado.',
                         'delay' => '200',
-                        'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas web'
+                        'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas web',
+                        'link' => 'framework-laravel'
                     ],
                     [
                         'icon' => 'fas fa-database',
                         'title' => 'Desenvolvimento de Sites',
                         'description' => 'Criação de sites institucionais, portfólios e landing pages responsivas com foco em conversão e experiência do usuário.',
                         'delay' => '300',
-                        'aria_label' => 'Criação de sites responsivos e otimizados'
+                        'aria_label' => 'Criação de sites responsivos e otimizados',
+                        'link' => 'desenvolvimento-sites'
                     ],
                     [
                         'icon' => 'fas fa-mobile-alt',
                         'title' => 'Desenvolvimento de APP',
                         'description' => 'Criação de aplicativos móveis para Android e iOS com integração completa aos seus sistemas web e APIs.',
                         'delay' => '400',
-                        'aria_label' => 'Desenvolvimento de aplicativos móveis Android e iOS'
+                        'aria_label' => 'Desenvolvimento de aplicativos móveis Android e iOS',
+                        'link' => 'desenvolvimento-app'
                     ],
                     [
                         'icon' => 'fas fa-server',
                         'title' => 'Construção de APIs',
                         'description' => 'Desenvolvimento de APIs RESTful seguras e bem documentadas para integração com aplicativos móveis e web.',
                         'delay' => '500',
-                        'aria_label' => 'Desenvolvimento de APIs RESTful para integração'
+                        'aria_label' => 'Desenvolvimento de APIs RESTful para integração',
+                        'link' => 'construcao-apis'
                     ],
                     [
                         'icon' => 'fas fa-database',
                         'title' => 'Desenvolvimento de Sistemas',
                         'description' => 'Criação de sistemas web personalizados para gestão empresarial, e-commerce e automação de processos.',
                         'delay' => '600',
-                        'aria_label' => 'Desenvolvimento de sistemas web personalizados'
+                        'aria_label' => 'Desenvolvimento de sistemas web personalizados',
+                        'link' => 'desenvolvimento-sistemas'
                     ],
                     [
-                        'icon' => 'fas fa-bolt',
+                        'icon' => 'fas fa-robot',
                         'title' => 'Automações com N8N e IA',
                         'description' => 'Criação de fluxos de automação com N8N e integração com inteligência artificial para otimizar processos.',
                         'delay' => '700',
-                        'aria_label' => 'Automações empresariais com N8N e inteligência artificial'
+                        'aria_label' => 'Automações empresariais com N8N e inteligência artificial',
+                        'link' => 'automacoes-n8n-ia'
                     ],
                     [
                         'icon' => 'fas fa-palette',
                         'title' => 'Criação de Identidade Visual',
                         'description' => 'Desenvolvimento de logos, materiais de marketing e identidade visual completa para fortalecer sua marca no mercado digital.',
                         'delay' => '800',
-                        'aria_label' => 'Criação de identidade visual e branding'
+                        'aria_label' => 'Criação de identidade visual e branding',
+                        'link' => 'identidade-visual'
                     ],
                     [
-                        'icon' => 'fas fa-lightbulb',
-                        'title' => 'Consultoria em Tecnologia',
-                        'description' => 'Consultoria estratégica para escolha de tecnologias, arquitetura de projetos e otimização de processos.',
+                        'icon' => 'fas fa-search',
+                        'title' => 'Otimização SEO para Sites',
+                        'description' => 'Otimização SEO completa para melhorar o posicionamento do seu site nos mecanismos de busca e aumentar o tráfego orgânico.',
                         'delay' => '900',
-                        'aria_label' => 'Consultoria especializada em tecnologia e arquitetura'
-                    ]
+                        'aria_label' => 'Otimização SEO para melhor posicionamento no Google',
+                        'link' => 'otimizacao-seo'
+                    ],
+                    
                 ];
                 
                 foreach ($services as $service):
@@ -166,7 +176,7 @@ include 'components/stats.php';
 
                             <h3 class="service-title" itemprop="name"><?php echo $service['title']; ?></h3>
                             <p class="service-description" itemprop="description"><?php echo $service['description']; ?></p>
-                            <a href="<?php echo url('servicos'); ?>" class="service-link" 
+                            <a href="<?php echo url($service['link']); ?>" class="btn-primary-standard" 
                                aria-label="<?php echo $service['aria_label']; ?>" itemprop="url">
                             Saiba mais <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                         </a>
@@ -318,7 +328,7 @@ include 'components/stats.php';
         </div>
     </section>
     
-    <!-- Clients Logos Section -->
+    <!-- Clients Logos Section 
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center text-center mb-4">
@@ -332,7 +342,6 @@ include 'components/stats.php';
             
             <div class="clients-carousel">
                 <div class="clients-track">
-                    <!-- Duplicamos os logos para loop infinito -->
                     <div class="client-logo-modern">
                         <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="techcorp-title">
                             <title id="techcorp-title">TechCorp</title>
@@ -389,7 +398,7 @@ include 'components/stats.php';
                             <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">DataSoft</text>
                         </svg>
                     </div>
-                    <!-- Duplicate for infinite loop -->
+
                     <div class="client-logo-modern">
                         <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="techcorp-title2">
                             <title id="techcorp-title2">TechCorp</title>
@@ -450,6 +459,7 @@ include 'components/stats.php';
             </div>
         </div>
     </section>
+    -->
 
     <?php include 'components/materias-home.php'; ?>
 

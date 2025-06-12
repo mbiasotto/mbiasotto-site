@@ -58,7 +58,7 @@ foreach ($homeMaterias as $slug) {
         <!-- Botão ver todas -->
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center fade-up">
-                <a href="<?php echo url('materias'); ?>" class="btn btn-primary btn-lg">
+                <a href="<?php echo url('materias'); ?>" class="btn btn-cta-enhanced">
                     <i class="fas fa-th-list me-2"></i>
                     Ver Todas as Matérias
                 </a>

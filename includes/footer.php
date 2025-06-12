@@ -30,12 +30,12 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5 class="mb-3">Serviços</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Desenvolvimento PHP</a></li>
-                        <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Framework Laravel</a></li>
-                        <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Desenvolvimento de Sites</a></li>
-                        <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Construção de APIs</a></li>
-                        <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Desenvolvimento de Sistemas</a></li>
-                        <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Automações com n8n e IA</a></li>
+                        <li class="mb-2"><a href="<?php echo url('desenvolvimento-php'); ?>">Desenvolvimento PHP</a></li>
+                        <li class="mb-2"><a href="<?php echo url('desenvolvimento-sites'); ?>">Desenvolvimento de Sites</a></li>
+                        <li class="mb-2"><a href="<?php echo url('automacoes-n8n-ia'); ?>">Automações com N8N e IA</a></li>
+                        <li class="mb-2"><a href="<?php echo url('desenvolvimento-app'); ?>">Desenvolvimento de APP</a></li>
+                        <li class="mb-2"><a href="<?php echo url('framework-laravel'); ?>">Framework Laravel</a></li>
+                        <li class="mb-2"><a href="<?php echo url('construcao-apis'); ?>">Construção de APIs</a></li>
                     </ul>
                 </div>
                 
@@ -44,6 +44,7 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="<?php echo url(''); ?>">Home</a></li>
                         <li class="mb-2"><a href="<?php echo url('servicos'); ?>">Serviços</a></li>
+                        <li class="mb-2"><a href="<?php echo url('materias'); ?>">Matérias</a></li>
                         <li class="mb-2"><a href="<?php echo url('como-trabalhamos'); ?>">Como Trabalhamos</a></li>
                         <li class="mb-2"><a href="<?php echo url('programador-php-freelancer'); ?>">Quem Sou</a></li>
                         <li class="mb-2"><a href="<?php echo url('contato'); ?>">Contato</a></li>

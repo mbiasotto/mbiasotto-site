@@ -1,7 +1,7 @@
 <?php
 // Configurações da página - Otimizadas para SEO
 $pageTitle = 'Serviços Desenvolvimento PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
-$pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, APIs REST, sistemas web, apps móveis, automações n8n. Programador PHP freelancer Sorocaba SP. Orçamento gratuito!';
+$pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, APIs REST, sistemas web, apps móveis, automações N8N. Programador PHP freelancer Sorocaba SP. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento php, laravel framework, apis rest, sistemas web, manutenção php, programador php freelancer, desenvolvimento sob demanda, sorocaba sp';
 
 // Configurações do Hero interno
@@ -17,13 +17,11 @@ include 'includes/navigation.php';
 include 'components/hero.php';
 ?>
 
-    <!-- SEO: Comentário HTML - Página de serviços especializados em PHP -->
     <!-- Services Section -->
     <section class="py-5 bg-light" role="main" aria-labelledby="services-main-title">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8 fade-up">
-                    <!-- SEO: H1 principal da página otimizado -->
                     <h1 id="services-main-title" class="section-title">Nossos Serviços</h1>
                     <p class="section-subtitle">
                         Soluções personalizadas para cada necessidade do seu negócio
@@ -44,7 +42,8 @@ include 'components/hero.php';
                             ['Autenticação segura', 'Otimização de performance', 'Código documentado']
                         ],
                         'animation' => 'fade-up',
-                        'aria_label' => 'Desenvolvimento PHP moderno para aplicações web robustas'
+                        'aria_label' => 'Desenvolvimento PHP moderno para aplicações web robustas',
+                        'link' => 'desenvolvimento-php'
                     ],
                     [
                         'icon' => 'fas fa-layer-group',
@@ -56,7 +55,8 @@ include 'components/hero.php';
                             ['Autenticação Sanctum', 'Filas e jobs', 'Testes automatizados']
                         ],
                         'animation' => 'fade-left',
-                        'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas profissionais'
+                        'aria_label' => 'Desenvolvimento com Framework Laravel para sistemas profissionais',
+                        'link' => 'framework-laravel'
                     ],
                     [
                         'icon' => 'fas fa-globe',
@@ -68,7 +68,8 @@ include 'components/hero.php';
                             ['UX/UI moderno', 'Formulários de contato', 'Integração com Analytics']
                         ],
                         'animation' => 'fade-right',
-                        'aria_label' => 'Criação de sites responsivos com foco em SEO e conversão'
+                        'aria_label' => 'Criação de sites responsivos com foco em SEO e conversão',
+                        'link' => 'desenvolvimento-sites'
                     ],
                     [
                         'icon' => 'fas fa-mobile-alt',
@@ -80,13 +81,91 @@ include 'components/hero.php';
                             ['API Integration', 'Push Notifications', 'App Store']
                         ],
                         'animation' => 'fade-up',
-                        'aria_label' => 'Desenvolvimento de aplicativos móveis para Android e iOS'
+                        'aria_label' => 'Desenvolvimento de aplicativos móveis para Android e iOS',
+                        'link' => 'desenvolvimento-app'
+                    ],
+                    [
+                        'icon' => 'fas fa-server',
+                        'title' => 'Construção de APIs',
+                        'subtitle' => 'APIs RESTful seguras',
+                        'description' => 'Desenvolvimento de APIs RESTful seguras e bem documentadas para integração com aplicativos móveis e web.',
+                        'features' => [
+                            ['RESTful', 'Autenticação JWT', 'Documentação'],
+                            ['Rate limiting', 'Versionamento', 'Testes unitários']
+                        ],
+                        'animation' => 'fade-left',
+                        'aria_label' => 'Desenvolvimento de APIs RESTful para integração',
+                        'link' => 'construcao-apis'
+                    ],
+                    [
+                        'icon' => 'fas fa-database',
+                        'title' => 'Desenvolvimento de Sistemas',
+                        'subtitle' => 'Sistemas personalizados',
+                        'description' => 'Criação de sistemas web personalizados para gestão empresarial, e-commerce e automação de processos.',
+                        'features' => [
+                            ['Gestão empresarial', 'E-commerce', 'CRM/ERP'],
+                            ['Relatórios', 'Dashboards', 'Integração']
+                        ],
+                        'animation' => 'fade-right',
+                        'aria_label' => 'Desenvolvimento de sistemas web personalizados',
+                        'link' => 'desenvolvimento-sistemas'
+                    ],
+                    [
+                        'icon' => 'fas fa-robot',
+                        'title' => 'Automações com N8N e IA',
+                        'subtitle' => 'Automação inteligente',
+                        'description' => 'Criação de fluxos de automação com N8N e integração com inteligência artificial para otimizar processos.',
+                        'features' => [
+                            ['N8N workflows', 'IA integrada', 'WhatsApp Bot'],
+                            ['Automação processos', 'Integração APIs', 'ChatBots']
+                        ],
+                        'animation' => 'fade-up',
+                        'aria_label' => 'Automações empresariais com N8N e inteligência artificial',
+                        'link' => 'automacoes-n8n-ia'
+                    ],
+                    [
+                        'icon' => 'fas fa-palette',
+                        'title' => 'Criação de Identidade Visual',
+                        'subtitle' => 'Branding completo',
+                        'description' => 'Desenvolvimento de logos, materiais de marketing e identidade visual completa para fortalecer sua marca no mercado digital.',
+                        'features' => [
+                            ['Logo profissional', 'Manual da marca', 'Paleta de cores'],
+                            ['Materiais gráficos', 'Cartão de visita', 'Papelaria']
+                        ],
+                        'animation' => 'fade-left',
+                        'aria_label' => 'Criação de identidade visual e branding',
+                        'link' => 'identidade-visual'
+                    ],
+                    [
+                        'icon' => 'fas fa-search',
+                        'title' => 'Otimização SEO para Sites',
+                        'subtitle' => 'Melhore seu posicionamento',
+                        'description' => 'Otimização SEO completa para melhorar o posicionamento do seu site nos mecanismos de busca e aumentar o tráfego orgânico.',
+                        'features' => [
+                            ['Auditoria SEO', 'Meta tags', 'Schema markup'],
+                            ['Velocidade', 'Tráfego orgânico', 'Relatórios']
+                        ],
+                        'animation' => 'fade-right',
+                        'aria_label' => 'Otimização SEO para melhor posicionamento no Google',
+                        'link' => 'otimizacao-seo'
+                    ],
+                    [
+                        'icon' => 'fas fa-lightbulb',
+                        'title' => 'Consultoria em Tecnologia',
+                        'subtitle' => 'Orientação estratégica',
+                        'description' => 'Consultoria estratégica para escolha de tecnologias, arquitetura de projetos e otimização de processos.',
+                        'features' => [
+                            ['Análise técnica', 'Arquitetura', 'Escolha de tecnologias'],
+                            ['Code review', 'Performance', 'Modernização']
+                        ],
+                        'animation' => 'fade-left',
+                        'aria_label' => 'Consultoria especializada em tecnologia e arquitetura',
+                        'link' => 'consultoria-tecnologia'
                     ]
                 ];
 
                 foreach ($detailedServices as $index => $service):
                 ?>
-                    <!-- Service -->
                     <div class="col-lg-6 <?php echo $service['animation']; ?>" role="listitem">
                     <article class="service-detail-card" itemscope itemtype="https://schema.org/Service">
                         <div class="service-detail-header">
@@ -94,7 +173,6 @@ include 'components/hero.php';
                                     <i class="<?php echo $service['icon']; ?>"></i>
                             </div>
                             <div>
-                                    <!-- SEO: H2 para cada serviço com palavras-chave específicas -->
                                     <h2 class="service-detail-title" itemprop="name"><?php echo $service['title']; ?></h2>
                                     <p class="service-detail-subtitle" itemprop="category"><?php echo $service['subtitle']; ?></p>
                             </div>
@@ -117,47 +195,17 @@ include 'components/hero.php';
                             </div>
                             
                             <div class="service-detail-footer">
-                                    <a href="<?php echo url('contato'); ?>" class="btn-primary-standard" 
+                                    <a href="<?php echo url($service['link']); ?>" class="btn-primary-standard" 
                                        aria-label="<?php echo $service['aria_label']; ?> - Solicitar orçamento" 
                                        itemprop="url">
-                                        <i class="fas fa-calculator me-2" aria-hidden="true"></i>
-                                        Solicitar Orçamento
+                                        <i class="fas fa-arrow-right me-2" aria-hidden="true"></i>
+                                        Saiba mais
                                     </a>
                                 </div>
                             </div>
                         </article>
                     </div>
                 <?php endforeach; ?>
-            </div>
-            
-            <!-- SEO: Seção adicional com mais serviços -->
-            <div class="row mt-5">
-                <div class="col-12 text-center fade-up">
-                    <h2 class="section-title mb-4">Outros Serviços Especializados</h2>
-                    <div class="row g-3">
-                        <div class="col-md-4 fade-left">
-                            <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
-                                <i class="fas fa-server service-extra-icon" aria-hidden="true"></i>
-                                <h3 class="service-extra-title" itemprop="name">APIs RESTful</h3>
-                                <p class="service-extra-desc" itemprop="description">Integração e desenvolvimento de APIs seguras</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 fade-up">
-                            <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
-                                <i class="fas fa-bolt service-extra-icon" aria-hidden="true"></i>
-                                <h3 class="service-extra-title" itemprop="name">Automações n8n</h3>
-                                <p class="service-extra-desc" itemprop="description">Automação de processos com IA</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 fade-right">
-                            <div class="additional-service-card" itemscope itemtype="https://schema.org/Service">
-                                <i class="fas fa-tools service-extra-icon" aria-hidden="true"></i>
-                                <h3 class="service-extra-title" itemprop="name">Manutenção PHP</h3>
-                                <p class="service-extra-desc" itemprop="description">Suporte e manutenção de sistemas existentes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
