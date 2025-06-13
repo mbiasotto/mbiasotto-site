@@ -4,7 +4,7 @@ require_once 'includes/config.php';
 
 // Configurações da página - Otimizadas para SEO
 $pageTitle = 'Programador PHP Freelancer Sorocaba / São Paulo | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
-$pageDescription = 'Programador PHP freelancer Sorocaba / São Paulo com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
+$pageDescription = 'Programador PHP freelancer Sorocaba / São Paulo com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda.';
 $pageKeywords = 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 
 // JavaScript adicional
@@ -36,7 +36,7 @@ include 'includes/header.php';
                     <!-- Hero Buttons -->
                         <div class="hero-buttons mb-5" role="group" aria-label="Ações principais">
                         <a href="<?php echo url('contato'); ?>" class="btn btn-cta-primary me-3 mb-3" 
-                           aria-label="Solicitar orçamento gratuito para desenvolvimento PHP">
+                           aria-label="Solicitar orçamento para desenvolvimento PHP">
                                 <i class="fas fa-rocket me-2" aria-hidden="true"></i>
                                 Solicitar Orçamento
                             </a>
@@ -196,9 +196,9 @@ include 'components/stats.php';
                         <div class="col-lg-5 mb-4 mb-lg-0 fade-left">
 
                             <h2 id="lead-capture-title" class="section-title mb-4">Pronto para transformar sua ideia em realidade?</h2>
-                            <p class="mb-4">Receba uma análise gratuita do seu projeto e descubra como posso ajudar a impulsionar seu negócio com soluções tecnológicas personalizadas.</p>
+                            <p class="mb-4">Receba uma análise do seu projeto e descubra como posso ajudar a impulsionar seu negócio com soluções tecnológicas personalizadas.</p>
                             
-                            <div class="mb-4" role="list" aria-label="Benefícios do orçamento gratuito">
+                            <div class="mb-4" role="list" aria-label="Benefícios do orçamento">
                                 <div class="lead-feature-item" role="listitem">
                                     <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Orçamento detalhado sem compromisso</span>
@@ -221,7 +221,7 @@ include 'components/stats.php';
                             <?php
                             // Configurações do formulário para home
                             $formTitle = 'Solicite um orçamento';
-                            $formSubtitle = 'Preencha o formulário abaixo para receber uma análise gratuita do seu projeto.';
+                            $formSubtitle = 'Preencha o formulário abaixo para receber uma análise do seu projeto.';
                             $formClass = 'lead-conversion-form-home';
                             $formId = 'homeContactForm';
                             $isSimplified = true;
