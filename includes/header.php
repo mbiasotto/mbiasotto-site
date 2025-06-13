@@ -302,7 +302,8 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
 
     <!-- Tag Canonical dinâmica SEM www -->
     <?php
-    $canonical = 'https://' . preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']) . $_SERVER['REQUEST_URI'];
+    $host = preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']);
+    $canonical = 'https://' . $host . $_SERVER['REQUEST_URI'];
     ?>
     <link rel="canonical" href="<?= htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8') ?>">
 
