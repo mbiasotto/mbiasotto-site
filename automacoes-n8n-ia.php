@@ -88,6 +88,13 @@ include 'components/hero.php';
         </div>
     </section>
 
+    <?php 
+    $formTitle = 'Solicite um orçamento para Automação e IA';
+    $formSubtitle = 'Conte sobre o processo que deseja automatizar e receba uma proposta personalizada.';
+    $formId = 'servicoAutomacoesContactForm';
+    include 'components/home-contact-form.php'; 
+    ?>
+
     <?php include 'components/servicos-relacionados.php'; ?>
 
 <?php include 'components/cta-section.php'; ?>

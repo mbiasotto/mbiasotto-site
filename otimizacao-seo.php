@@ -88,6 +88,13 @@ include 'components/hero.php';
         </div>
     </section>
 
+    <?php 
+    $formTitle = 'Solicite um orçamento para Otimização SEO';
+    $formSubtitle = 'Conte sobre seu site e seus objetivos de SEO para receber uma proposta personalizada.';
+    $formId = 'servicoSeoContactForm';
+    include 'components/home-contact-form.php'; 
+    ?>
+
     <?php include 'components/servicos-relacionados.php'; ?>
 
 <?php include 'components/cta-section.php'; ?>

@@ -88,6 +88,13 @@ include 'components/hero.php';
         </div>
     </section>
 
+    <?php 
+    $formTitle = 'Solicite um orçamento para Desenvolvimento PHP';
+    $formSubtitle = 'Descreva seu projeto em PHP e receba uma proposta personalizada para sua necessidade.';
+    $formId = 'servicoPhpContactForm';
+    include 'components/home-contact-form.php'; 
+    ?>
+
     <?php include 'components/servicos-relacionados.php'; ?>
 
 <?php include 'components/cta-section.php'; ?>

@@ -88,6 +88,13 @@ include 'components/hero.php';
         </div>
     </section>
 
+    <?php 
+    $formTitle = 'Solicite um orçamento para Sistema Laravel';
+    $formSubtitle = 'Conte sobre seu sistema Laravel e receba uma proposta sob medida para o seu negócio.';
+    $formId = 'servicoLaravelContactForm';
+    include 'components/home-contact-form.php'; 
+    ?>
+
     <?php include 'components/servicos-relacionados.php'; ?>
 
 <?php include 'components/cta-section.php'; ?>

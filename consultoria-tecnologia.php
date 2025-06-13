@@ -88,6 +88,13 @@ include 'components/hero.php';
         </div>
     </section>
 
+    <?php 
+    $formTitle = 'Solicite uma consultoria em tecnologia';
+    $formSubtitle = 'Descreva seu desafio ou projeto e receba uma proposta personalizada de consultoria.';
+    $formId = 'servicoConsultoriaContactForm';
+    include 'components/home-contact-form.php'; 
+    ?>
+
     <?php include 'components/servicos-relacionados.php'; ?>
 
 <?php include 'components/cta-section.php'; ?>

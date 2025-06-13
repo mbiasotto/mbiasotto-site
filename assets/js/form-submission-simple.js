@@ -73,12 +73,31 @@ function processFormSubmission(form, button) {
     setButtonLoading(button, true);
     
     try {
+        // Antes de enviar, identificar origem
+        const origem = form.getAttribute('id') || window.location.pathname;
+        
         // Analytics (se disponível)
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'form_submit', {
-                event_category: 'Form',
-                event_label: form.id
+            gtag('event', 'contact_form_submit', {
+                'event_category': 'Conversion',
+                'event_label': origem,
+                'value': 200
             });
+            gtag('event', 'generate_lead', {
+                'event_category': 'Conversion',
+                'event_label': 'Lead Generated - ' + origem,
+                'value': 200
+            });
+            gtag('event', 'form_conversion_success', {
+                'event_category': 'Contact',
+                'event_label': 'Contact Form Converted Successfully',
+                'conversion_type': 'contact_form',
+                'recaptcha_protected': true,
+                'form_origem': origem
+            });
+        }
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', { origem: origem });
         }
         
         // Definir ação do reCAPTCHA baseada no formulário

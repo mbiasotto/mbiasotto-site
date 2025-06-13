@@ -88,6 +88,13 @@ include 'components/hero.php';
         </div>
     </section>
 
+    <?php 
+    $formTitle = 'Solicite um orçamento para Desenvolvimento de APP';
+    $formSubtitle = 'Descreva o aplicativo que você precisa e receba uma proposta personalizada.';
+    $formId = 'servicoAppContactForm';
+    include 'components/home-contact-form.php'; 
+    ?>
+
     <?php include 'components/servicos-relacionados.php'; ?>
 
 <?php include 'components/cta-section.php'; ?>
