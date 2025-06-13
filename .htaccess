@@ -5,6 +5,12 @@
 RewriteEngine On
 
 # ===========================================
+# Redireciona www para sem www (SEO canonical)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# ===========================================
+
+# ===========================================
 # 1. URLs LIMPAS (ESSENCIAL)
 # ===========================================
 
