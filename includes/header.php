@@ -31,6 +31,9 @@ $needsRecaptcha = needsRecaptcha();
 
 // reCAPTCHA v3 Configuration
 $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
+
+$host = preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']);
+$canonical = 'https://' . $host . $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" itemscope itemtype="https://schema.org/WebPage">
@@ -261,7 +264,7 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <!-- Open Graph básico -->
     <meta property="og:title" content="<?php echo $pageTitle; ?>">
     <meta property="og:description" content="<?php echo $pageDescription; ?>">
-    <meta property="og:url" content="<?php echo $canonicalUrl; ?>">
+    <meta property="og:url" content="<?= htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8') ?>">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?php echo asset('assets/images/favicon.png'); ?>">
@@ -300,10 +303,6 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     </script>
 
     <!-- Tag Canonical dinâmica SEM www -->
-    <?php
-    $host = preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']);
-    $canonical = 'https://' . $host . $_SERVER['REQUEST_URI'];
-    ?>
     <link rel="canonical" href="<?= htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8') ?>">
 
 </head>
