@@ -257,7 +257,6 @@ $recaptcha_site_key = '6LebUF0rAAAAAH2K0WX2mVhxUugPn8pPAbtEQiqQ';
     <title><?php echo $pageTitle; ?> - Sorocaba / São Paulo</title>
     <meta name="description" content="<?php echo $pageDescription; ?>">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="<?php echo $canonicalUrl; ?>">
     
     <!-- Open Graph básico -->
     <meta property="og:title" content="<?php echo $pageTitle; ?>">
