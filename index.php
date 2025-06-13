@@ -3,8 +3,8 @@
 require_once 'includes/config.php';
 
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Programador PHP Freelancer Sorocaba-SP | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
-$pageDescription = 'Programador PHP freelancer Sorocaba SP com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
+$pageTitle = 'Programador PHP Freelancer Sorocaba / São Paulo | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
+$pageDescription = 'Programador PHP freelancer Sorocaba / São Paulo com +20 anos experiência. Desenvolvimento Laravel, APIs REST, automações n8n, sistemas web sob demanda. Orçamento gratuito!';
 $pageKeywords = 'programador php freelancer, desenvolvedor php, desenvolvimento php sob demanda, manutenção sistemas php, especialista php, freelancer php brasil, integração api php, laravel freelancer, programador php sorocaba';
 
 // JavaScript adicional
@@ -81,8 +81,8 @@ include 'components/stats.php';
 
                     <h2 id="services-title" class="section-title fade-up">Serviços Especializados</h2>
                     <p class="section-subtitle fade-up">
-                        Soluções completas em desenvolvimento web e mobile com foco em PHP e tecnologias modernas 
-                        para empresas em Sorocaba e região
+                        Soluções completas em desenvolvimento web e mobile com foco em PHP (Laravel) e tecnologias modernas 
+                        para empresas em Sorocaba / São Paulo (todo o Brasil)
                     </p>
                 </div>
             </div>
