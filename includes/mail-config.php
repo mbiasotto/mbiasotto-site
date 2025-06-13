@@ -32,7 +32,7 @@ class MailService
             $this->mail->CharSet = 'UTF-8';
             
             // Configurações padrão
-            $this->mail->setFrom('sendrevenda@mbiasotto.com', 'Site Maurício Biasotto');
+            $this->mail->setFrom('sendrevenda@mbiasotto.com', 'Site MBiasotto');
             $this->mail->addReplyTo('mauricio@mbiasotto.com', 'Mauricio Biasotto');
             
         } catch (Exception $e) {
