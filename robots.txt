@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Páginas importantes para indexação (programador PHP freelancer)
-Allow: /index.php
+Allow: /
 Allow: /servicos
 Allow: /programador-php-freelancer
 Allow: /contato
