@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Desenvolvimento de Sites Freelancer Sorocaba / São Paulo | Sites Responsivos Freelancer';
+$pageTitle = 'Desenvolvimento de Sites Responsivos Freelancer Sorocaba / São Paulo | Sites Responsivos Freelancer';
 $pageDescription = 'Desenvolvimento de sites responsivos, institucionais, landing pages. Design moderno, SEO otimizado. Freelancer web Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento sites, site responsivo, criação sites, programador web, landing page';
 
 // Configurações do Hero interno
-$heroTitle = 'Desenvolvimento de Sites <BR><span class="text-blue-200">Sorocaba / São Paulo</span>';
+$heroTitle = 'Desenvolvimento de Sites Responsivos <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Sites responsivos e modernos com foco em conversão';
 $isInternal = true;
 
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Desenvolvimento de Sites <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
+                            <h1 class="service-page-title">Desenvolvimento de Sites Responsivos <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">Sites responsivos e modernos com foco em conversão</p>
                         </div>
 
