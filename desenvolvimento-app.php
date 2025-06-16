@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Desenvolvimento de App Mobile Sorocaba | Aplicativos Android iOS Freelancer';
+$pageTitle = 'Desenvolvimento de App Mobile Freelancer Sorocaba / São Paulo | Aplicativos Android iOS Freelancer';
 $pageDescription = 'Desenvolvimento de aplicativos móveis Android e iOS. React Native, Flutter, apps nativos. Freelancer app developer Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento app, aplicativo mobile, react native, flutter, app android ios';
 
 // Configurações do Hero interno
-$heroTitle = 'Desenvolvimento de APP';
+$heroTitle = 'Desenvolvimento de APP <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Aplicativos móveis para Android e iOS';
 $isInternal = true;
 
@@ -26,8 +26,8 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Desenvolvimento de APP</h1>
-                            <p class="service-page-subtitle">Aplicativos móveis para Android e iOS</p>
+                            <h1 class="service-page-title">Desenvolvimento de APP <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
+                            <p class="service-page-subtitle">Aplicativos móveis para Android e iOS <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></p>
                         </div>
 
                         <!-- Service Description -->

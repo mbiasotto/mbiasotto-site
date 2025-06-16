@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Consultoria em Tecnologia Sorocaba | Consultor de TI Freelancer Estratégia';
+$pageTitle = 'Consultoria em Tecnologia Freelancer Sorocaba / São Paulo | Consultor de TI Freelancer Estratégia';
 $pageDescription = 'Consultoria em tecnologia e TI para empresas: análise técnica, estratégia digital, modernização de sistemas. Consultor freelancer Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'consultoria tecnologia, consultor ti, estratégia digital, modernização sistemas, análise técnica';
 
 // Configurações do Hero interno
-$heroTitle = 'Consultoria em Tecnologia';
+$heroTitle = 'Consultoria em Tecnologia <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Estratégia e soluções tecnológicas para empresas';
 $isInternal = true;
 
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Consultoria em Tecnologia</h1>
+                            <h1 class="service-page-title">Consultoria em Tecnologia <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">Estratégia e soluções tecnológicas para empresas</p>
                         </div>
 

@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Desenvolvimento de Sistemas Web Sorocaba | Sistemas Personalizados Freelancer';
+$pageTitle = 'Desenvolvimento de Sistemas Web Freelancer Sorocaba / São Paulo | Sistemas Personalizados Freelancer';
 $pageDescription = 'Desenvolvimento de sistemas web personalizados: gestão empresarial, e-commerce, CRM, ERP. Freelancer especialista Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento sistemas, sistema web, gestão empresarial, e-commerce, crm erp';
 
 // Configurações do Hero interno
-$heroTitle = 'Desenvolvimento de Sistemas';
+$heroTitle = 'Desenvolvimento de Sistemas <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Sistemas web personalizados para gestão empresarial';
 $isInternal = true;
 
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Desenvolvimento de Sistemas</h1>
+                            <h1 class="service-page-title">Desenvolvimento de Sistemas <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">Sistemas web personalizados para gestão empresarial</p>
                         </div>
 

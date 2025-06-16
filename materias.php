@@ -4,7 +4,7 @@ require_once 'includes/config.php';
 require_once 'includes/longtail-config.php';
 
 // Configurações da página
-$pageTitle = 'Matérias | Programador PHP Freelancer - Guias para Empresários';
+$pageTitle = 'Matérias | Programador PHP Freelancer Sorocaba / São Paulo - Guias para Empresários';
 $pageDescription = 'Guias práticos sobre desenvolvimento PHP, contratação de freelancers, preços e automações. Conteúdo especializado para empresários tomarem decisões inteligentes.';
 $pageKeywords = 'materias php, desenvolvimento php, contratar programador, automação chatbot, guias empresários';
 

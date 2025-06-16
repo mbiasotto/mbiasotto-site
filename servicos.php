@@ -1,6 +1,6 @@
 <?php
 // Configurações da página - Otimizadas para SEO
-$pageTitle = 'Serviços Desenvolvimento PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
+$pageTitle = 'Serviços Desenvolvimento PHP Freelancer Sorocaba / São Paulo | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
 $pageDescription = 'Serviços especializados em desenvolvimento PHP: Laravel, APIs REST, sistemas web, apps móveis, automações N8N. Programador PHP freelancer Sorocaba SP. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento php, laravel framework, apis rest, sistemas web, manutenção php, programador php freelancer, desenvolvimento sob demanda, sorocaba sp';
 
@@ -22,7 +22,7 @@ include 'components/hero.php';
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8 fade-up">
-                    <h1 id="services-main-title" class="section-title">Nossos Serviços</h1>
+                    <h1 id="services-main-title" class="section-title">Nossos Serviços <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                     <p class="section-subtitle">
                         Soluções personalizadas para cada necessidade do seu negócio
                     </p>

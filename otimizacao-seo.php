@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Otimização SEO Sorocaba | Especialista SEO Freelancer Sites WordPress';
+$pageTitle = 'Otimização SEO Freelancer Sorocaba / São Paulo | Especialista SEO Freelancer Sites WordPress';
 $pageDescription = 'Otimização SEO profissional para sites. Melhore posicionamento no Google, aumente tráfego orgânico. SEO técnico e conteúdo. Orçamento gratuito!';
 $pageKeywords = 'otimização seo, seo sites, posicionamento google, seo wordpress, consultor seo';
 
 // Configurações do Hero interno
-$heroTitle = 'Otimização SEO para Sites';
+$heroTitle = 'Otimização SEO para Sites <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Melhore o posicionamento do seu site no Google';
 $isInternal = true;
 
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Otimização SEO para Sites</h1>
+                            <h1 class="service-page-title">Otimização SEO para Sites <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">Melhore o posicionamento do seu site no Google</p>
                         </div>
 

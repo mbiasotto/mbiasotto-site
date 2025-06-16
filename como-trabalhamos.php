@@ -3,7 +3,7 @@
 require_once 'includes/config.php';
 
 // Configurações da página
-$pageTitle = 'Contratando um Programador PHP Freelancer | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
+$pageTitle = 'Contratando um Programador PHP Freelancer Sorocaba / São Paulo | Especialista Laravel, APPs, APIs, N8N, MCP, ChatBots e automações';
 $pageDescription = 'Metodologia profissional e transparente para desenvolvimento de projetos PHP em Sorocaba. Conheça nosso processo estruturado.';
 
 // Configurações do Hero interno
@@ -17,7 +17,7 @@ include 'includes/header.php';
 
 <?php
 // Configurações do Hero interno
-$heroTitle = 'Metodologia comprovada de um Programador Freelancer de sucesso';
+$heroTitle = 'Metodologia comprovada de um Programador Freelancer de sucesso <BR><span class="text-blue-200">Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Processo estruturado e transparente que garante entregas de qualidade dentro do prazo';
 $isInternal = true;
 

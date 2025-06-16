@@ -1,12 +1,12 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Automação N8N e Chatbots IA Sorocaba | Automação de Processos Freelancer';
+$pageTitle = 'Automação N8N e ChatBots com IA Freelancer Sorocaba / São Paulo | Automação de Processos Freelancer';
 $pageDescription = 'Automação de processos com N8N, chatbots inteligentes e integração de sistemas. Freelancer especialista em automação Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'automação n8n, chatbot ia, automação processos, workflow, integração sistemas';
 
 // Configurações do Hero interno
-$heroTitle = 'Automação N8N e IA';
-$heroSubtitle = 'Automação de processos e chatbots inteligentes';
+$heroTitle = 'Automação N8N e ChatBots com IA <span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
+$heroSubtitle = 'Automação de processos e chatBots inteligentes';
 $isInternal = true;
 
 // Include header
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Automação N8N e IA</h1>
+                            <h1 class="service-page-title">Automação N8N e ChatBots com IA <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">Automação de processos e chatbots inteligentes</p>
                         </div>
 
@@ -44,7 +44,7 @@ include 'components/hero.php';
                         <!-- Service Features -->
                         <div class="row mb-5">
                             <div class="col-md-6">
-                                <h3 class="mb-4">Automação e IA</h3>
+                                <h3 class="mb-4">Automação e Chatbots com IA</h3>
                                 <ul class="service-features-list">
                                     <li><i class="fas fa-check-circle text-primary"></i> Workflows N8N</li>
                                     <li><i class="fas fa-check-circle text-primary"></i> Chatbots inteligentes</li>

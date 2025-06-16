@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Criação de Identidade Visual Sorocaba | Designer Gráfico Freelancer Logo';
+$pageTitle = 'Criação de Identidade Visual Freelancer Sorocaba / São Paulo | Designer Gráfico Freelancer Logo';
 $pageDescription = 'Criação de identidade visual completa: logo, manual da marca, materiais gráficos. Designer freelancer Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'identidade visual, criação logo, design gráfico, manual marca, branding';
 
 // Configurações do Hero interno
-$heroTitle = 'Criação de Identidade Visual';
+$heroTitle = 'Criação de Identidade Visual <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'Desenvolvimento de logos e materiais de marketing';
 $isInternal = true;
 
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Criação de Identidade Visual</h1>
+                            <h1 class="service-page-title">Criação de Identidade Visual <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">Desenvolvimento de logos e materiais de marketing</p>
                         </div>
 

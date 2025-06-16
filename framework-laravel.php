@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Desenvolvimento Laravel Sorocaba | Framework PHP Especialista Freelancer';
+$pageTitle = 'Desenvolvimento Laravel PHP Freelancer Sorocaba / São Paulo | Framework PHP Especialista Freelancer';
 $pageDescription = 'Desenvolvimento Laravel profissional: APIs, sistemas web, autenticação. Framework PHP especialista em Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento laravel, framework laravel, programador laravel, apis laravel, sistemas laravel';
 
 // Configurações do Hero interno
-$heroTitle = 'Framework Laravel';
+$heroTitle = 'Framework Laravel PHP <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'O framework PHP mais popular e robusto do mercado';
 $isInternal = true;
 
@@ -26,7 +26,7 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Framework Laravel</h1>
+                            <h1 class="service-page-title">Framework Laravel PHP <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
                             <p class="service-page-subtitle">O framework PHP mais popular e robusto do mercado</p>
                         </div>
 

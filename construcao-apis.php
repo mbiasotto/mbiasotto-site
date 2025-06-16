@@ -1,11 +1,11 @@
 <?php
 // Configurações da página - Long tail apenas no title HTML para SEO
-$pageTitle = 'Desenvolvimento PHP Freelancer Sorocaba | Especialista PHP Moderno Laravel';
+$pageTitle = 'Desenvolvimento de APIs PHP Freelancer Sorocaba / São Paulo | Especialista PHP Moderno Laravel';
 $pageDescription = 'Desenvolvimento PHP profissional com Laravel, APIs REST, sistemas web. Freelancer PHP experiente em Sorocaba. Orçamento gratuito!';
 $pageKeywords = 'desenvolvimento php, freelancer php, programador php, laravel, apis, sistemas web';
 
 // Configurações do Hero interno
-$heroTitle = 'Construção de APIs';
+$heroTitle = 'Construção de APIs PHP <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span>';
 $heroSubtitle = 'APIs RESTful seguras e bem documentadas';
 $isInternal = true;
 
@@ -26,8 +26,8 @@ include 'components/hero.php';
                         
                         <!-- Service Icon & Intro -->
                         <div class="text-center mb-5">
-                            <h1 class="service-page-title">Construção de APIs</h1>
-                            <p class="service-page-subtitle">APIs RESTful seguras e bem documentadas</p>
+                            <h1 class="service-page-title">Construção de APIs PHP <BR><span class="text-blue-200">Freelancer - Sorocaba / São Paulo</span></h1>
+                            <p class="service-page-subtitle">APIs RESTful PHP seguras e bem documentadas</p>
                         </div>
 
                         <!-- Service Description -->
