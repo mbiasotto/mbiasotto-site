@@ -155,6 +155,14 @@ include 'components/stats.php';
                         'link' => 'gestor-de-ia'
                     ],
                     [
+                        'icon' => 'fas fa-cogs',
+                        'title' => 'Agentes de IA',
+                        'description' => 'Criação de agentes autônomos para executar tarefas complexas, como prospecção, pesquisa e análise de dados.',
+                        'delay' => '900',
+                        'aria_label' => 'Desenvolvimento de Agentes de IA autônomos',
+                        'link' => 'agentes-de-ia'
+                    ],
+                    [
                         'icon' => 'fas fa-palette',
                         'title' => 'Criação de Identidade Visual',
                         'description' => 'Desenvolvimento de logos, materiais de marketing e identidade visual completa para fortalecer sua marca no mercado digital.',

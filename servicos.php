@@ -137,6 +137,19 @@ include 'components/hero.php';
                         'link' => 'gestor-de-ia'
                     ],
                     [
+                        'icon' => 'fas fa-cogs',
+                        'title' => 'Agentes de IA',
+                        'subtitle' => 'Automação de Tarefas Complexas',
+                        'description' => 'Desenvolvimento de agentes autônomos que planejam e executam tarefas de ponta a ponta, como prospecção, pesquisa e análise de dados.',
+                        'features' => [
+                            ['Agentes de Prospecção', 'Pesquisa de Mercado', 'Análise de Concorrentes'],
+                            ['Gerenciamento de Processos', 'Suporte Inteligente', 'Execução 24/7']
+                        ],
+                        'animation' => 'fade-left',
+                        'aria_label' => 'Desenvolvimento de Agentes de IA autônomos',
+                        'link' => 'agentes-de-ia'
+                    ],
+                    [
                         'icon' => 'fas fa-palette',
                         'title' => 'Criação de Identidade Visual',
                         'subtitle' => 'Branding completo',

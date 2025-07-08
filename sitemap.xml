@@ -121,6 +121,13 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://mbiasotto.com/agentes-de-ia</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 <!-- Matérias/Artigos -->
 <url>
   <loc>https://mbiasotto.com/materias</loc>
@@ -148,6 +155,13 @@
   <lastmod>2024-12-19</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
+</url>
+
+<url>
+    <loc>https://mbiasotto.com/como-criar-agentes-de-ia-para-negocios</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
 </url>
 
 <url>

@@ -55,52 +55,100 @@ function getLongtailPages() {
         ],
         
         'o-que-faz-um-gestor-de-ia' => [
-            'title' => 'O que faz um Gestor de IA e por que sua empresa precisa de um?',
-            'meta_title' => 'O Que Faz um Gestor de IA? | Funções e Vantagens para Empresas',
-            'meta_description' => 'Descubra o que faz um Gestor de IA, suas responsabilidades e por que contratar um especialista pode transformar seus processos com automação e inteligência artificial.',
-            'keywords' => 'gestor de ia, o que faz gestor de ia, especialista em ia, automação com ia, contratar gestor de ia',
+            'title' => 'Contratar Gestor de IA: O Especialista para Automatizar sua Empresa',
+            'meta_title' => 'Contratar Gestor de IA | Especialista em Automação para Empresas',
+            'meta_description' => 'Procurando um Gestor de IA? Contrate um especialista para analisar seus processos, implementar automações com n8n e integrar chatbots, otimizando seus resultados.',
+            'keywords' => 'contratar gestor de ia, especialista em ia, profissional de automação, consultor ia',
             'slug' => 'o-que-faz-um-gestor-de-ia',
-            'hero_title' => 'O que faz um Gestor de IA<br><span class="text-blue-200">e por que sua empresa precisa de um?</span>',
-            'hero_subtitle' => 'Entenda o papel estratégico que integra inteligência artificial aos seus processos de negócio',
+            'hero_title' => 'Procurando um Gestor de IA?<br><span class="text-blue-200">Encontre o especialista para seu projeto</span>',
+            'hero_subtitle' => 'O profissional que conecta o potencial da Inteligência Artificial com as necessidades práticas do seu negócio.',
             'image' => 'gestor-de-ia.webp',
             'content' => [
-                'intro' => 'O termo "Gestor de IA" está ganhando destaque, mas o que ele realmente faz? Em resumo, ele é o profissional que conecta o potencial da Inteligência Artificial com as necessidades práticas de um negócio, transformando processos manuais em sistemas automatizados e inteligentes.',
+                'intro' => 'Se você busca um especialista para liderar a transformação digital da sua empresa com inteligência artificial, você está no lugar certo. Um Gestor de IA é o profissional que analisa, planeja e implementa soluções de automação para gerar resultados concretos.',
                 'sections' => [
                     [
-                        'title' => 'As Principais Responsabilidades de um Gestor de IA',
-                        'content' => 'O trabalho vai muito além de apenas "usar o ChatGPT". Um bom gestor analisa o fluxo de trabalho da empresa, identifica gargalos e projeta soluções de automação que realmente geram valor.',
+                        'title' => 'Soluções que um Gestor de IA pode Implementar',
+                        'content' => 'O foco é traduzir tecnologia em resultados. Em vez de jargões técnicos, o Gestor de IA entrega soluções práticas que otimizam o dia a dia da sua operação.',
                         'tips' => [
-                            'Mapeamento de processos internos da empresa',
-                            'Desenvolvimento de chatbots para atendimento',
-                            'Criação de automações com ferramentas como n8n',
-                            'Integração de IA com sistemas existentes (CRMs, ERPs)',
+                            'Mapeamento de processos para identificar gargalos',
+                            'Desenvolvimento de chatbots para atendimento 24/7',
+                            'Criação de automações com n8n para tarefas repetitivas',
+                            'Integração de IA com seus sistemas (CRMs, ERPs)',
                             'Análise de dados para otimização contínua'
                         ]
                     ],
                     [
-                        'title' => 'Por que contratar um Gestor de IA é um investimento, não um custo',
-                        'content' => 'Muitas empresas hesitam por não entenderem o retorno. A automação de tarefas repetitivas libera sua equipe para focar em atividades estratégicas, enquanto a IA melhora a experiência do cliente e reduz erros operacionais.',
+                        'title' => 'Por que contratar um Gestor de IA é um Investimento Estratégico',
+                        'content' => 'O retorno sobre o investimento vem da eficiência. A automação libera sua equipe para focar em atividades estratégicas, enquanto a IA melhora a experiência do cliente e reduz custos operacionais.',
                         'tips' => [
-                            'Redução de até 40% em custos operacionais',
-                            'Aumento da capacidade de atendimento ao cliente',
-                            'Eliminação de erros humanos em tarefas manuais',
+                            'Redução de custos com tarefas manuais',
+                            'Aumento da capacidade de atendimento',
+                            'Eliminação de erros humanos em processos',
                             'Tomada de decisão mais rápida e baseada em dados'
                         ]
                     ],
                     [
                         'title' => 'Sinais de que sua empresa precisa de um Gestor de IA',
-                        'content' => 'Se sua equipe gasta muito tempo em tarefas manuais, seu atendimento não dá conta da demanda ou você sente que está perdendo competitividade, a IA pode ser a resposta.',
+                        'content' => 'Se sua operação enfrenta desafios de escalabilidade, sua equipe está sobrecarregada ou você sente que está perdendo competitividade, um especialista em IA pode ser a resposta.',
                         'tips' => [
-                            'Equipe sobrecarregada com tarefas repetitivas',
-                            'Dificuldade para responder todos os clientes rapidamente',
-                            'Processos internos lentos e com muitos erros',
-                            'Desejo de inovar e se diferenciar no mercado'
+                            'Equipe gasta muito tempo em tarefas repetitivas',
+                            'Dificuldade para responder todos os clientes com agilidade',
+                            'Processos internos lentos e propensos a erros',
+                            'Desejo de inovar e se destacar no mercado'
                         ]
                     ]
                 ]
             ],
             'cta_title' => 'Quer levar a Inteligência Artificial para o seu negócio?',
             'cta_text' => 'Ofereço uma análise gratuita para identificar os melhores pontos de automação na sua empresa. Vamos transformar seus processos juntos.'
+        ],
+
+        'como-criar-agentes-de-ia-para-negocios' => [
+            'title' => 'Como Criar Agentes de IA que Trabalham para sua Empresa 24/7',
+            'meta_title' => 'Como Criar Agentes de IA | Guia de Automação para Negócios',
+            'meta_description' => 'Aprenda como criar Agentes de IA para automatizar tarefas como prospecção, pesquisa de mercado e suporte. Contrate um especialista para desenvolver seus agentes.',
+            'keywords' => 'agentes de ia, criar agentes de ia, ia para negócios, automação com ia, como fazer ia',
+            'slug' => 'como-criar-agentes-de-ia-para-negocios',
+            'hero_title' => 'Como Criar Agentes de IA<br><span class="text-blue-200">que trabalham para você 24/7</span>',
+            'hero_subtitle' => 'Um guia para entender como funcionam os agentes autônomos e o que eles podem fazer pelo seu negócio',
+            'image' => 'agentes-de-ia.webp',
+            'content' => [
+                'intro' => 'Imagine ter uma equipe digital que não apenas executa tarefas, mas também planeja e resolve problemas de forma autônoma. Isso é o que os Agentes de IA fazem. Eles são o próximo nível da automação, capazes de lidar com fluxos de trabalho complexos que antes exigiam intervenção humana constante.',
+                'sections' => [
+                    [
+                        'title' => 'O que é um Agente de IA?',
+                        'content' => 'Diferente de uma simples automação (que segue um roteiro fixo), um Agente de IA tem um objetivo e pode tomar decisões para alcançá-lo. Ele pode, por exemplo, pesquisar na web, analisar dados, enviar e-mails e interagir com outras ferramentas, tudo de forma autônoma.',
+                        'tips' => [
+                            'Define objetivos e metas claras',
+                            'Planeja os passos para atingir o objetivo',
+                            'Executa ações em sistemas e na web',
+                            'Aprende com os resultados para otimizar'
+                        ]
+                    ],
+                    [
+                        'title' => 'Casos de Uso Práticos para Empresas',
+                        'content' => 'O potencial é imenso. Empresas estão usando agentes para automatizar desde a prospecção de novos clientes até o gerenciamento de inventário, liberando suas equipes para focarem em estratégia e criatividade.',
+                        'tips' => [
+                            'Agente de Prospecção que busca e qualifica leads',
+                            'Agente de Conteúdo que pesquisa e escreve rascunhos',
+                            'Agente de Monitoramento que acompanha concorrentes',
+                            'Agente de RH que faz triagem de candidatos'
+                        ]
+                    ],
+                    [
+                        'title' => 'Como Contratar um Especialista para Criar seus Agentes',
+                        'content' => 'O desenvolvimento de um agente eficaz exige conhecimento técnico em IA, APIs e engenharia de prompts. Contratar um especialista garante que você terá uma solução robusta, segura e alinhada com seus objetivos de negócio.',
+                        'tips' => [
+                            'Busque um profissional com experiência em automação',
+                            'Avalie o portfólio de projetos de IA',
+                            'Discuta claramente os objetivos do agente',
+                            'Garanta que haverá suporte e otimização'
+                        ]
+                    ]
+                ]
+            ],
+            'cta_title' => 'Pronto para construir seus próprios Agentes de IA?',
+            'cta_text' => 'Ofereço o desenvolvimento de agentes personalizados para automatizar os processos mais complexos da sua empresa. Vamos conversar!'
         ],
 
         'programacao-php-vale-pena-2025-analise' => [
