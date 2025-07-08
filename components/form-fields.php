@@ -48,6 +48,7 @@ $isSimplified = $isSimplified ?? false;
         <option value="app">Aplicativo</option>
         <option value="sistema">Sistema Personalizado</option>
         <option value="automacao">Automação com IA</option>
+        <option value="gestor-ia">Gestor de IA</option>
         <option value="consultoria">Consultoria</option>
         <option value="outro">Outro</option>
     </select>

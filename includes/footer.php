@@ -33,6 +33,7 @@
                         <li class="mb-2"><a href="<?php echo url('desenvolvimento-php'); ?>">Desenvolvimento PHP</a></li>
                         <li class="mb-2"><a href="<?php echo url('desenvolvimento-sites'); ?>">Desenvolvimento de Sites</a></li>
                         <li class="mb-2"><a href="<?php echo url('automacoes-n8n-ia'); ?>">Automações com N8N e IA</a></li>
+                        <li class="mb-2"><a href="<?php echo url('gestor-de-ia'); ?>">Gestor de IA</a></li>
                         <li class="mb-2"><a href="<?php echo url('desenvolvimento-app'); ?>">Desenvolvimento de APP</a></li>
                         <li class="mb-2"><a href="<?php echo url('framework-laravel'); ?>">Framework Laravel</a></li>
                         <li class="mb-2"><a href="<?php echo url('construcao-apis'); ?>">Construção de APIs</a></li>

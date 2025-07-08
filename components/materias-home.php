@@ -8,10 +8,10 @@ require_once 'includes/longtail-config.php';
 
 // Selecionar as 4 primeiras matérias para mostrar na home
 $homeMaterias = [
+    'o-que-faz-um-gestor-de-ia',
     'contratar-programador-php-freelancer-especialista',
     'freelancer-vs-agencia-php',
-    'bom-programador-php-entregas',
-    'automacao-php-chatbot-whatsapp-n8n-processos'
+    'bom-programador-php-entregas'
 ];
 
 $allPages = getAllLongtailPages();

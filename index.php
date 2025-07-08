@@ -147,6 +147,14 @@ include 'components/stats.php';
                         'link' => 'automacoes-n8n-ia'
                     ],
                     [
+                        'icon' => 'fas fa-brain',
+                        'title' => 'Gestor de IA',
+                        'description' => 'Implementação de soluções de IA para otimizar processos, automatizar tarefas e melhorar a tomada de decisão.',
+                        'delay' => '800',
+                        'aria_label' => 'Serviços de Gestor de IA para otimização de negócios',
+                        'link' => 'gestor-de-ia'
+                    ],
+                    [
                         'icon' => 'fas fa-palette',
                         'title' => 'Criação de Identidade Visual',
                         'description' => 'Desenvolvimento de logos, materiais de marketing e identidade visual completa para fortalecer sua marca no mercado digital.',

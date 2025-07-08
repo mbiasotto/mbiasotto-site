@@ -124,6 +124,19 @@ include 'components/hero.php';
                         'link' => 'automacoes-n8n-ia'
                     ],
                     [
+                        'icon' => 'fas fa-brain',
+                        'title' => 'Gestor de IA',
+                        'subtitle' => 'Inteligência Artificial para Negócios',
+                        'description' => 'Análise e implementação de soluções de IA para otimizar processos, automatizar tarefas e melhorar a tomada de decisão na sua empresa.',
+                        'features' => [
+                            ['Análise de Processos', 'Implementação de Chatbots', 'Automação com n8n'],
+                            ['Integração com ChatGPT', 'Otimização de Custos', 'Suporte Especializado']
+                        ],
+                        'animation' => 'fade-right',
+                        'aria_label' => 'Serviços de Gestor de IA para otimização de negócios',
+                        'link' => 'gestor-de-ia'
+                    ],
+                    [
                         'icon' => 'fas fa-palette',
                         'title' => 'Criação de Identidade Visual',
                         'subtitle' => 'Branding completo',

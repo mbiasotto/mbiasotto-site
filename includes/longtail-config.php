@@ -54,6 +54,55 @@ function getLongtailPages() {
             'cta_text' => 'Com mais de 20 anos de experiência, explico tudo em linguagem simples e mantenho você informado sobre cada etapa do projeto.'
         ],
         
+        'o-que-faz-um-gestor-de-ia' => [
+            'title' => 'O que faz um Gestor de IA e por que sua empresa precisa de um?',
+            'meta_title' => 'O Que Faz um Gestor de IA? | Funções e Vantagens para Empresas',
+            'meta_description' => 'Descubra o que faz um Gestor de IA, suas responsabilidades e por que contratar um especialista pode transformar seus processos com automação e inteligência artificial.',
+            'keywords' => 'gestor de ia, o que faz gestor de ia, especialista em ia, automação com ia, contratar gestor de ia',
+            'slug' => 'o-que-faz-um-gestor-de-ia',
+            'hero_title' => 'O que faz um Gestor de IA<br><span class="text-blue-200">e por que sua empresa precisa de um?</span>',
+            'hero_subtitle' => 'Entenda o papel estratégico que integra inteligência artificial aos seus processos de negócio',
+            'image' => 'gestor-de-ia.webp',
+            'content' => [
+                'intro' => 'O termo "Gestor de IA" está ganhando destaque, mas o que ele realmente faz? Em resumo, ele é o profissional que conecta o potencial da Inteligência Artificial com as necessidades práticas de um negócio, transformando processos manuais em sistemas automatizados e inteligentes.',
+                'sections' => [
+                    [
+                        'title' => 'As Principais Responsabilidades de um Gestor de IA',
+                        'content' => 'O trabalho vai muito além de apenas "usar o ChatGPT". Um bom gestor analisa o fluxo de trabalho da empresa, identifica gargalos e projeta soluções de automação que realmente geram valor.',
+                        'tips' => [
+                            'Mapeamento de processos internos da empresa',
+                            'Desenvolvimento de chatbots para atendimento',
+                            'Criação de automações com ferramentas como n8n',
+                            'Integração de IA com sistemas existentes (CRMs, ERPs)',
+                            'Análise de dados para otimização contínua'
+                        ]
+                    ],
+                    [
+                        'title' => 'Por que contratar um Gestor de IA é um investimento, não um custo',
+                        'content' => 'Muitas empresas hesitam por não entenderem o retorno. A automação de tarefas repetitivas libera sua equipe para focar em atividades estratégicas, enquanto a IA melhora a experiência do cliente e reduz erros operacionais.',
+                        'tips' => [
+                            'Redução de até 40% em custos operacionais',
+                            'Aumento da capacidade de atendimento ao cliente',
+                            'Eliminação de erros humanos em tarefas manuais',
+                            'Tomada de decisão mais rápida e baseada em dados'
+                        ]
+                    ],
+                    [
+                        'title' => 'Sinais de que sua empresa precisa de um Gestor de IA',
+                        'content' => 'Se sua equipe gasta muito tempo em tarefas manuais, seu atendimento não dá conta da demanda ou você sente que está perdendo competitividade, a IA pode ser a resposta.',
+                        'tips' => [
+                            'Equipe sobrecarregada com tarefas repetitivas',
+                            'Dificuldade para responder todos os clientes rapidamente',
+                            'Processos internos lentos e com muitos erros',
+                            'Desejo de inovar e se diferenciar no mercado'
+                        ]
+                    ]
+                ]
+            ],
+            'cta_title' => 'Quer levar a Inteligência Artificial para o seu negócio?',
+            'cta_text' => 'Ofereço uma análise gratuita para identificar os melhores pontos de automação na sua empresa. Vamos transformar seus processos juntos.'
+        ],
+
         'programacao-php-vale-pena-2025-analise' => [
             'title' => 'PHP ainda é uma boa escolha em 2025? Veja quando vale a pena usar',
             'meta_title' => 'PHP Vale a Pena em 2025? Quando Usar Esta Linguagem | Análise Completa',
@@ -669,4 +718,3 @@ function getAllLongtailPages() {
     return getLongtailPages();
 }
 ?>
-</rewritten_file>
