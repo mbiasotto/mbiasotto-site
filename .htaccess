@@ -37,6 +37,11 @@ Redirect 301 /servicos.php /servicos
 Redirect 301 /trabalhos-realizados.php /servicos
 Redirect 301 /servicos/marketing-de-busca-seo-sem.php /servicos
 Redirect 301 /programador-php-freelancer.php /programador-php-freelancer
+Redirect 301 /blog/programador-php-agora-na-primeira-pagina-do-google /programador-php-freelancer
+Redirect 301 /blog/category/programacao-php /programador-php-freelancer
+Redirect 301 /servicos/marketing-de-busca-seo-sem.php /otimizacao-seo
+Redirect 301 /servicos/marketing-de-busca-seo-sem.php /otimizacao-seo
+
 
 # ===========================================
 # 3. COMPRESSÃO (SE DISPONÍVEL)
